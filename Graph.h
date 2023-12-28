@@ -21,7 +21,7 @@ class Vertex {
     bool visited;          // auxiliary field
     bool processing;       // auxiliary field
 
-    void addEdge(Vertex<T> *dest, double w);
+    void addEdge(Vertex<T> *dest, double w, std::string);
     bool removeEdgeTo(Vertex<T> *d);
 public:
     Vertex(T in);
@@ -39,13 +39,15 @@ public:
 template <class T>
 class Edge {
     Vertex<T> * dest;      // destination vertex
+    std::string attribute; // edge attribute
     double weight;         // edge weight
 public:
-    Edge(Vertex<T> *d, double w);
+    Edge(Vertex<T> *d, double w, std::string attr = "");
     Vertex<T> *getDest() const;
     void setDest(Vertex<T> *dest);
     double getWeight() const;
     void setWeight(double weight);
+    string getAttribute() const;
     friend class Graph<T>;
     friend class Vertex<T>;
 };
@@ -58,7 +60,7 @@ public:
     int getNumVertex() const;
     bool addVertex(const T &in);
     bool removeVertex(const T &in);
-    bool addEdge(const T &sourc, const T &dest, double w);
+    bool addEdge(const T &sourc, const T &dest, double w, std::string attr);
     bool removeEdge(const T &sourc, const T &dest);
     vector<Vertex<T> * > getVertexSet() const;
     int inDegree(const T &v) const;
@@ -70,7 +72,7 @@ template <class T>
 Vertex<T>::Vertex(T in): info(in) {}
 
 template <class T>
-Edge<T>::Edge(Vertex<T> *d, double w): dest(d), weight(w) {}
+Edge<T>::Edge(Vertex<T> *d, double w, std::string attr): dest(d), weight(w), attribute(attr) {}
 
 
 template <class T>
@@ -121,6 +123,10 @@ double Edge<T>::getWeight() const {
 template<class T>
 void Edge<T>::setWeight(double weight) {
     Edge::weight = weight;
+}
+template<class T>
+string Edge<T>::getAttribute() const {
+    return attribute;
 }
 
 /*
@@ -192,7 +198,7 @@ bool Graph<T>::addVertex(const T &in) {
  */
 //TODO
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, double w) {
+bool Graph<T>::addEdge(const T &sourc, const T &dest, double w, std::string attr) {
     // Find the source and destination vertices
     Vertex<T> *sourceVertex = findVertex(sourc);
     Vertex<T> *destVertex = findVertex(dest);
@@ -204,10 +210,10 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double w) {
     }
 
     // Create a new edge from the source to the destination with the given weight
-    Edge<T> newEdge(destVertex, w);
+    Edge<T> newEdge(destVertex, w, attr);
 
     // Add the new edge to the source vertex's adjacency list
-    sourceVertex->addEdge(destVertex, w);
+    sourceVertex->addEdge(destVertex, w, attr);
 
     // Update the adjacency list of the source vertex using setAdj
     sourceVertex->setAdj(sourceVertex->getAdj());
@@ -221,8 +227,8 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double w) {
  */
 //TODO
 template <class T>
-void Vertex<T>::addEdge(Vertex<T> *d, double w) {
-    Edge<T> newEdge(d, w);
+void Vertex<T>::addEdge(Vertex<T> *d, double w, std::string attr) {
+    Edge<T> newEdge(d, w, attr);
     adj.push_back(newEdge);
 }
 
