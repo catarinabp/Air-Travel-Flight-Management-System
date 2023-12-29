@@ -1,0 +1,21 @@
+.DS_Store
+.idea/
+# Ignore compiled binaries
+*.exe
+*.o
+*.so
+*.exe
+*.pdb
+*.bin
+
+# Ignore log files
+*.log
+
+# Ignore package files
+*.jar
+*.war
+*.ear
+
+# Ignore dependency directories
+/node_modules
+/vendor
