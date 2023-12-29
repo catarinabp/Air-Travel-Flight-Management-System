@@ -3,6 +3,7 @@
 #include "extractFromDatabase.h"
 #include "Graph.h"
 #include <string>
+#include <unordered_set>
 
 int numberOfAirports(Graph<string> mainGraph) {
     // this function returns the number of airports in the graph.
@@ -17,5 +18,12 @@ int numberOfAirports(Graph<string> mainGraph) {
     }
     return numberOfAirports;
 }
+
+int numFlights(Graph<string> mainGraph) {
+    // this function returns the number of flights in the graph.
+    int numFlights = mainGraph.getNumEdges();
+    return numFlights;
+}
+
 
 #endif //PROJETO2AED_STATISTICS_H
