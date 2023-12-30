@@ -13,6 +13,16 @@ string getCityName(string info) {
     getline(ss, cityName, ',');
     return cityName;
 }
+string getCountryName(string info) {
+    string countryName;
+    stringstream ss(info);
+    getline(ss, countryName, ':');
+    getline(ss, countryName, ',');
+    getline(ss, countryName, ',');
+    getline(ss, countryName, ',');
+    getline(ss, countryName, ',');
+    return countryName;
+}
 
 /**
  * @brief Calculates the number of outgoing flights from a given airport in the graph.
@@ -238,13 +248,12 @@ int numberOfDestinationsCountries(Graph<std::string> &graph, vector<string> airp
         return (int) countries.size();
 }
 
-int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+vector<vector<string>> vectorOfReachableAirports(Graph<std::string> &graph, std::string airportCode, int maxStops){
     vector<vector<string>> airports;
     vector<string> airportsToVisit;
     vector<string> airportsVisited;
     airportsToVisit.push_back(airportCode);
     airports.push_back(airportsToVisit);
-    int count = 0;
     for(int i = 0; i < maxStops; ++i){
         airportsToVisit.clear();
         for(auto airport: airports[i]){
@@ -260,6 +269,12 @@ int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode
         }
         airports.push_back(airportsToVisit);
     }
+    return airports;
+}
+
+int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+    auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
+    int count = 0;
     for(auto airport: airports){
         count += airport.size();
     }
@@ -267,36 +282,84 @@ int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode
 }
 
 // create a function similar to the last one, but it should verify not by airport but by city
-int numberOfReachableCities(Graph<std::string> &graph, std::string airportCode, int maxStops) {
-    vector<vector<string>> cities;
-    vector<string> citiesToVisit;
-    vector<string> citiesVisited;
-    auto vertex = graph.findVertex(airportCode);
-    string cityName = getCityName(vertex->getAdj()[0].getDest()->getInfo());
-    citiesToVisit.push_back(cityName);
-    cities.push_back(citiesToVisit);
-    int count = 0;
-    for(int i = 0; i < maxStops; ++i){
-        citiesToVisit.clear();
-        for(auto city: cities[i]){
-            vertex = graph.findVertex(city);
-            for(int j = 1; j < vertex->getAdj().size(); ++j){
-                string newCity = getCityName(vertex->getAdj()[j].getDest()->getInfo());
-                if(find(citiesVisited.begin(), citiesVisited.end(), newCity) == citiesVisited.end()){
-                    if(find(citiesToVisit.begin(), citiesToVisit.end(), newCity) == citiesToVisit.end()){
-                        citiesToVisit.push_back(getCityName(newCity));
-                        citiesVisited.push_back(getCityName(newCity));
-                    }
+int numberOfReacheableCities(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+    auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
+    vector<string> cities;
+    for(auto airport: airports){
+        for(auto airportCode: airport){
+            auto vertex = graph.findVertex(airportCode);
+            if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
+                string cityName = getCityName(vertex->getAdj()[0].getDest()->getInfo()) ;
+                if(find(cities.begin(), cities.end(), cityName) == cities.end()){
+                    cities.push_back(cityName);
                 }
             }
         }
-        cities.push_back(citiesToVisit);
     }
-    for(auto city: cities){
-        count += city.size();
+    return (int) cities.size();
+}
+// create a function similar to the last one, but it should verify not by airport but by Country
+int numberOfReacheableCountries(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+    auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
+    vector<string> countries;
+    for(auto airport: airports){
+        for(auto airportCode: airport){
+            auto vertex = graph.findVertex(airportCode);
+            if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
+                string countryName = getCountryName(vertex->getAdj()[0].getDest()->getInfo());
+                if(find(countries.begin(), countries.end(), countryName) == countries.end()){
+                    countries.push_back(countryName);
+                }
+            }
+        }
     }
-    return count-1;
+    return (int) countries.size();
 }
 
+vector<std::string> maxTrip(Graph<std::string> &graph, std::string airportCode){
+    vector<std::string> trips;
+    auto airports = vectorOfReachableAirports(graph, airportCode, 16);
+    auto end = airports.size()-1;
+    while(airports[end].empty()){
+        end--;
+    }
+    for(auto airport : airports[end]) {
+        trips.push_back(airportCode + " --> " + airport);
+    }
+    return trips;
+}
+
+vector<string> topAirports(Graph<std::string> &graph, int k) {
+    pair<int, string> pairs;
+    vector<pair<int, string>> top;
+    for(auto vertex: graph.getVertexSet()) {
+        if(!vertex->getAdj().empty()) {
+            pairs.first = vertex->getAdj().size();
+            pairs.second = vertex->getInfo();
+            if(top.empty()){
+                top.push_back(pairs);
+            }
+            else{
+                bool added = false;
+                for(int i = 0; i < top.size(); ++i){
+                    if(pairs.first > top[i].first){
+                        top.insert(top.begin()+i, pairs);
+                        added = true;
+                        break;
+                    }
+                }
+                if(!added){
+                    top.push_back(pairs);
+                }
+            }
+        }
+    }
+    // now you should return a vector of pairs with only k elements
+    vector<string> topK;
+    for(int i = 0; i < k; ++i){
+        topK.push_back(top[i].second);
+    }
+    return topK;
+}
 
 #endif //PROJETO2AED_STATISTICS_H

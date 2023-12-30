@@ -3,6 +3,7 @@
 #include <gmock/gmock.h>
 #include "Graph.h"
 #include "statistics.h"
+#include "search.h"
 
 using testing::Eq;
 
@@ -130,15 +131,88 @@ TEST(Statistics, numberOfReachableAirports) {
     EXPECT_EQ(2880, numberOfReachableAirports(graph, "YEG", 4));
     EXPECT_EQ(2977, numberOfReachableAirports(graph, "CDG", 5));
 }
-// test the function numberOfReachableCities from statistics.h, give only 3 examples
-TEST(Statistics, numberOfReachableCities) {
+// test the function numberOfReachableDestinations from statistics.h, give other 3 examples
+TEST(Statistics, numberOfReachableAirports2) {
     int numberOfAirports = 0;
     int numberOfAirlines = 0;
     int numberOfFlights = 0;
     auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
 
-    EXPECT_EQ(743, numberOfReachableCities(graph, "OPO", 2));
-    EXPECT_EQ(2761, numberOfReachableCities(graph, "LAX", 3));
-    EXPECT_EQ(2880, numberOfReachableCities(graph, "YEG", 4));
-    EXPECT_EQ(2977, numberOfReachableCities(graph, "CDG", 5));
+    EXPECT_EQ(1125, numberOfReachableAirports(graph, "LIS", 9));
+    EXPECT_EQ(369, numberOfReachableAirports(graph, "LAE", 3));
+    EXPECT_EQ(2807, numberOfReachableAirports(graph, "LOS", 4));
+}
+
+// test the function numberOfCities from statistics.h, give only 3 examples
+TEST(Statistics, numberOfReacheableCities) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+
+    EXPECT_EQ(707, numberOfReacheableCities(graph, "OPO", 2));
+    EXPECT_EQ(2664, numberOfReacheableCities(graph, "LAX", 3));
+    EXPECT_EQ(2781, numberOfReacheableCities(graph, "YEG", 4));
+    EXPECT_EQ(2874, numberOfReacheableCities(graph, "CDG", 5));
+}
+// test the function numberOfReacheableCountries from statistics.h, give only 3 examples
+TEST(Statistics, numberOfReacheableCountries) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+
+    EXPECT_EQ(164, numberOfReacheableCountries(graph, "OPO", 2));
+    EXPECT_EQ(223, numberOfReacheableCountries(graph, "LAX", 3));
+    EXPECT_EQ(223, numberOfReacheableCountries(graph, "YEG", 4));
+    EXPECT_EQ(225, numberOfReacheableCountries(graph, "CDG", 5));
+}
+// test the function maxTrip from statistics.h, give only 3 examples
+TEST(Statistics, maxTrip) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+
+    EXPECT_EQ(1, maxTrip(graph, "OPO").size());
+    EXPECT_EQ(1, maxTrip(graph, "LAX").size());
+    EXPECT_EQ(3, maxTrip(graph, "YEG").size());
+    EXPECT_EQ(2, maxTrip(graph, "CDG").size());
+}
+
+//test the function topAirports from statistics.h.
+TEST(Statistics, topAirports) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+
+    auto airports = topAirports(graph, 10);
+    EXPECT_EQ("ATL", airports[0]);
+    EXPECT_EQ("ORD", airports[1]);
+    EXPECT_EQ("PEK", airports[2]);
+    EXPECT_EQ("LHR", airports[3]);
+    EXPECT_EQ("CDG", airports[4]);
+    EXPECT_EQ("FRA", airports[5]);
+    EXPECT_EQ("LAX", airports[6]);
+    EXPECT_EQ("DFW", airports[7]);
+    EXPECT_EQ("JFK", airports[8]);
+    EXPECT_EQ("AMS", airports[9]);
+}
+
+// test the function findShortestPath from search.h
+TEST(Search, findShortestPath) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+    string sourceAirport = "OPO";
+    string destinationAirport = "LAX";
+    auto shortestPath = findShortestPath(graph, sourceAirport, destinationAirport);
+
 }

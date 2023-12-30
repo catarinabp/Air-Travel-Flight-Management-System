@@ -157,11 +157,6 @@ void Vertex<T>::setAdj(const vector<Edge<T>> &adj) {
 }
 
 
-//=============================================================================
-// Exercise 1: Graph implementation
-//=============================================================================
-// Subexercise 1.1: addVertex
-//=============================================================================
 /*
  *  Adds a vertex with a given content or info (in) to a graph (this).
  *  Returns true if successful, and false if a vertex with that content already exists.
@@ -184,9 +179,6 @@ bool Graph<T>::addVertex(const T &in) {
     return true;
 }
 
-//=============================================================================
-// Subexercise 1.2: addEdge
-//=============================================================================
 /*
  * Adds an edge to a graph (this), given the contents of the source and
  * destination vertices and the edge weight (w).
@@ -228,9 +220,6 @@ void Vertex<T>::addEdge(Vertex<T> *d, std::string w) {
     adj.push_back(newEdge);
 }
 
-//=============================================================================
-// Subexercise 1.3: removeEdge
-//=============================================================================
 /*
  * Removes an edge from a graph (this).
  * The edge is identified by the source (sourc) and destination (dest) contents.
@@ -276,9 +265,6 @@ bool Vertex<T>::removeEdgeTo(Vertex<T> *d) {
     return false;
 }
 
-//=============================================================================
-// Subexercise 1.4: removeVertex
-//=============================================================================
 /*
  *  Removes a vertex with a given content (in) from a graph (this), and
  *  all outgoing and incoming edges.
