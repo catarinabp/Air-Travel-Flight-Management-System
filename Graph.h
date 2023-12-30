@@ -35,6 +35,7 @@ public:
     const vector<Edge<T>> &getAdj() const;
     void setAdj(const vector<Edge<T>> &adj);
     friend class Graph<T>;
+
 };
 
 template <class T>
@@ -63,7 +64,19 @@ public:
     bool removeEdge(const T &sourc, const T &dest);
     vector<Vertex<T> * > getVertexSet() const;
     int inDegree(const T &v) const;
+    int getNumEdges() const;
 };
+
+template <class T>
+int Graph<T>::getNumEdges() const {
+    int count = 0;
+    for (const auto& vertex : vertexSet) {
+        count += vertex->getAdj().size();
+    }
+    // If the graph is undirected, divide by 2 to avoid double-counting
+    // This depends on the specifics of the graph representation.
+    return count / 2;
+}
 
 /****************** Provided constructors and functions ********************/
 

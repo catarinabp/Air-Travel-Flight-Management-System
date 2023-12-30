@@ -3,6 +3,7 @@
 #include "extractFromDatabase.h"
 #include "Graph.h"
 #include <string>
+#include <unordered_set>
 
 string getCityName(string info) {
     string cityName;
@@ -361,5 +362,12 @@ vector<string> topAirports(Graph<std::string> &graph, int k) {
     }
     return topK;
 }
+
+int numFlights(Graph<string> mainGraph) {
+    // this function returns the number of flights in the graph.
+    int numFlights = mainGraph.getNumEdges();
+    return numFlights;
+}
+
 
 #endif //PROJETO2AED_STATISTICS_H

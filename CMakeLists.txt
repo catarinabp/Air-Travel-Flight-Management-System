@@ -7,11 +7,11 @@ add_subdirectory(googletest)
 include_directories(googletest/googletest/include)
 include_directories(googletest/googlemock/include)
 
-add_executable(Projeto2AED main.cpp test.cpp)
+
+add_executable(Projeto2AED main.cpp
+        test.cpp
+        cmake-build-debug/Menu.h
+        menu.h
+        menu.cpp)
 
 target_link_libraries(Projeto2AED gtest gtest_main)
-
-
-
-
-
