@@ -4,6 +4,7 @@
 #include "Graph.h"
 #include <string>
 #include <unordered_set>
+#include <cmath>
 
 string getCityName(string info) {
     string cityName;
@@ -369,5 +370,17 @@ int numFlights(Graph<string> mainGraph) {
     return numFlights;
 }
 
+double haversineDistance(double lat1, double lon1, double lat2, double lon2) {
+    const double R = 6371.0;
+    double dLat = (lat2 * M_PI / 180.0) - (lat1 * M_PI / 180.0);
+    double dLon = (lon2 * M_PI / 180.0) - (lon1 * M_PI / 180.0);
+
+    double a = sin(dLat / 2.0) * sin(dLat / 2.0) + cos(lat1) * cos(lat2) * sin(dLon / 2.0) * sin(dLon / 2.0);
+    double c = 2.0 * atan2(sqrt(a), sqrt(1.0 - a));
+
+    double distance = R * c;
+
+    return distance;
+}
 
 #endif //PROJETO2AED_STATISTICS_H
