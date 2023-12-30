@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/bbbra/Desktop/save/Projeto2AED/googletest
+# Install script for directory: C:/Users/bbbra/Desktop/Projeto2AED/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/bbbra/Desktop/save/Projeto2AED/build/googletest/googlemock/cmake_install.cmake")
+  include("C:/Users/bbbra/Desktop/Projeto2AED/build/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

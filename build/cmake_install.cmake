@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/bbbra/Desktop/save/Projeto2AED
+# Install script for directory: C:/Users/bbbra/Desktop/Projeto2AED
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/bbbra/Desktop/save/Projeto2AED/build/googletest/cmake_install.cmake")
+  include("C:/Users/bbbra/Desktop/Projeto2AED/build/googletest/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/bbbra/Desktop/save/Projeto2AED/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/bbbra/Desktop/Projeto2AED/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
