@@ -1,0 +1,8 @@
+# ninja log v5
+35	2569	7256055944761779	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	bc320d5878b85f29
+13	2579	7256055944871649	CMakeFiles/Projeto2AED.dir/main.cpp.obj	8b8674beff3ff496
+1	7661	7256055995741462	CMakeFiles/Projeto2AED.dir/test.cpp.obj	dc77f784aba08dd2
+22	18240	7256056101511453	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	f21efd96f1e02a1c
+18242	18402	7256056103171532	lib/libgtest.a	5f80ef819b308c25
+18403	18491	7256056104081519	lib/libgtest_main.a	950b590ef90b8e56
+18491	18767	7256056106771484	Projeto2AED.exe	265713a3406fb453
