@@ -21,6 +21,8 @@ void menu::Menu() {
     cout << "                 " << 8 << "Number of destination airports reachable from an airport;" << endl;
     cout << "                 " << 9 << "Number of cities reachable from an airport;" << endl;
     cout << "                " << 10 << "Number of countries reachable from an airport;" << endl;
+    cout << "                " << 11 << "Maximum trip and corresponding pair of source-destination airports;" << endl;
+    cout << "                " << 12 << "Top-k airport(s) with the greatest air traffic capacity (with the greatest number of flights;" << endl;
     cout << endl;
     cout << "                 " << "Press 0 to quit." << endl;
     cout << endl;

@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include "menu.h"
 #include "statistics.h"
+#include <iostream>
 
 
 int main(int argc, char* argv[]) {
@@ -52,7 +53,7 @@ int main(int argc, char* argv[]) {
 
         //Global number of available flights
         if (filter == 2) {
-            std::cout << "The global number of available flights is " << statistics::numFlights() << std::endl;
+            std::cout << "The global number of available flights is " << statistics::numFlights << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -216,6 +217,44 @@ int main(int argc, char* argv[]) {
                 std::cin >> userInput;
             }
         }
+
+        //Maximum trip and corresponding pair of source-destination airports;
+        if (filter ==11) {
+            std::string airportCode;
+            std::cout << "Please type the airport's code: ";
+            std::cin >> airportCode;
+            std::cout << endl;
+            std::cout << "The maximum trip(s) and corresponding pair(s) of source-destination airports from " << airportCode
+                          << "airport are the following: " << statistics::maxTrip(airportCode) << std::endl;
+            std::cout << "\nType 1 to return: ";
+            int userInput;
+            std::cin >> userInput;
+
+            // Validate user input if necessary
+            while (userInput != 1) {
+                std::cout << "Invalid input. Type 1 to return: ";
+                std::cin >> userInput;
+            }
+        }
+
+        //Top-k airport(s) with the greatest air traffic capacity (with the greatest number of flights)
+        if (filter ==12) {
+            int k;
+            std::cout << "Please type the your chosen k value: ";
+            std::cin >> k;
+            std::cout << endl;
+            std::cout << "The Top-" << k << " airport(s) with the greatest air traffic capacity is the following: " << statistics::topAirports(k) << std::endl;
+            std::cout << "\nType 1 to return: ";
+            int userInput;
+            std::cin >> userInput;
+
+            // Validate user input if necessary
+            while (userInput != 1) {
+                std::cout << "Invalid input. Type 1 to return: ";
+                std::cin >> userInput;
+            }
+        }
+
 
 
 
