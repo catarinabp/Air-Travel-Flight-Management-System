@@ -39,12 +39,13 @@ vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport,
         pq.pop();
 
         // Get neighboring vertices of the currentAirport
-        auto neighbors = graph.findVertex(currentAirport)->getAdj();
-        if(neighbors[0].getWeight() == "AIRPORT") {
-            neighbors.erase(neighbors.begin());
-        }
-        // Update distances to neighboring vertices
-        for (const auto &edge : neighbors) {
+        if(!graph.findVertex(currentAirport)->getAdj().empty()) {
+            auto neighbors = graph.findVertex(currentAirport)->getAdj();
+            if(neighbors[0].getWeight() == "AIRPORT") {
+                neighbors.erase(neighbors.begin());
+            }
+            // Update distances to neighboring vertices
+            for (const auto &edge : neighbors) {
                 T neighborAirport = edge.getDest()->getInfo();
                 int newDistance = distance[currentAirport] + 1; // Assuming equal weight for all edges
 
@@ -53,6 +54,7 @@ vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport,
                     distance[neighborAirport] = newDistance;
                     pq.push({newDistance, neighborAirport});
                 }
+            }
         }
     }
 
@@ -65,34 +67,40 @@ vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport,
 }
 
 template <class T>
-void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance, const T &start, const T &current, vector<T> &currentPath, vector<vector<T>> &allPaths) {
-    if (current == start) {
-        currentPath.push_back(current);
-        allPaths.push_back(currentPath);
-        currentPath.clear();
-        return;
-    }
+void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance, const T &end, const T &current, vector<T> &currentPath, vector<vector<T>> &allPaths, size_t initialSize = 2) {
+    if(distance.at(end) != INT_MAX) {
+        if (current == end) {
+            currentPath.push_back(current);
+            allPaths.push_back(currentPath);
+            currentPath.resize(initialSize);
+            return;
+        }
+        initialSize = currentPath.size();
 
+        auto neighbors = graph.findVertex(current)->getAdj();
+        if(neighbors[0].getWeight() == "AIRPORT") {
+            neighbors.erase(neighbors.begin());
+        }
 
-    auto neighbors = graph.findVertex(current)->getAdj();
-    if(neighbors[0].getWeight() == "AIRPORT") {
-        neighbors.erase(neighbors.begin());
-    }
+        for (const auto &edge : neighbors) {
+            currentPath.push_back(current);
+            T neighborAirport = edge.getDest()->getInfo();
+            auto lessDifferentThatSource = distance.at(neighborAirport) + distance.at(current) < distance.at(end) && distance.at(neighborAirport) != 0;
+            auto sameAsEnd = neighborAirport == end;
+            auto higherOnlyIfEnd = (distance.at(neighborAirport) + distance.at(current) > distance.at(end) && neighborAirport == end);
 
-    for (const auto &edge : neighbors) {
-        currentPath.push_back(current);
-        T neighborAirport = edge.getDest()->getInfo();
-        auto tell = distance.at(neighborAirport);
-        auto what = distance.at(start);
-        if (distance.at(neighborAirport) > distance.at(start) || neighborAirport == start) {
-            // Add the airline information between consecutive airports in the path
-            currentPath.push_back(edge.getWeight());
-            backtrackPaths(graph, distance, start, neighborAirport, currentPath, allPaths);
-        } else {
-            currentPath.clear();
+            if (lessDifferentThatSource || sameAsEnd || higherOnlyIfEnd) {
+                // Add the airline information between consecutive airports in the path
+                currentPath.push_back(edge.getWeight());
+                backtrackPaths(graph, distance, end, neighborAirport, currentPath, allPaths, initialSize);
+            } else {
+                currentPath.resize(initialSize);
+            }
+        }
+        if(initialSize >= 2) {
+            currentPath.resize(initialSize-2);
         }
     }
-
 }
 template <class T>
 string nameToCode(const Graph<T> &graph, string input) {

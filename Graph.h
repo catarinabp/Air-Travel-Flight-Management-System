@@ -256,7 +256,6 @@ bool Vertex<T>::removeEdgeToByWeight(Vertex<T> *d, const string &weight) {
                             });
 
     bool removed = (newEnd != adj.end());
-    cout << removed << endl;
 
     // Erase the elements marked for removal
     adj.erase(newEnd);

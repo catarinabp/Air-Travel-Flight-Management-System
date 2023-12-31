@@ -4,10 +4,12 @@
 
 #ifndef PROJETO2AED_MENU_H
 #define PROJETO2AED_MENU_H
+#include "UserPreferences.h"
 
 class menu {
 public:
-    static void Menu();
+    static void Menu(const UserPreferences& preferences);
+    static void displayPreferences(const UserPreferences& preferences);
 };
 
 #endif //PROJETO2AED_MENU_H

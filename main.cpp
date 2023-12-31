@@ -4,20 +4,14 @@
 #include "statistics.h"
 #include "userPreferences.h"
 #include "search.h"
-#include <iostream>
 
+UserPreferences preferences;
 
 int main(int argc, char* argv[]) {
-    //testing::InitGoogleTest(&argc, argv);
-    //std::cout << "START TESTING" << std::endl << std::endl;
-    //int res = RUN_ALL_TESTS();
-
-    //return res;
     int numberOfAirports = 0;
     int numberOfAirlines = 0;
     int numberOfFlights = 0;
-    UserPreferences preferences;
-    auto graph = filterGraph(extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights), preferences);
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
 
     int filter;
     int again = 1;
@@ -25,24 +19,17 @@ int main(int argc, char* argv[]) {
     while (again == 1) {
 
         std::cout << std::endl;
-        menu::Menu(); //Call menu
+        menu::Menu(preferences); //Call menu
         std::cout << "Please choose the option you prefer by writing the number that corresponds to it and then pressing return: " << std::endl;
         std::cin >> filter;
 
-        if (filter < 0 && filter > 17) {
+        if (0 > filter && filter > 17) {
             std::cout << std::endl;
             std::cout << "Sorry, that is not a valid option." << std::endl;
             std::cout << std::endl;
             std::cout << "Please choose the option you prefer by writing the number that corresponds to it and then pressing return: " << std::endl;
             std::cin >> filter;
         }
-
-        /* while (!(std::cin >> filter)) {
-            std::cout << "Invalid input. Please enter a valid number: ";
-            std::cin.clear();  // Clear the error flag
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Discard invalid input
-            std::cout << std::endl;
-        } */
 
         //Global number of airports
         if (filter == 1) {
@@ -156,7 +143,7 @@ int main(int argc, char* argv[]) {
             std::cout << endl;
             std::cout << "The list of destination airports reachable from " << airportCode
                       << "airport is the following: " << std::endl;
-            for(auto top: listOfDestinations(graph, airportCode)) {
+            for(const auto& top: listOfDestinations(graph, airportCode)) {
                 std::cout << top << std::endl;
             }
             std::cout << "\nType 1 to return: ";
@@ -392,25 +379,178 @@ int main(int argc, char* argv[]) {
             }
             std::cout << endl;
             std::cout << "The best flight options from " << source << " to " << destination << " are the following: " << endl;
-            for(auto single: sources) {
-                for(auto single2: destinations) {
-                    auto all = findShortestPath(graph, single, single2);
-                    for(const auto& path: all) {
-                        for(int i = 0; i < path.size();i++) {
-                            if(i % 2 == 0 && i != path.size()-1) {
-                                std::cout << path[i] << " ----";
-                            } else if(i % 2 != 0) {
-                                std::cout << path[i] << "----> ";
-                            } else {
-                                std::cout << path[i] << std::endl;
+            vector<vector<string>> all;
+            int count = 0;
+            for(const auto& single: sources) {
+                for(const auto& single2: destinations) {
+                    all = findShortestPath(graph, single, single2);
+                    if(!all.empty()) {
+                        for(const auto& path: all) {
+                            for(int i = 0; i < path.size();i++) {
+                                if(i % 2 == 0 && i != path.size()-1) {
+                                    std::cout << path[i] << " ----";
+                                } else if(i % 2 != 0) {
+                                    std::cout << path[i] << "----> ";
+                                } else {
+                                    std::cout << path[i] << std::endl;
+                                }
                             }
                         }
-                    }
-                    if(all.empty()) {
-                        std::cout << "It's not possible to go from " << source << " to " << destination << std::endl;
+                        count++;
                     }
                 }
             }
+            if(count == 0) {
+                cout << "There are no flights from " << source << " to " << destination << "with the selected preferences" << endl;
+            }
+            std::cout << "\nType 1 to return: ";
+            int userInput;
+            std::cin >> userInput;
+
+            // Validate user input if necessary
+            while(userInput != 1) {
+                std::cout << "Invalid input. Type 1 to return: ";
+                std::cin >> userInput;
+            }
+        }
+
+        if(filter == 17) {
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the preferred Airlines you want to add to the list: " << endl;
+            string preferredAirlines;
+            cin.ignore(100, '\n');
+            getline(cin, preferredAirlines);
+            if(!preferredAirlines.empty()) {
+                stringstream ss(preferredAirlines);
+                string airline;
+                while(getline(ss, airline, ',')) {
+                    preferences.preferredAirlines.push_back(airline);
+                }
+            }
+
+
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the avoided Airlines you want to add to the list: " << endl;
+            string avoidedAirlines;
+            cin.ignore(100, '\n');
+            getline(cin, avoidedAirlines);
+            if(!avoidedAirlines.empty()) {
+                stringstream ss2(avoidedAirlines);
+                string airline2;
+                while(getline(ss2, airline2, ',')) {
+                    preferences.avoidedAirlines.push_back(airline2);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the preferred Airports you want to add to the list: " << endl;
+            string preferredAirports;
+            cin.ignore(100, '\n');
+            getline(cin, preferredAirports);
+            if(!preferredAirports.empty()) {
+                stringstream ss3(preferredAirports);
+                string airport;
+                while(getline(ss3, airport, ',')) {
+                    preferences.preferredAirports.push_back(airport);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the avoided Airports you want to add to the list: " << endl;
+            string avoidedAirports;
+            cin.ignore(100, '\n');
+            getline(cin, avoidedAirports);
+            if(!avoidedAirports.empty()) {
+                stringstream ss4(avoidedAirports);
+                string airport2;
+                while(getline(ss4, airport2, ',')) {
+                    preferences.avoidedAirports.push_back(airport2);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the preferred Cities you want to add to the list: " << endl;
+            string preferredCities;
+            cin.ignore(100, '\n');
+            getline(cin, preferredAirports);
+            if(!preferredCities.empty()) {
+                stringstream ss5(preferredAirports);
+                string city;
+                while(getline(ss5, city, ',')) {
+                    preferences.preferredCities.push_back(city);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the avoided Cities you want to add to the list: " << endl;
+            string avoidedCities;
+            cin.ignore(100, '\n');
+            getline(cin, avoidedCities);
+            if(!avoidedCities.empty()) {
+                stringstream ss6(avoidedCities);
+                string city2;
+                while(getline(ss6, city2, ',')) {
+                    preferences.avoidedCities.push_back(city2);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the preferred Countries you want to add to the list: " << endl;
+            string preferredCountries;
+            cin.ignore(100, '\n');
+            getline(cin, preferredCountries);
+            if(!preferredCities.empty()) {
+                stringstream ss7(preferredCountries);
+                string country;
+                while(getline(ss7, country, ',')) {
+                    preferences.preferredCountries.push_back(country);
+                }
+            }
+            cout << endl;
+            cout << "Always right the code of Airline / Airport." << endl;
+            cout << "Always right the name of City / Country." << endl;
+            cout << "Leave blank to apply default (null). " << endl;
+            cout << endl;
+            cout << "Write the code of the avoided Countries you want to add to the list: " << endl;
+            string avoidedCountries;
+            cin.ignore(100, '\n');
+            getline(cin, avoidedCountries);
+            if(!avoidedCountries.empty()) {
+                stringstream ss8(avoidedCountries);
+                string country2;
+                while(getline(ss8, country2, ',')) {
+                    preferences.avoidedCountries.push_back(country2);
+                }
+            }
+            cout << endl;
+            cout << "Wait, processing." << endl;
+            cout << endl;
+            graph = filterGraph(extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights), preferences);
+            cout << endl;
+            cout << "Preferences updated!" << endl;
+            cout << endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;

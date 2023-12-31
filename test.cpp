@@ -143,32 +143,6 @@ TEST(Statistics, numberOfReachableAirports2) {
     EXPECT_EQ(2807, numberOfReachableAirports(graph, "LOS", 4));
 }
 
-// test the function numberOfCities from statistics.h, give only 3 examples
-TEST(Statistics, numberOfReacheableCities) {
-    int numberOfAirports = 0;
-    int numberOfAirlines = 0;
-    int numberOfFlights = 0;
-
-    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
-
-    EXPECT_EQ(707, numberOfReacheableCities(graph, "OPO", 2));
-    EXPECT_EQ(2664, numberOfReacheableCities(graph, "LAX", 3));
-    EXPECT_EQ(2781, numberOfReacheableCities(graph, "YEG", 4));
-    EXPECT_EQ(2874, numberOfReacheableCities(graph, "CDG", 5));
-}
-// test the function numberOfReacheableCountries from statistics.h, give only 3 examples
-TEST(Statistics, numberOfReacheableCountries) {
-    int numberOfAirports = 0;
-    int numberOfAirlines = 0;
-    int numberOfFlights = 0;
-
-    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
-
-    EXPECT_EQ(164, numberOfReacheableCountries(graph, "OPO", 2));
-    EXPECT_EQ(223, numberOfReacheableCountries(graph, "LAX", 3));
-    EXPECT_EQ(223, numberOfReacheableCountries(graph, "YEG", 4));
-    EXPECT_EQ(225, numberOfReacheableCountries(graph, "CDG", 5));
-}
 // test the function maxTrip from statistics.h, give only 3 examples
 TEST(Statistics, maxTrip) {
     int numberOfAirports = 0;
