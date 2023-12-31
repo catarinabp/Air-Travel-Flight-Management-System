@@ -10,6 +10,27 @@
 
 using namespace std;
 
+/**
+ * @brief Extracts airport, airline, and flight information from CSV files to create a graph.
+ *
+ * This function reads airport, airline, and flight information from CSV files and constructs a graph
+ * representing the connections between airports and airlines.
+ *
+ * @param numberOfAirports Reference to store the total number of airports extracted.
+ * @param numberOfAirlines Reference to store the total number of airlines extracted.
+ * @param numberOfFlights Reference to store the total number of flights extracted.
+ * @return A graph representing airport and airline connections.
+ *
+ * @note Assumes the existence of three CSV files: airports.csv, flights.csv, and airlines.csv.
+ * The format of these CSV files must be suitable for parsing (comma-separated values).
+ *
+ * Example Usage:
+ * @code
+ *    int numAirports, numAirlines, numFlights;
+ *    Graph<std::string> airportGraph = extractFromDatabase(numAirports, numAirlines, numFlights);
+ *    // airportGraph now contains the extracted information from CSV files.
+ * @endcode
+ */
 Graph<string> extractFromDatabase(int &numberOfAirports, int &numberOfAirlines, int &numberOfFlights) {
     string line;
     Graph<string> mainGraph;

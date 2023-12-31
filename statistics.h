@@ -4,18 +4,45 @@
 #include "Graph.h"
 #include <string>
 
-string getCityName(string info) {
+/**
+ * @brief Extracts and returns the city name from the provided information string.
+ *
+ * This function parses the input information string to extract the city name.
+ * The information string is expected to have a specific format where the city
+ * name is delimited by commas.
+ *
+ * @param info The information string containing details, including the city name.
+ * @return The extracted city name.
+ *
+ * @note The input information string should have the format:
+ *       "field1:value,field2:value,field3:value,cityName:value,field4:value"
+ */
+string getCityName(const string& info) {
     string cityName;
     stringstream ss(info);
+    // Extract city name (assuming it is the fourth field separated by commas)
     getline(ss, cityName, ':');
     getline(ss, cityName, ',');
     getline(ss, cityName, ',');
     getline(ss, cityName, ',');
     return cityName;
 }
-string getCountryName(string info) {
+
+/**
+ * @brief Extracts and returns the country name from the provided information string.
+ *
+ * This function assumes a specific format where the country name is the fifth
+ * field separated by commas in the input information string.
+ *
+ * @param info The information string containing details, including the country name.
+ * @return The extracted country name.
+ *
+ * @note The input information string should have the format: "field1:value,field2:value,field3:value,cityName:value,countryName:value,field4:value"
+ */
+string getCountryName(const string& info) {
     string countryName;
     stringstream ss(info);
+    // Extract country name (assuming it is the fifth field separated by commas)
     getline(ss, countryName, ':');
     getline(ss, countryName, ',');
     getline(ss, countryName, ',');
@@ -23,27 +50,68 @@ string getCountryName(string info) {
     getline(ss, countryName, ',');
     return countryName;
 }
-string getAirportName(string info) {
+
+/**
+ * @brief Extracts and returns the airport name from the provided information string.
+ *
+ * This function assumes a specific format where the airport name is the third
+ * field separated by commas in the input information string.
+ *
+ * @param info The information string containing details, including the airport name.
+ * @return The extracted airport name.
+ *
+ * @note The input information string should have the format: "field1:value,field2:value,airportName:value,field3:value,field4:value"
+ *
+ */
+string getAirportName(const string& info) {
     string airportName;
     stringstream ss(info);
+    // Extract airport name (assuming it is the third field separated by commas)
     getline(ss, airportName, ':');
     getline(ss, airportName, ',');
     getline(ss, airportName, ',');
     return airportName;
 }
-string getAirportCode(string info) {
-    string code;
+
+/**
+ * @brief Extracts and returns the airport code from the provided information string.
+ *
+ * This function assumes a specific format where the airport code is the second
+ * field separated by commas in the input information string.
+ *
+ * @param info The information string containing details, including the airport code.
+ * @return The extracted airport code.
+ *
+ * @note The input information string should have the format: "field1:value,airportCode:value,field2:value,field3:value,field4:value"
+ */
+string getAirportCode(const string& info) {
+    string airportCode;
     stringstream ss(info);
-    getline(ss, code, ':');
-    getline(ss, code, ',');
-    return code;
+    // Extract airport code (assuming it is the second field separated by commas)
+    getline(ss, airportCode, ':');
+    getline(ss, airportCode, ',');
+    return airportCode;
 }
-string getId(string info) {
+
+/**
+ * @brief Extracts and returns the identifier from the provided information string.
+ *
+ * This function assumes a specific format where the identifier is the first
+ * field separated by a colon in the input information string.
+ *
+ * @param info The information string containing details, including the identifier.
+ * @return The extracted identifier.
+ *
+ * @note The input information string should have the format: "id:value,field1:value,field2:value,field3:value,field4:value"
+ */
+string getId(const string& info) {
     string id;
     stringstream ss(info);
+    // Extract identifier (assuming it is the first field separated by a colon)
     getline(ss, id, ':');
     return id;
 }
+
 /**
  * @brief Calculates the number of outgoing flights from a given airport in the graph.
  *
@@ -59,10 +127,10 @@ string getId(string info) {
  * @pre The provided airport code should exist in the graph.
  *
  */
-int numberOfFlightsOut(Graph<std::string> &graph, std::string airportCode) {
+int numberOfFlightsOut(Graph<std::string> &graph, const std::string& airportCode) {
     int count = 0;
     auto vertex = graph.findVertex(airportCode);
-    count += vertex->getAdj().size();
+    count += (int) vertex->getAdj().size();
     return count;
 }
 
@@ -81,7 +149,7 @@ int numberOfFlightsOut(Graph<std::string> &graph, std::string airportCode) {
  * @pre The provided airport code should exist in the graph.
  *
  */
-int numberOfAirlinesOut(Graph<std::string> &graph, std::string airportCode) {
+int numberOfAirlinesOut(Graph<std::string> &graph, const std::string& airportCode) {
     int count = 0;
     auto vertex = graph.findVertex(airportCode);
     string airlineCode;
@@ -110,7 +178,7 @@ int numberOfAirlinesOut(Graph<std::string> &graph, std::string airportCode) {
  * @pre The graph must be properly initialized.
  * @pre The provided airline code should exist in the graph.
  */
-int numberOfFlightsPerAirline(Graph<std::string> &graph, std::string airlineCode) {
+int numberOfFlightsPerAirline(Graph<std::string> &graph, const std::string& airlineCode) {
     int count = 0;
     for(auto vertex : graph.getVertexSet()){
         for(int i = 1; i < vertex->getAdj().size(); i++){
@@ -135,7 +203,7 @@ int numberOfFlightsPerAirline(Graph<std::string> &graph, std::string airlineCode
  *
  * @pre The graph must be properly initialized.
  */
-int numberOfFlightsPerCity(Graph<std::string> &graph, std::string city) {
+int numberOfFlightsPerCity(Graph<std::string> &graph, const std::string& city) {
     int count = 0;
     for(auto vertex : graph.getVertexSet()){
         if(vertex->getAdj().empty()){
@@ -173,7 +241,7 @@ int numberOfFlightsPerCity(Graph<std::string> &graph, std::string city) {
  * @pre The graph must be properly initialized.
  * @pre The provided airport code should exist in the graph.
  */
-vector<string> listOfDestinations(Graph<std::string> &graph, std::string airportCode) {
+vector<string> listOfDestinations(Graph<std::string> &graph, const std::string& airportCode) {
     auto vertex = graph.findVertex(airportCode);
     vector<string> airports;
     for(int i = 1; i < vertex->getAdj().size(); i++){
@@ -195,7 +263,7 @@ vector<string> listOfDestinations(Graph<std::string> &graph, std::string airport
  *
  * @pre The vector must be non-empty and properly initialized.
  */
-int numberOfDestinationsAirports(vector<string> airports) {
+int numberOfDestinationsAirports(const vector<string>& airports) {
     return (int) airports.size();
 }
 
@@ -213,9 +281,9 @@ int numberOfDestinationsAirports(vector<string> airports) {
  * @pre The graph must be properly initialized.
  * @pre The vector of airport codes must be non-empty and properly initialized.
  */
-int numberOfDestinationsCities(Graph<std::string> &graph, vector<string> airports) {
+int numberOfDestinationsCities(Graph<std::string> &graph, const vector<string>& airports) {
     vector<string> cities;
-    for(auto airport: airports) {
+    for(const auto& airport: airports) {
         auto vertex = graph.findVertex(airport);
         if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
             string info = vertex->getAdj()[0].getDest()->getInfo();
@@ -247,9 +315,9 @@ int numberOfDestinationsCities(Graph<std::string> &graph, vector<string> airport
  * @pre The graph must be properly initialized.
  * @pre The vector of airport codes must be non-empty and properly initialized.
  */
-int numberOfDestinationsCountries(Graph<std::string> &graph, vector<string> airports) {
+int numberOfDestinationsCountries(Graph<std::string> &graph, const vector<string>& airports) {
         vector<string> countries;
-        for(auto airport: airports) {
+        for(const auto& airport: airports) {
             auto vertex = graph.findVertex(airport);
             if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
                 string info = vertex->getAdj()[0].getDest()->getInfo();
@@ -268,7 +336,21 @@ int numberOfDestinationsCountries(Graph<std::string> &graph, vector<string> airp
         return (int) countries.size();
 }
 
-vector<vector<string>> vectorOfReachableAirports(Graph<std::string> &graph, std::string airportCode, int maxStops){
+/**
+ * @brief Finds and returns a vector of vectors containing reachable airports within a specified maximum number of stops.
+ *
+ * This function performs a breadth-first search to find airports reachable from the provided airport code
+ * within the given maximum number of stops. The result is a vector of vectors, where each vector represents
+ * the airports reachable within a specific number of stops.
+ *
+ * @param graph The graph representing the airport connections.
+ * @param airportCode The code of the starting airport.
+ * @param maxStops The maximum number of stops allowed in the search.
+ * @return A vector of vectors containing reachable airports at each level of stops.
+ *
+ * @note The input graph should represent airport connections using vertices and edges.
+ */
+vector<vector<string>> vectorOfReachableAirports(Graph<std::string> &graph, const std::string& airportCode, int maxStops){
     vector<vector<string>> airports;
     vector<string> airportsToVisit;
     vector<string> airportsVisited;
@@ -276,7 +358,7 @@ vector<vector<string>> vectorOfReachableAirports(Graph<std::string> &graph, std:
     airports.push_back(airportsToVisit);
     for(int i = 0; i < maxStops; ++i){
         airportsToVisit.clear();
-        for(auto airport: airports[i]){
+        for(const auto& airport: airports[i]){
             auto vertex = graph.findVertex(airport);
             for(int j = 1; j < vertex->getAdj().size(); ++j){
                 if(find(airportsVisited.begin(), airportsVisited.end(), vertex->getAdj()[j].getDest()->getInfo()) == airportsVisited.end()){
@@ -292,22 +374,67 @@ vector<vector<string>> vectorOfReachableAirports(Graph<std::string> &graph, std:
     return airports;
 }
 
-int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+/**
+ * @brief Calculates the total number of reachable airports within a specified maximum number of stops.
+ *
+ * This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code
+ * within the given maximum number of stops. The total count of reachable airports is then calculated and returned.
+ *
+ * @param graph The graph representing the airport connections.
+ * @param airportCode The code of the starting airport.
+ * @param maxStops The maximum number of stops allowed in the search.
+ * @return The total number of reachable airports within the specified number of stops.
+ *
+ * @note The input graph should represent airport connections using vertices and edges.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<std::string> airportGraph;  // Assume a properly initialized graph
+ *    std::string startAirportCode = "JFK";
+ *    int maxStopsAllowed = 3;
+ *    int totalReachableAirports = numberOfReachableAirports(airportGraph, startAirportCode, maxStopsAllowed);
+ *    // totalReachableAirports now contains the count of reachable airports within the specified stops
+ * @endcode
+ */
+int numberOfReachableAirports(Graph<std::string> &graph, const std::string& airportCode, int maxStops) {
     auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
     int count = 0;
-    for(auto airport: airports){
-        count += airport.size();
+    for(const auto& airport: airports){
+        count += (int) airport.size();
     }
     return count-1;
 }
 
-// create a function similar to the last one, but it should verify not by airport but by city
-int numberOfReachableCities(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+/**
+ * @brief Calculates the total number of reachable cities within a specified maximum number of stops.
+ *
+ * This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code
+ * within the given maximum number of stops. It then extracts the city names associated with those airports and
+ * calculates the total count of unique reachable cities.
+ *
+ * @param graph The graph representing the airport connections.
+ * @param airportCode The code of the starting airport.
+ * @param maxStops The maximum number of stops allowed in the search.
+ * @return The total number of unique reachable cities within the specified number of stops.
+ *
+ * @note The input graph should represent airport connections using vertices and edges, where the first edge weight
+ * represents the airport information.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<std::string> airportGraph;  // Assume a properly initialized graph
+ *    std::string startAirportCode = "JFK";
+ *    int maxStopsAllowed = 3;
+ *    int totalReachableCities = numberOfReachableCities(airportGraph, startAirportCode, maxStopsAllowed);
+ *    // totalReachableCities now contains the count of unique reachable cities within the specified stops
+ * @endcode
+ */
+int numberOfReachableCities(Graph<std::string> &graph, const std::string& airportCode, int maxStops) {
     auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
     vector<string> cities;
-    for(auto airport: airports){
-        for(auto airportCode: airport){
-            auto vertex = graph.findVertex(airportCode);
+    for(const auto& airport: airports){
+        for(const auto& airportCoded: airport){
+            auto vertex = graph.findVertex(airportCoded);
             if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
                 string cityName = getCityName(vertex->getAdj()[0].getDest()->getInfo()) ;
                 if(find(cities.begin(), cities.end(), cityName) == cities.end()){
@@ -318,13 +445,36 @@ int numberOfReachableCities(Graph<std::string> &graph, std::string airportCode, 
     }
     return (int) cities.size();
 }
-// create a function similar to the last one, but it should verify not by airport but by Country
-int numberOfReachableCountries(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+/**
+ * @brief Calculates the total number of reachable countries within a specified maximum number of stops.
+ *
+ * This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code
+ * within the given maximum number of stops. It then extracts the country names associated with those airports and
+ * calculates the total count of unique reachable countries.
+ *
+ * @param graph The graph representing the airport connections.
+ * @param airportCode The code of the starting airport.
+ * @param maxStops The maximum number of stops allowed in the search.
+ * @return The total number of unique reachable countries within the specified number of stops.
+ *
+ * @note The input graph should represent airport connections using vertices and edges, where the first edge weight
+ * represents the airport information.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<std::string> airportGraph;  // Assume a properly initialized graph
+ *    std::string startAirportCode = "JFK";
+ *    int maxStopsAllowed = 3;
+ *    int totalReachableCountries = numberOfReachableCountries(airportGraph, startAirportCode, maxStopsAllowed);
+ *    // totalReachableCountries now contains the count of unique reachable countries within the specified stops
+ * @endcode
+ */
+int numberOfReachableCountries(Graph<std::string> &graph, const std::string& airportCode, int maxStops) {
     auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
     vector<string> countries;
-    for(auto airport: airports){
-        for(auto airportCode: airport){
-            auto vertex = graph.findVertex(airportCode);
+    for(const auto& airport: airports){
+        for(const auto& airportCoded: airport){
+            auto vertex = graph.findVertex(airportCoded);
             if(vertex->getAdj()[0].getWeight() == "AIRPORT"){
                 string countryName = getCountryName(vertex->getAdj()[0].getDest()->getInfo());
                 if(find(countries.begin(), countries.end(), countryName) == countries.end()){
@@ -336,25 +486,68 @@ int numberOfReachableCountries(Graph<std::string> &graph, std::string airportCod
     return (int) countries.size();
 }
 
-vector<std::string> maxTrip(Graph<std::string> &graph, std::string airportCode){
+/**
+ * @brief Finds the maximum trip from the provided airport code within a specified maximum number of stops.
+ *
+ * This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code
+ * within the given maximum number of stops. It then identifies the last non-empty level in the reachability hierarchy
+ * and constructs trips from the starting airport code to each airport at that level.
+ *
+ * @param graph The graph representing the airport connections.
+ * @param airportCode The code of the starting airport.
+ * @return A vector of strings representing the trips from the provided airport code to each airport at the last reachable level.
+ *
+ * @note The input graph should represent airport connections using vertices and edges, where the first edge weight
+ * represents the airport information.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<std::string> airportGraph;  // Assume a properly initialized graph
+ *    std::string startAirportCode = "JFK";
+ *    std::vector<std::string> maxTrips = maxTrip(airportGraph, startAirportCode);
+ *    // maxTrips now contains trips from the provided airport code to each airport at the last reachable level
+ * @endcode
+ */
+vector<std::string> maxTrip(Graph<std::string> &graph, const std::string& airportCode){
     vector<std::string> trips;
     auto airports = vectorOfReachableAirports(graph, airportCode, 16);
     auto end = airports.size()-1;
     while(airports[end].empty()){
         end--;
     }
-    for(auto airport : airports[end]) {
+    for(const auto& airport : airports[end]) {
         trips.push_back(airportCode + " --> " + airport);
     }
     return trips;
 }
 
+/**
+ * @brief Finds the top K airports based on the number of outgoing flights.
+ *
+ * This function calculates the number of outgoing flights for each airport in the provided graph
+ * and then identifies the top K airports with the highest number of outgoing flights.
+ *
+ * @param graph The graph representing airport connections.
+ * @param k The number of top airports to retrieve.
+ * @return A vector of strings representing the top K airports based on the number of outgoing flights.
+ *
+ * @note The input graph should represent airport connections using vertices and edges, where the first edge weight
+ * represents the airport information.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<std::string> airportGraph;  // Assume a properly initialized graph
+ *    int k = 5;  // Number of top airports to retrieve
+ *    std::vector<std::string> topAirportCodes = topAirports(airportGraph, k);
+ *    // topAirportCodes now contains the codes of the top K airports based on outgoing flights
+ * @endcode
+ */
 vector<string> topAirports(Graph<std::string> &graph, int k) {
     pair<int, string> pairs;
     vector<pair<int, string>> top;
     for(auto vertex: graph.getVertexSet()) {
         if(!vertex->getAdj().empty()) {
-            pairs.first = vertex->getAdj().size();
+            pairs.first = (int) vertex->getAdj().size();
             pairs.second = vertex->getInfo();
             if(top.empty()){
                 top.push_back(pairs);

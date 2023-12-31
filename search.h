@@ -9,6 +9,28 @@
 #include "Graph.h"
 #include "userPreferences.h"
 
+/**
+ * @brief Find the shortest paths from a start airport to an end airport in a graph.
+ *
+ * This function uses Dijkstra's algorithm to find the shortest paths from a start airport to an end airport
+ * in the given graph. It returns a vector of vectors, where each inner vector represents a distinct shortest path.
+ *
+ * @tparam T The type of data stored in the graph vertices.
+ * @param graph The input graph.
+ * @param startAirport The code of the starting airport.
+ * @param endAirport The code of the destination airport.
+ * @return A vector of vectors containing the shortest paths.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<string> flightGraph;
+ *    // Populate flightGraph...
+ *    string startAirport = "OPO";
+ *    string endAirport = "JFK";
+ *    auto paths = findShortestPath(flightGraph, startAirport, endAirport);
+ *    // Use paths for further processing...
+ * @endcode
+ */
 template <class T>
 vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport, const T &endAirport) {
     // Map to store distances from startAirport to each vertex
@@ -66,6 +88,35 @@ vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport,
     return allPaths;
 }
 
+/**
+ * @brief Backtrack and find paths from the current airport to the destination in a graph.
+ *
+ * This function recursively backtracks and finds paths from the current airport to the destination
+ * in the given graph. It considers the distances provided and adds information about airlines between
+ * consecutive airports in the path. The results are stored in the `allPaths` vector.
+ *
+ * @tparam T The type of data stored in the graph vertices.
+ * @param graph The input graph.
+ * @param distance A map containing distances from the start airport to each vertex.
+ * @param end The destination airport.
+ * @param current The current airport in the path.
+ * @param currentPath The current path being constructed.
+ * @param allPaths Vector to store all the paths found.
+ * @param initialSize The initial size of the current path vector (default is 2).
+ *
+ * Example Usage:
+ * @code
+ *    Graph<string> flightGraph;
+ *    // Populate flightGraph...
+ *    string startAirport = "OPO";
+ *    string endAirport = "JFK";
+ *    unordered_map<string, int> distances; // Populate distances map...
+ *    vector<vector<string>> paths;
+ *    vector<string> currentPath;
+ *    backtrackPaths(flightGraph, distances, endAirport, startAirport, currentPath, paths);
+ *    // Use paths for further processing...
+ * @endcode
+ */
 template <class T>
 void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance, const T &end, const T &current, vector<T> &currentPath, vector<vector<T>> &allPaths, size_t initialSize = 2) {
     if(distance.at(end) != INT_MAX) {
@@ -102,6 +153,27 @@ void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance
         }
     }
 }
+/**
+ * @brief Convert an airport name to its corresponding code.
+ *
+ * This function searches for airports in the given graph whose names match the input string.
+ * It displays the matching options and allows the user to select the desired option by entering
+ * a corresponding number. The function then returns the airport code for the selected option.
+ *
+ * @tparam T The type of data stored in the graph vertices.
+ * @param graph The input graph.
+ * @param input The input string representing the airport name.
+ * @return The airport code corresponding to the selected option.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<string> flightGraph;
+ *    // Populate flightGraph...
+ *    string userInput = "Los Angeles";
+ *    string airportCode = nameToCode(flightGraph, userInput);
+ *    // Use airportCode for further processing...
+ * @endcode
+ */
 template <class T>
 string nameToCode(const Graph<T> &graph, string input) {
     vector<string> options;
@@ -127,6 +199,27 @@ string nameToCode(const Graph<T> &graph, string input) {
     return getAirportCode(options[option-1]);
 }
 
+/**
+ * @brief Convert a city name to corresponding airport codes.
+ *
+ * This function searches for airports in the given graph whose cities match the input string.
+ * It displays the matching options and allows the user to select the desired option by entering
+ * a corresponding number. The function then returns a vector of airport codes corresponding to the selected option.
+ *
+ * @tparam T The type of data stored in the graph vertices.
+ * @param graph The input graph.
+ * @param input The input string representing the city name.
+ * @return A vector of airport codes corresponding to the selected option.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<string> flightGraph;
+ *    // Populate flightGraph...
+ *    string userInput = "Los Angeles";
+ *    vector<string> airportCodes = cityToCode(flightGraph, userInput);
+ *    // Use airportCodes for further processing...
+ * @endcode
+ */
 template <class T>
 vector<string> cityToCode(const Graph<T> &graph, string input) {
     unordered_multimap<string, string> map;
@@ -169,6 +262,28 @@ vector<string> cityToCode(const Graph<T> &graph, string input) {
 // ----------------------- FILTERING GRAPH ------------------------
 // ----------------------------------------------------------------
 
+/**
+ * @brief Filter a graph based on user preferences.
+ *
+ * This function takes an original graph and applies user preferences to filter out vertices and edges.
+ * It removes airports, edges with avoided airlines, airports from avoided countries and cities,
+ * edges with non-preferred airlines, and airports not from preferred countries or cities.
+ *
+ * @tparam T The type of data stored in the graph vertices.
+ * @param originalGraph The original input graph.
+ * @param userPreferences The user preferences specifying filtering criteria.
+ * @return A new graph containing only the vertices and edges that satisfy the user preferences.
+ *
+ * Example Usage:
+ * @code
+ *    Graph<string> originalGraph;
+ *    // Populate originalGraph...
+ *    UserPreferences preferences;
+ *    // Set user preferences...
+ *    Graph<string> filteredGraph = filterGraph(originalGraph, preferences);
+ *    // Use filteredGraph for further processing...
+ * @endcode
+ */
 template <class T>
 Graph<T> filterGraph(const Graph<T> &originalGraph, const UserPreferences &userPreferences) {
     Graph<T> filteredGraph = originalGraph;
