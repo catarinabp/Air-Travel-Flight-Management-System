@@ -209,10 +209,61 @@ TEST(Search, findShortestPath) {
     int numberOfAirports = 0;
     int numberOfAirlines = 0;
     int numberOfFlights = 0;
+    UserPreferences preferences;
+    preferences.preferredAirlines.push_back("USA");
+    preferences.preferredAirlines.push_back("RYR");
+    Graph<string> graphTest;
+    graphTest.addVertex("OPO");
+    graphTest.addVertex("LIS");
+    graphTest.addVertex("CDG");
+    graphTest.addVertex("LHR");
+    graphTest.addVertex("LAX");
+    graphTest.addEdge("OPO", "LIS", "USA");
+    graphTest.addEdge("LIS", "CDG", "USA");
+    graphTest.addEdge("CDG", "LHR", "USA");
+    graphTest.addEdge("LHR", "LAX", "USA");
+    graphTest.addEdge("OPO", "LIS", "RYR");
+    graphTest.addEdge("LIS", "CDG", "RYR");
+    graphTest.addEdge("CDG", "LHR", "RYR");
+
+    // graphTest = filterGraph(graphTest, preferences);
+    auto graph = filterGraph(extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights), preferences);
+
+    string sourceAirport = "OPO";
+    string destinationAirport = "LIS";
+    auto shortestPath = findShortestPath(graph, sourceAirport, destinationAirport);
+    cout << shortestPath.size() << endl;
+}
+
+//test the funtion nameToCode from search.h
+TEST(Search, nameToCode) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
 
     auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
-    string sourceAirport = "OPO";
-    string destinationAirport = "LAX";
-    auto shortestPath = findShortestPath(graph, sourceAirport, destinationAirport);
+    auto source = nameToCode(graph, "Porto");
+    auto destination = nameToCode(graph, "Los Angeles");
+    auto shortestPath = findShortestPath(graph, source, destination);
+}
 
+// test the function cityToCode from search.h
+TEST(Search, cityToCode) {
+    int numberOfAirports = 0;
+    int numberOfAirlines = 0;
+    int numberOfFlights = 0;
+
+    auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
+    auto sourceCodes = cityToCode(graph, "Paris");
+    auto destinationCodes = cityToCode(graph, "Los Angeles");
+    vector<vector<string>> globalFlights;
+    for(auto source: sourceCodes) {
+        for(auto destination: destinationCodes) {
+            auto shortestPath = findShortestPath(graph, source, destination);
+            for(auto flight: shortestPath) {
+                globalFlights.push_back(flight);
+            }
+        }
+    }
+    cout << globalFlights.size() << endl;
 }

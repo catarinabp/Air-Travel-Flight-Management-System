@@ -5,6 +5,8 @@
 #include <utility>
 #include <vector>
 #include <queue>
+#include <stack>
+#include <list>
 
 using namespace std;
 
@@ -24,6 +26,7 @@ class Vertex {
 
     void addEdge(Vertex<T> *dest, std::string w);
     bool removeEdgeTo(Vertex<T> *d);
+    bool removeEdgeToByWeight(Vertex<T> *d, const string &weight);
 public:
     Vertex(T in);
     T getInfo() const;
@@ -35,7 +38,6 @@ public:
     const vector<Edge<T>> &getAdj() const;
     void setAdj(const vector<Edge<T>> &adj);
     friend class Graph<T>;
-
 };
 
 template <class T>
@@ -54,29 +56,26 @@ public:
 
 template <class T>
 class Graph {
-    vector<Vertex<T> *> vertexSet;    // vertex set
+    vector<Vertex<T> *> vertexSet;      // vertex set
+    int _index_;                        // auxiliary field
+    stack<Vertex<T>> _stack_;           // auxiliary field
+    list<list<T>> _list_sccs_;        // auxiliary field
+
+    void dfsVisit(Vertex<T> *v,  vector<T> & res) const;
+    bool dfsIsDAG(Vertex<T> *v) const;
 public:
     Vertex<T> *findVertex(const T &in) const;
     int getNumVertex() const;
     bool addVertex(const T &in);
     bool removeVertex(const T &in);
-    bool addEdge(const T &sourc, const T &dest, std::string w);
+    bool addEdge(const T &sourc, const T &dest, string w);
     bool removeEdge(const T &sourc, const T &dest);
+    bool removeEdgeByWeight(const T &sourc, const T &dest, const string &weight);
     vector<Vertex<T> * > getVertexSet() const;
-    int inDegree(const T &v) const;
-    int getNumEdges() const;
+    vector<T> dfs() const;
+    vector<T> dfs(const T & source) const;
+    vector<T> bfs(const T &source) const;
 };
-
-template <class T>
-int Graph<T>::getNumEdges() const {
-    int count = 0;
-    for (const auto& vertex : vertexSet) {
-        count += vertex->getAdj().size();
-    }
-    // If the graph is undirected, divide by 2 to avoid double-counting
-    // This depends on the specifics of the graph representation.
-    return count / 2;
-}
 
 /****************** Provided constructors and functions ********************/
 
@@ -174,51 +173,27 @@ void Vertex<T>::setAdj(const vector<Edge<T>> &adj) {
  *  Adds a vertex with a given content or info (in) to a graph (this).
  *  Returns true if successful, and false if a vertex with that content already exists.
  */
-//TODO
 template <class T>
 bool Graph<T>::addVertex(const T &in) {
-    // Check if a vertex with the same content already exists
-    if (findVertex(in) != nullptr) {
-        // Vertex with the same content already exists
+    if ( findVertex(in) != NULL)
         return false;
-    }
-
-    // Create a new vertex with the provided content
-    Vertex<T> *newVertex = new Vertex<T>(in);
-
-    // Add the new vertex to the graph
-    vertexSet.push_back(newVertex);
-
+    vertexSet.push_back(new Vertex<T>(in));
     return true;
 }
+
 
 /*
  * Adds an edge to a graph (this), given the contents of the source and
  * destination vertices and the edge weight (w).
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
-//TODO
 template <class T>
-bool Graph<T>::addEdge(const T &sourc, const T &dest, std::string w) {
-    // Find the source and destination vertices
-    Vertex<T> *sourceVertex = findVertex(sourc);
-    Vertex<T> *destVertex = findVertex(dest);
-
-    // Check if both source and destination vertices exist
-    if (sourceVertex == nullptr || destVertex == nullptr) {
-        // One or both of the vertices do not exist
+bool Graph<T>::addEdge(const T &sourc, const T &dest, string w) {
+    auto v1 = findVertex(sourc);
+    auto v2 = findVertex(dest);
+    if (v1 == NULL || v2 == NULL)
         return false;
-    }
-
-    // Create a new edge from the source to the destination with the given weight
-    Edge<T> newEdge(destVertex, w);
-
-    // Add the new edge to the source vertex's adjacency list
-    sourceVertex->addEdge(destVertex, w);
-
-    // Update the adjacency list of the source vertex using setAdj
-    sourceVertex->setAdj(sourceVertex->getAdj());
-
+    v1->addEdge(v2,w);
     return true;
 }
 
@@ -226,36 +201,24 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, std::string w) {
  * Auxiliary function to add an outgoing edge to a vertex (this),
  * with a given destination vertex (d) and edge weight (w).
  */
-//TODO
 template <class T>
-void Vertex<T>::addEdge(Vertex<T> *d, std::string w) {
-    Edge<T> newEdge(d, w);
-    adj.push_back(newEdge);
+void Vertex<T>::addEdge(Vertex<T> *d, string w) {
+    adj.push_back(Edge<T>(d, w));
 }
+
 
 /*
  * Removes an edge from a graph (this).
  * The edge is identified by the source (sourc) and destination (dest) contents.
  * Returns true if successful, and false if such edge does not exist.
  */
-//TODO
 template <class T>
 bool Graph<T>::removeEdge(const T &sourc, const T &dest) {
-    // HINT: Use "findVertex" to obtain the actual vertices.
-    // HINT: Use "removeEgeTo" to actually remove the edge.
-    // Find the source and destination vertices
-    Vertex<T> *sourceVertex = findVertex(sourc);
-    Vertex<T> *destVertex = findVertex(dest);
-
-    // Check if both source and destination vertices exist
-    if (sourceVertex == nullptr || destVertex == nullptr) {
-        // One or both of the vertices do not exist
+    auto v1 = findVertex(sourc);
+    auto v2 = findVertex(dest);
+    if (v1 == NULL || v2 == NULL)
         return false;
-    }
-
-    // Use the removeEdgeTo method to remove the edge
-    return sourceVertex->removeEdgeTo(destVertex);
-    return false;
+    return v1->removeEdgeTo(v2);
 }
 
 /*
@@ -263,19 +226,42 @@ bool Graph<T>::removeEdge(const T &sourc, const T &dest) {
  * from a vertex (this).
  * Returns true if successful, and false if such edge does not exist.
  */
-//TODO
 template <class T>
 bool Vertex<T>::removeEdgeTo(Vertex<T> *d) {
-    // HINT: use an iterator to scan the "adj" vector and then erase the edge.
-    // Use an iterator to scan the "adj" vector and erase the edge
-    for (auto it = adj.begin(); it != adj.end(); ++it) {
-        if (it->getDest() == d) {
-            adj.erase(it);
-            return true;  // Edge found and removed
-        }
-    }
-    // Edge not found
-    return false;
+    auto newEnd = remove_if(adj.begin(), adj.end(),
+                            [d](const Edge<T>& edge) { return edge.dest == d; });
+
+    bool removed = (newEnd != adj.end());
+
+    // Erase the elements marked for removal
+    adj.erase(newEnd, adj.end());
+
+    return removed;
+}
+
+template <class T>
+bool Graph<T>::removeEdgeByWeight(const T &sourc, const T &dest, const string &weight) {
+    auto v1 = findVertex(sourc);
+    auto v2 = findVertex(dest);
+    if (v1 == nullptr || v2 == nullptr)
+        return false;
+    return v1->removeEdgeToByWeight(v2, weight);
+}
+
+template <class T>
+bool Vertex<T>::removeEdgeToByWeight(Vertex<T> *d, const string &weight) {
+    auto newEnd = remove_if(adj.begin(), adj.end(),
+                            [d, weight](const Edge<T>& edge) {
+                                return edge.dest == d && edge.weight == weight;
+                            });
+
+    bool removed = (newEnd != adj.end());
+    cout << removed << endl;
+
+    // Erase the elements marked for removal
+    adj.erase(newEnd);
+
+    return removed;
 }
 
 /*
@@ -283,31 +269,112 @@ bool Vertex<T>::removeEdgeTo(Vertex<T> *d) {
  *  all outgoing and incoming edges.
  *  Returns true if successful, and false if such vertex does not exist.
  */
-//TODO
 template <class T>
 bool Graph<T>::removeVertex(const T &in) {
-    // HINT: use an iterator to scan the "vertexSet" vector and then erase the vertex.
-    // HINT: take advantage of "removeEdgeTo" to remove incoming edges.
-    // Find the vertex with the specified content
-    auto it = find_if(vertexSet.begin(), vertexSet.end(), [&in](Vertex<T> *v) {
-        return v->getInfo() == in;
-    });
-
-    // Check if the vertex with the specified content was found
-    if (it == vertexSet.end()) {
-        // Vertex not found
+    auto v = findVertex(in);
+    if (v == NULL)
         return false;
-    }
 
-    // Remove incoming edges to the vertex
-    for (Vertex<T> *v : vertexSet) {
-        v->removeEdgeTo(*it);
-    }
+    for (auto u : vertexSet)
+        u->removeEdgeTo(v);
 
-    // Erase the vertex from the vertexSet
-    delete *it;  // Delete the vertex to free memory
-    vertexSet.erase(it);
+    auto it = vertexSet.begin();
+    while (it != vertexSet.end()) {
+        if (*it == v) {
+            it = vertexSet.erase(it);
+            delete v;
+        } else {
+            ++it;
+        }
+    }
 
     return true;
+}
+
+
+/****************** DFS ********************/
+/*
+ * Performs a depth-first search (dfs) traversal in a graph (this).
+ * Returns a vector with the contents of the vertices by dfs order.
+ * Follows the algorithm described in theoretical classes.
+ */
+template <class T>
+vector<T> Graph<T>::dfs() const {
+    vector<T> res;
+    for (auto v : vertexSet)
+        v->visited = false;
+    for (auto v : vertexSet)
+        if (! v->visited)
+            dfsVisit(v, res);
+    return res;
+}
+
+/*
+ * Auxiliary function that visits a vertex (v) and its adjacent, recursively.
+ * Updates a parameter with the list of visited node contents.
+ */
+template <class T>
+void Graph<T>::dfsVisit(Vertex<T> *v, vector<T> & res) const {
+    v->visited = true;
+    res.push_back(v->info);
+    for (auto & e : v->adj) {
+        auto w = e.dest;
+        if ( ! w->visited)
+            dfsVisit(w, res);
+    }
+}
+
+
+/****************** DFS ********************/
+/*
+ * Performs a depth-first search (dfs) in a graph (this).
+ * Returns a vector with the contents of the vertices by dfs order,
+ * from the source node.
+ */
+template <class T>
+vector<T> Graph<T>::dfs(const T & source) const {
+    vector<T> res;
+    auto s = findVertex(source);
+    if (s == nullptr)
+        return res;
+
+    for (auto v : vertexSet)
+        v->visited = false;
+
+    dfsVisit(s, res);
+    return res;
+}
+
+
+/****************** BFS ********************/
+/*
+ * Performs a breadth-first search (bfs) in a graph (this), starting
+ * from the vertex with the given source contents (source).
+ * Returns a vector with the contents of the vertices by bfs order.
+ */
+template <class T>
+vector<T> Graph<T>::bfs(const T & source) const {
+    vector<T> res;
+    auto s = findVertex(source);
+    if (s == NULL)
+        return res;
+    queue<Vertex<T> *> q;
+    for (auto v : vertexSet)
+        v->visited = false;
+    q.push(s);
+    s->visited = true;
+    while (!q.empty()) {
+        auto v = q.front();
+        q.pop();
+        res.push_back(v->info);
+        for (auto & e : v->adj) {
+            auto w = e.dest;
+            if ( ! w->visited ) {
+                q.push(w);
+                w->visited = true;
+            }
+        }
+    }
+    return res;
 };
 #endif //PROJETO2AED_GRAPH_H
