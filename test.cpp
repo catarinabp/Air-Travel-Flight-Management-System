@@ -79,13 +79,13 @@ TEST(Statistics, numberOfDestinationsAirports) {
     int numberOfFlights = 0;
     auto graph = extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights);
     vector<string> airports = listOfDestinations(graph, "OPO");
-    EXPECT_EQ(61, numberOfDestinationsAirports(airports));
+    EXPECT_EQ(61, numberOfDestinationsAirports(airports, std::string()));
     airports = listOfDestinations(graph, "LAX");
-    EXPECT_EQ(149, numberOfDestinationsAirports(airports));
+    EXPECT_EQ(149, numberOfDestinationsAirports(airports, std::string()));
     airports = listOfDestinations(graph, "YEG");
-    EXPECT_EQ(35, numberOfDestinationsAirports(airports));
+    EXPECT_EQ(35, numberOfDestinationsAirports(airports, std::string()));
     airports = listOfDestinations(graph, "CDG");
-    EXPECT_EQ(236, numberOfDestinationsAirports(airports));
+    EXPECT_EQ(236, numberOfDestinationsAirports(airports, std::string()));
 }
 // test the function numberOfDestinationsCities from statistics.h, give only 3 examples
 TEST(Statistics, numberOfDestinationsCities) {

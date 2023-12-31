@@ -56,8 +56,8 @@ build CMakeFiles/Projeto2AED.dir/main.cpp.obj: CXX_COMPILER__Projeto2AED_unscann
   OBJECT_DIR = CMakeFiles\Projeto2AED.dir
   OBJECT_FILE_DIR = CMakeFiles\Projeto2AED.dir
 
-build CMakeFiles/Projeto2AED.dir/test.cpp.obj: CXX_COMPILER__Projeto2AED_unscanned_Debug C$:/Users/bbbra/Desktop/Projeto2AED/test.cpp || cmake_object_order_depends_target_Projeto2AED
-  DEP_FILE = CMakeFiles\Projeto2AED.dir\test.cpp.obj.d
+build CMakeFiles/Projeto2AED.dir/menu.cpp.obj: CXX_COMPILER__Projeto2AED_unscanned_Debug C$:/Users/bbbra/Desktop/Projeto2AED/menu.cpp || cmake_object_order_depends_target_Projeto2AED
+  DEP_FILE = CMakeFiles\Projeto2AED.dir\menu.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/bbbra/Desktop/Projeto2AED/googletest/googlemock/include -isystem C:/Users/bbbra/Desktop/Projeto2AED/googletest/googletest/include -isystem C:/Users/bbbra/Desktop/Projeto2AED/googletest/googletest
   OBJECT_DIR = CMakeFiles\Projeto2AED.dir
@@ -71,7 +71,7 @@ build CMakeFiles/Projeto2AED.dir/test.cpp.obj: CXX_COMPILER__Projeto2AED_unscann
 #############################################
 # Link the executable Projeto2AED.exe
 
-build Projeto2AED.exe: CXX_EXECUTABLE_LINKER__Projeto2AED_Debug CMakeFiles/Projeto2AED.dir/main.cpp.obj CMakeFiles/Projeto2AED.dir/test.cpp.obj | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Projeto2AED.exe: CXX_EXECUTABLE_LINKER__Projeto2AED_Debug CMakeFiles/Projeto2AED.dir/main.cpp.obj CMakeFiles/Projeto2AED.dir/menu.cpp.obj | lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Projeto2AED.dir

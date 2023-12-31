@@ -1,7 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/anacatarinapatricio/CLionProjects/Projeto2AED -B /Users/anacatarinapatricio/CLionProjects/Projeto2AED/cmake-build-debug
-CMake Error at CMakeLists.txt:6 (add_subdirectory):
-  add_subdirectory given source "googletest" which is not an existing
-  directory.
-
-
--- Configuring incomplete, errors occurred!
+"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\bbbra\Desktop\Projeto2AED -B C:\Users\bbbra\Desktop\Projeto2AED\cmake-build-debug
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/bbbra/Desktop/Projeto2AED/cmake-build-debug

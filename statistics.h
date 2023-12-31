@@ -302,7 +302,7 @@ int numberOfReachableAirports(Graph<std::string> &graph, std::string airportCode
 }
 
 // create a function similar to the last one, but it should verify not by airport but by city
-int numberOfReacheableCities(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+int numberOfReachableCities(Graph<std::string> &graph, std::string airportCode, int maxStops) {
     auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
     vector<string> cities;
     for(auto airport: airports){
@@ -319,7 +319,7 @@ int numberOfReacheableCities(Graph<std::string> &graph, std::string airportCode,
     return (int) cities.size();
 }
 // create a function similar to the last one, but it should verify not by airport but by Country
-int numberOfReacheableCountries(Graph<std::string> &graph, std::string airportCode, int maxStops) {
+int numberOfReachableCountries(Graph<std::string> &graph, std::string airportCode, int maxStops) {
     auto airports = vectorOfReachableAirports(graph, airportCode, maxStops);
     vector<string> countries;
     for(auto airport: airports){
