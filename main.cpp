@@ -1,8 +1,7 @@
 #include <iostream>
-#include <gtest/gtest.h>
+#include <algorithm>
 #include "menu.h"
 #include "statistics.h"
-#include "userPreferences.h"
 #include "search.h"
 
 UserPreferences preferences;

@@ -7,7 +7,7 @@
 #include <limits>
 #include <algorithm>
 #include "Graph.h"
-#include "userPreferences.h"
+#include "UserPreferences.h"
 
 /**
  * @brief Find the shortest paths from a start airport to an end airport in a graph.
@@ -190,7 +190,7 @@ string nameToCode(const Graph<T> &graph, string input) {
             }
         }
     }
-    // it slould display all the options in a menu so the user can select the option they want
+    // it should display all the options in a menu so the user can select the option they want
     for(int i = 0; i < options.size(); i++) {
         cout << i + 1 << ". " << options[i] << endl;
     }
@@ -243,7 +243,7 @@ vector<string> cityToCode(const Graph<T> &graph, string input) {
             }
         }
     }
-    // it slould display all the options in a menu so the user can select the option they want
+    // it should display all the options in a menu so the user can select the option they want
     for(int i = 0; i < options.size(); i++) {
         cout << i + 1 << ". " << options[i] << endl;
     }
@@ -340,7 +340,7 @@ Graph<T> filterGraph(const Graph<T> &originalGraph, const UserPreferences &userP
         }
     }
 
-    // Remove airlines diferrent than the preferred ones
+    // Remove airlines different from the preferred ones
     if (!userPreferences.preferredAirlines.empty()) {
         // Create a list to store edges to be removed
         std::vector<std::tuple<T, T, std::string>> edgesToRemove;
