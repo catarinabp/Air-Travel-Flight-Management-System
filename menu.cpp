@@ -25,20 +25,22 @@ void menu::Menu(const UserPreferences& preferences) {
     cout << endl;
     cout << "-------------------------------------------------- Best Flight Options ------------------------------------------------" << endl;
     cout << endl;
-    cout << "                 " << 16 << "- Best Flight Options ------------------------------------------------" << endl;
+    cout << "                 " << 16 << "- Best Flight Options;" << endl;
     cout << endl;
     cout << "------------------------------------------------------- PREFERENCES ---------------------------------------------------" << endl;
     cout << endl;
-    cout << "                 " << 17 << "- Edit system preferences --------------------------------------------" << endl;
+    cout << "                 " << 17 << "- Edit system preferences;" << endl;
     cout << endl;
     displayPreferences(preferences);
-    cout << "--------------------------------------------------------- Guide -------------------------------------------------------" << endl;
+    cout << "--------------------------------------------------------- GUIDE -------------------------------------------------------" << endl;
     cout << endl;
-    cout << "                 " << 18 << "- Review how to write the arguments for the search filters -----------" << endl;
+    cout << "                 " << 18 << "- Review how to write the arguments for the search filters;" << endl;
     cout << endl;
-    cout << "----------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
     cout << endl;
     cout << "                 " << "Press 0 to quit." << endl;
+    cout << endl;
+    cout << "-----------------------------------------------------------------------------------------------------------------------" << endl;
     cout << endl;
 }
 
@@ -135,12 +137,15 @@ void menu::displayPreferences(const UserPreferences& preferences) {
 }
 
 void menu::Guide() {
-    cout << "Airport's code (acronym)" << endl;
-    cout << "   - All uppercase letters (e.g. OPO)" << endl;
+    cout << "How should I write the arguments of the search filters?" << endl;
     cout << endl;
-    cout << "Airline's code (acronym)" << endl;
-    cout << "   - All uppercase letters (e.g. TAP)" << endl;
+    cout << "   Airport's code (acronym)" << endl;
+    cout << "     - All uppercase letters (e.g. OPO)" << endl;
     cout << endl;
-    cout << "City's /Country's name" << endl;
-    cout << "   - The first letter uppercase and the following lowercase (e.g. Oporto, Portugal)" << endl;
+    cout << "   Airline's code (acronym)" << endl;
+    cout << "     - All uppercase letters (e.g. TAP)" << endl;
+    cout << endl;
+    cout << "   City's /Country's name ***" << endl;
+    cout << "     - The first letter uppercase and the following lowercase " << endl;
+    cout << "       (e.g. Oporto, Portugal)" << endl;
 }
