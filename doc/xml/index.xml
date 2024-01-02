@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="d7/d77/class_edge" kind="class"><name>Edge</name>
+    <member refid="d7/d77/class_edge_1ae4d65678b91bd9d814af4720ad87cd0c" kind="variable"><name>dest</name></member>
+    <member refid="d7/d77/class_edge_1a7b1763bb85d4cc63d292752c2bbaf6d0" kind="variable"><name>weight</name></member>
+    <member refid="d7/d77/class_edge_1aefa9b76cd57411c5354e5620dc2d84dd" kind="friend"><name>Graph&lt; T &gt;</name></member>
+    <member refid="d7/d77/class_edge_1a2e120a12dec663fa334633b4f26cbed8" kind="friend"><name>Vertex&lt; T &gt;</name></member>
+    <member refid="d7/d77/class_edge_1a303637c9cbcac1005c164591956fed51" kind="function"><name>Edge</name></member>
+    <member refid="d7/d77/class_edge_1a9a2de066dff8513dd788d553fc1d0c81" kind="function"><name>getDest</name></member>
+    <member refid="d7/d77/class_edge_1a163ee9f75e35701e6a04ea1c987e4094" kind="function"><name>setDest</name></member>
+    <member refid="d7/d77/class_edge_1a685f283c31bf5553acca4eea34d19d15" kind="function"><name>getWeight</name></member>
+    <member refid="d7/d77/class_edge_1a43954e1d4b8c5bafaf39346cd689b39e" kind="function"><name>setWeight</name></member>
+  </compound>
+  <compound refid="da/d9a/class_graph" kind="class"><name>Graph</name>
+    <member refid="da/d9a/class_graph_1a73d4e735fc0a7c83c9c689a2b53fa623" kind="variable"><name>vertexSet</name></member>
+    <member refid="da/d9a/class_graph_1a1e0cd13bd9e91a125a484a0817c030a1" kind="variable"><name>_index_</name></member>
+    <member refid="da/d9a/class_graph_1a261998fc1e44c878c595c2b0a05680be" kind="variable"><name>_stack_</name></member>
+    <member refid="da/d9a/class_graph_1ab06fb542caac016248829c9e6fd11ec4" kind="variable"><name>_list_sccs_</name></member>
+    <member refid="da/d9a/class_graph_1ab2bb8011642e0d5e6a71e0981d661056" kind="function"><name>dfsVisit</name></member>
+    <member refid="da/d9a/class_graph_1a06743c0b3e219cfeefa5aade38556cb7" kind="function"><name>dfsIsDAG</name></member>
+    <member refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kind="function"><name>findVertex</name></member>
+    <member refid="da/d9a/class_graph_1a0853eac15cdf0f06d63f4b8a7820ec71" kind="function"><name>getNumVertex</name></member>
+    <member refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" kind="function"><name>addVertex</name></member>
+    <member refid="da/d9a/class_graph_1af9c903104ad69a7782979fa9caedf163" kind="function"><name>removeVertex</name></member>
+    <member refid="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" kind="function"><name>addEdge</name></member>
+    <member refid="da/d9a/class_graph_1a1106092a37366486cf55576f9ec01692" kind="function"><name>removeEdge</name></member>
+    <member refid="da/d9a/class_graph_1ad9ef501254809330045c899c512d3a7c" kind="function"><name>removeEdgeByWeight</name></member>
+    <member refid="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" kind="function"><name>getVertexSet</name></member>
+    <member refid="da/d9a/class_graph_1a911798b1a89f8c4ae90ba3eee849cff8" kind="function"><name>dfs</name></member>
+    <member refid="da/d9a/class_graph_1a510522c8221b321a82e687fe2f2cb484" kind="function"><name>dfs</name></member>
+    <member refid="da/d9a/class_graph_1aa47a4130165550e208e7a063fce6983a" kind="function"><name>bfs</name></member>
+  </compound>
+  <compound refid="d7/d3d/classmenu" kind="class"><name>menu</name>
+    <member refid="d7/d3d/classmenu_1a79821bec2967b5737c86fe7b76e918c2" kind="function"><name>Menu</name></member>
+    <member refid="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" kind="function"><name>displayPreferences</name></member>
+  </compound>
+  <compound refid="dd/d20/struct_user_preferences" kind="struct"><name>UserPreferences</name>
+    <member refid="dd/d20/struct_user_preferences_1a86c43f59ac9b15194b7140db4350514e" kind="variable"><name>preferredAirlines</name></member>
+    <member refid="dd/d20/struct_user_preferences_1ab004aa38eb0912baaf5ee27bd5297703" kind="variable"><name>avoidedAirlines</name></member>
+    <member refid="dd/d20/struct_user_preferences_1a5bc749253324b4cb91d5bf0c116ba09f" kind="variable"><name>avoidedCountries</name></member>
+    <member refid="dd/d20/struct_user_preferences_1afadc2ebbf67ca62e5c044a8d45950b27" kind="variable"><name>preferredCountries</name></member>
+    <member refid="dd/d20/struct_user_preferences_1afb23bf710d1b7678727d2d87359ea99a" kind="variable"><name>avoidedAirports</name></member>
+    <member refid="dd/d20/struct_user_preferences_1abd260a1b5c0fc94377652d64bcccc622" kind="variable"><name>preferredAirports</name></member>
+    <member refid="dd/d20/struct_user_preferences_1a4599f3bdf7263a3c3aaf96881cdd5c59" kind="variable"><name>avoidedCities</name></member>
+    <member refid="dd/d20/struct_user_preferences_1ac635edc7b60fd591baf5e3d046740222" kind="variable"><name>preferredCities</name></member>
+  </compound>
+  <compound refid="d0/d72/class_vertex" kind="class"><name>Vertex</name>
+    <member refid="d0/d72/class_vertex_1a415d7811eef6cdd992f0dca1f35a49cd" kind="variable"><name>info</name></member>
+    <member refid="d0/d72/class_vertex_1a5d9dfdd2caee11e300ff5142799345a1" kind="variable"><name>adj</name></member>
+    <member refid="d0/d72/class_vertex_1a187a2fe4ff50261cf3c15b8cda7dfc56" kind="variable"><name>visited</name></member>
+    <member refid="d0/d72/class_vertex_1ae575d4b9a6b1ada3f9626c458c060f54" kind="variable"><name>processing</name></member>
+    <member refid="d0/d72/class_vertex_1aefa9b76cd57411c5354e5620dc2d84dd" kind="friend"><name>Graph&lt; T &gt;</name></member>
+    <member refid="d0/d72/class_vertex_1a2877afde591d5cac1444d048151e585e" kind="function"><name>addEdge</name></member>
+    <member refid="d0/d72/class_vertex_1ab2b5b43fb1709a901b78718436763a84" kind="function"><name>removeEdgeTo</name></member>
+    <member refid="d0/d72/class_vertex_1a7f4e8e4773d667ed3e892538fa59f865" kind="function"><name>removeEdgeToByWeight</name></member>
+    <member refid="d0/d72/class_vertex_1afcbdd4d4198b672356559cb8fa088408" kind="function"><name>Vertex</name></member>
+    <member refid="d0/d72/class_vertex_1a48eae2f7af2362634adab02b7b2dbec6" kind="function"><name>getInfo</name></member>
+    <member refid="d0/d72/class_vertex_1a68c9c8792b2752b7540e2f8c14f686a4" kind="function"><name>setInfo</name></member>
+    <member refid="d0/d72/class_vertex_1aa2bb17f6ebd98a67f8da1f689b22fadc" kind="function"><name>isVisited</name></member>
+    <member refid="d0/d72/class_vertex_1aa1a1921cded8cb209382407b5a9433f3" kind="function"><name>setVisited</name></member>
+    <member refid="d0/d72/class_vertex_1aaa41dfa4ce1a19b4e529cc6cdc23b764" kind="function"><name>isProcessing</name></member>
+    <member refid="d0/d72/class_vertex_1ac7b2e53890abfbcd4d7ce3b7d34ee932" kind="function"><name>setProcessing</name></member>
+    <member refid="d0/d72/class_vertex_1a0b0341340972782503ff5065f46673fe" kind="function"><name>getAdj</name></member>
+    <member refid="d0/d72/class_vertex_1aacc5763deca4f0f308756b69f9598584" kind="function"><name>setAdj</name></member>
+  </compound>
+  <compound refid="d8/dcc/namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="d0/d76/extract_from_database_8h" kind="file"><name>extractFromDatabase.h</name>
+    <member refid="d0/d76/extract_from_database_8h_1a9746b1d2bd0c0c1b6790735c3cbdc42d" kind="function"><name>extractFromDatabase</name></member>
+  </compound>
+  <compound refid="da/db6/_graph_8h" kind="file"><name>Graph.h</name>
+  </compound>
+  <compound refid="df/d0a/main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="df/d0a/main_8cpp_1a7bd7a149ad56b9579b550c7e7c46010e" kind="variable"><name>preferences</name></member>
+    <member refid="df/d0a/main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="d0/d25/menu_8cpp" kind="file"><name>menu.cpp</name>
+  </compound>
+  <compound refid="d3/d54/menu_8h" kind="file"><name>menu.h</name>
+  </compound>
+  <compound refid="d9/d85/search_8h" kind="file"><name>search.h</name>
+    <member refid="d9/d85/search_8h_1ab09b9d9712af2b067a5ab5dfc59b9ba6" kind="function"><name>findShortestPath</name></member>
+    <member refid="d9/d85/search_8h_1a042f52f14efa68b742e287ebf911f497" kind="function"><name>backtrackPaths</name></member>
+    <member refid="d9/d85/search_8h_1a489a16449e68d4c576501fdc5c357681" kind="function"><name>nameToCode</name></member>
+    <member refid="d9/d85/search_8h_1a909d5e41d454bed34ed4d660d24310db" kind="function"><name>cityToCode</name></member>
+    <member refid="d9/d85/search_8h_1afdf46716f9507323c749b87c8b129af0" kind="function"><name>filterGraph</name></member>
+  </compound>
+  <compound refid="d7/dc5/statistics_8h" kind="file"><name>statistics.h</name>
+    <member refid="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" kind="function"><name>getCityName</name></member>
+    <member refid="d7/dc5/statistics_8h_1a7ade6cbb21815683ad69a67b4ea08684" kind="function"><name>getCountryName</name></member>
+    <member refid="d7/dc5/statistics_8h_1aacf264f427569269eab36c2960d5e681" kind="function"><name>getAirportName</name></member>
+    <member refid="d7/dc5/statistics_8h_1a83e40fd04baf45d2913fe2c0a8b55155" kind="function"><name>getAirportCode</name></member>
+    <member refid="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" kind="function"><name>getId</name></member>
+    <member refid="d7/dc5/statistics_8h_1a0499b196ab699d8c0aa1d593b7aa29f9" kind="function"><name>numberOfFlightsOut</name></member>
+    <member refid="d7/dc5/statistics_8h_1a6f171cc70bac7a96e700a54fe2cb48fe" kind="function"><name>numberOfAirlinesOut</name></member>
+    <member refid="d7/dc5/statistics_8h_1a55ec00d659cee48cab6e0a1fbe40cdc6" kind="function"><name>numberOfFlightsPerAirline</name></member>
+    <member refid="d7/dc5/statistics_8h_1affbbf1fb015bd9eb60eb4d8c5fe939bf" kind="function"><name>numberOfFlightsPerCity</name></member>
+    <member refid="d7/dc5/statistics_8h_1a13156e83fba163056d470cebcfcfe403" kind="function"><name>listOfDestinations</name></member>
+    <member refid="d7/dc5/statistics_8h_1ae56081c887cc17a9eb6644028166f3c8" kind="function"><name>numberOfDestinationsAirports</name></member>
+    <member refid="d7/dc5/statistics_8h_1a4b4ef164bd701dbdd2eb27c7bac4b430" kind="function"><name>numberOfDestinationsCities</name></member>
+    <member refid="d7/dc5/statistics_8h_1aaad0face8559efd3dc6f26a66c1e4cf8" kind="function"><name>numberOfDestinationsCountries</name></member>
+    <member refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kind="function"><name>vectorOfReachableAirports</name></member>
+    <member refid="d7/dc5/statistics_8h_1ab1a37a847e4a824fb7cb3dec4e2fad39" kind="function"><name>numberOfReachableAirports</name></member>
+    <member refid="d7/dc5/statistics_8h_1aa6a30697e1723f4f93c19712d4e57127" kind="function"><name>numberOfReachableCities</name></member>
+    <member refid="d7/dc5/statistics_8h_1aa2a3366d3aaacead421df312f52dc923" kind="function"><name>numberOfReachableCountries</name></member>
+    <member refid="d7/dc5/statistics_8h_1a4c60a44e0dca2dec742f08488c663f75" kind="function"><name>maxTrip</name></member>
+    <member refid="d7/dc5/statistics_8h_1a88b3122890921d6afd284952b64a183c" kind="function"><name>topAirports</name></member>
+  </compound>
+  <compound refid="df/d81/user_preferences_8h" kind="file"><name>userPreferences.h</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,1248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="d7/dc5/statistics_8h" kind="file" language="C++">
+    <compoundname>statistics.h</compoundname>
+    <includes refid="d0/d76/extract_from_database_8h" local="yes">extractFromDatabase.h</includes>
+    <includes refid="da/db6/_graph_8h" local="yes">Graph.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="df/d0a/main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>Graph.h</label>
+        <link refid="da/db6/_graph_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>extractFromDatabase.h</label>
+        <link refid="d0/d76/extract_from_database_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>statistics.h</label>
+        <link refid="d7/dc5/statistics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cstddef</label>
+      </node>
+      <node id="4">
+        <label>fstream</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>list</label>
+      </node>
+      <node id="11">
+        <label>queue</label>
+      </node>
+      <node id="5">
+        <label>sstream</label>
+      </node>
+      <node id="12">
+        <label>stack</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>utility</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="1">
+        <label>statistics.h</label>
+        <link refid="d7/dc5/statistics_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string getCityName</definition>
+        <argsstring>(const string &amp;info)</argsstring>
+        <name>getCityName</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Extracts and returns the city name from the provided information string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function parses the input information string to extract the city name. The information string is expected to have a specific format where the city name is delimited by commas.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The information string containing details, including the city name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted city name.</para>
+</simplesect>
+<simplesect kind="note"><para>The input information string should have the format: &quot;field1:value,field2:value,field3:value,cityName:value,field4:value&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="20" column="8" bodyfile="statistics.h" bodystart="20" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a7ade6cbb21815683ad69a67b4ea08684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string getCountryName</definition>
+        <argsstring>(const string &amp;info)</argsstring>
+        <name>getCountryName</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Extracts and returns the country name from the provided information string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes a specific format where the country name is the fifth field separated by commas in the input information string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The information string containing details, including the country name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted country name.</para>
+</simplesect>
+<simplesect kind="note"><para>The input information string should have the format: &quot;field1:value,field2:value,field3:value,cityName:value,countryName:value,field4:value&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="42" column="8" bodyfile="statistics.h" bodystart="42" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1aacf264f427569269eab36c2960d5e681" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string getAirportName</definition>
+        <argsstring>(const string &amp;info)</argsstring>
+        <name>getAirportName</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Extracts and returns the airport name from the provided information string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes a specific format where the airport name is the third field separated by commas in the input information string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The information string containing details, including the airport name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted airport name.</para>
+</simplesect>
+<simplesect kind="note"><para>The input information string should have the format: &quot;field1:value,field2:value,airportName:value,field3:value,field4:value&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="66" column="8" bodyfile="statistics.h" bodystart="66" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a83e40fd04baf45d2913fe2c0a8b55155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string getAirportCode</definition>
+        <argsstring>(const string &amp;info)</argsstring>
+        <name>getAirportCode</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Extracts and returns the airport code from the provided information string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes a specific format where the airport code is the second field separated by commas in the input information string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The information string containing details, including the airport code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted airport code.</para>
+</simplesect>
+<simplesect kind="note"><para>The input information string should have the format: &quot;field1:value,airportCode:value,field2:value,field3:value,field4:value&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="87" column="8" bodyfile="statistics.h" bodystart="87" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string getId</definition>
+        <argsstring>(const string &amp;info)</argsstring>
+        <name>getId</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Extracts and returns the identifier from the provided information string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes a specific format where the identifier is the first field separated by a colon in the input information string.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The information string containing details, including the identifier. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The extracted identifier.</para>
+</simplesect>
+<simplesect kind="note"><para>The input information string should have the format: &quot;id:value,field1:value,field2:value,field3:value,field4:value&quot; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="107" column="8" bodyfile="statistics.h" bodystart="107" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a0499b196ab699d8c0aa1d593b7aa29f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfFlightsOut</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode)</argsstring>
+        <name>numberOfFlightsOut</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of outgoing flights from a given airport in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights and a specific airport code. It finds the vertex corresponding to the provided airport code in the graph and counts the number of outgoing flights (edges) from that vertex.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the airport for which the outgoing flights are counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of outgoing flights from the specified airport.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The provided airport code should exist in the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="130" column="5" bodyfile="statistics.h" bodystart="130" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a6f171cc70bac7a96e700a54fe2cb48fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfAirlinesOut</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode)</argsstring>
+        <name>numberOfAirlinesOut</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of unique airlines operating outgoing flights from a given airport in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights, and a specific airport code. It finds the vertex corresponding to the provided airport code in the graph and counts the number of unique airlines operating outgoing flights (edges) from that vertex.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the airport for which the number of unique airlines is counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of unique airlines operating outgoing flights from the specified airport.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The provided airport code should exist in the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="152" column="5" bodyfile="statistics.h" bodystart="152" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a55ec00d659cee48cab6e0a1fbe40cdc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfFlightsPerAirline</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airlineCode)</argsstring>
+        <name>numberOfFlightsPerAirline</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airlineCode</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the total number of flights operated by a specific airline across all airports in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights, and a specific airline code. It iterates through all vertices (airports) in the graph and counts the number of outgoing flights (edges) operated by the specified airline from each airport.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airlineCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the airline for which the total number of flights is counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of flights operated by the specified airline across all airports in the graph.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The provided airline code should exist in the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="181" column="5" bodyfile="statistics.h" bodystart="181" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1affbbf1fb015bd9eb60eb4d8c5fe939bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfFlightsPerCity</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, std::string &amp;city)</argsstring>
+        <name>numberOfFlightsPerCity</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>city</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the total number of flights departing from airports located in a specific city in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights, and a specific city name. It iterates through all vertices (airports) in the graph, identifies airports located in the specified city, and counts the total number of outgoing flights (edges) from those airports.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>city</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the city for which the total number of flights is counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of flights departing from airports in the specified city in the graph.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="206" column="5" bodyfile="statistics.h" bodystart="206" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a13156e83fba163056d470cebcfcfe403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; listOfDestinations</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode)</argsstring>
+        <name>listOfDestinations</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves a list of unique destination airports reachable from a specified airport in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights and a specific airport code. It finds the vertex corresponding to the provided airport code in the graph and generates a list of unique destination airports that are reachable through outgoing flights from the specified airport.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the airport for which the list of destinations is retrieved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector containing the unique airport codes of destinations reachable from the specified airport.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The provided airport code should exist in the graph. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="240" column="8" bodyfile="statistics.h" bodystart="240" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1ae56081c887cc17a9eb6644028166f3c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfDestinationsAirports</definition>
+        <argsstring>(const vector&lt; string &gt; &amp;airports)</argsstring>
+        <name>numberOfDestinationsAirports</name>
+        <param>
+          <type>const vector&lt; string &gt; &amp;</type>
+          <declname>airports</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of unique destination airports in a given vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a vector containing airport codes and calculates the total number of unique destination airports represented in the vector.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>airports</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector containing airport codes representing destination airports. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of unique destination airports in the provided vector.</para>
+</simplesect>
+<simplesect kind="pre"><para>The vector must be non-empty and properly initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="262" column="5" bodyfile="statistics.h" bodystart="262" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a4b4ef164bd701dbdd2eb27c7bac4b430" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfDestinationsCities</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const vector&lt; string &gt; &amp;airports)</argsstring>
+        <name>numberOfDestinationsCities</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const vector&lt; string &gt; &amp;</type>
+          <declname>airports</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of unique destination cities represented by a vector of airport codes in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights, and a vector containing airport codes. It iterates through the provided vector, identifies airports located in cities, and counts the number of unique destination cities represented by those airports in the graph.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airports</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector containing airport codes for which the unique destination cities are counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of unique destination cities represented by the provided vector of airport codes.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The vector of airport codes must be non-empty and properly initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="280" column="5" bodyfile="statistics.h" bodystart="280" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1aaad0face8559efd3dc6f26a66c1e4cf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfDestinationsCountries</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const vector&lt; string &gt; &amp;airports)</argsstring>
+        <name>numberOfDestinationsCountries</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const vector&lt; string &gt; &amp;</type>
+          <declname>airports</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the number of unique destination countries represented by a vector of airport codes in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a graph representing airports and flights, and a vector containing airport codes. It iterates through the provided vector, identifies airports located in countries, and counts the number of unique destination countries represented by those airports in the graph.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airports and flights. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airports</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector containing airport codes for which the unique destination countries are counted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of unique destination countries represented by the provided vector of airport codes.</para>
+</simplesect>
+<simplesect kind="pre"><para>The graph must be properly initialized. </para>
+</simplesect>
+<simplesect kind="pre"><para>The vector of airport codes must be non-empty and properly initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="314" column="5" bodyfile="statistics.h" bodystart="314" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; vector&lt; string &gt; &gt;</type>
+        <definition>vector&lt; vector&lt; string &gt; &gt; vectorOfReachableAirports</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode, int maxStops)</argsstring>
+        <name>vectorOfReachableAirports</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxStops</declname>
+        </param>
+        <briefdescription>
+<para>Finds and returns a vector of vectors containing reachable airports within a specified maximum number of stops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function performs a breadth-first search to find airports reachable from the provided airport code within the given maximum number of stops. The result is a vector of vectors, where each vector represents the airports reachable within a specific number of stops.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing the airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the starting airport. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxStops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of stops allowed in the search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of vectors containing reachable airports at each level of stops.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="349" column="8" bodyfile="statistics.h" bodystart="349" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1ab1a37a847e4a824fb7cb3dec4e2fad39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfReachableAirports</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode, int maxStops)</argsstring>
+        <name>numberOfReachableAirports</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxStops</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the total number of reachable airports within a specified maximum number of stops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code within the given maximum number of stops. The total count of reachable airports is then calculated and returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing the airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the starting airport. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxStops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of stops allowed in the search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of reachable airports within the specified number of stops.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges.</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph;<sp/><sp/>//<sp/>Assume<sp/>a<sp/>properly<sp/>initialized<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">std::string<sp/>startAirportCode<sp/>=<sp/>&quot;JFK&quot;;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>maxStopsAllowed<sp/>=<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>totalReachableAirports<sp/>=<sp/>numberOfReachableAirports(airportGraph,<sp/>startAirportCode,<sp/>maxStopsAllowed);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>totalReachableAirports<sp/>now<sp/>contains<sp/>the<sp/>count<sp/>of<sp/>reachable<sp/>airports<sp/>within<sp/>the<sp/>specified<sp/>stops</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="395" column="5" bodyfile="statistics.h" bodystart="395" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1aa6a30697e1723f4f93c19712d4e57127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfReachableCities</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode, int maxStops)</argsstring>
+        <name>numberOfReachableCities</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxStops</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the total number of reachable cities within a specified maximum number of stops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code within the given maximum number of stops. It then extracts the city names associated with those airports and calculates the total count of unique reachable cities.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing the airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the starting airport. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxStops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of stops allowed in the search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of unique reachable cities within the specified number of stops.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges, where the first edge weight represents the airport information.</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph;<sp/><sp/>//<sp/>Assume<sp/>a<sp/>properly<sp/>initialized<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">std::string<sp/>startAirportCode<sp/>=<sp/>&quot;JFK&quot;;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>maxStopsAllowed<sp/>=<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>totalReachableCities<sp/>=<sp/>numberOfReachableCities(airportGraph,<sp/>startAirportCode,<sp/>maxStopsAllowed);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>totalReachableCities<sp/>now<sp/>contains<sp/>the<sp/>count<sp/>of<sp/>unique<sp/>reachable<sp/>cities<sp/>within<sp/>the<sp/>specified<sp/>stops</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="428" column="5" bodyfile="statistics.h" bodystart="428" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1aa2a3366d3aaacead421df312f52dc923" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int numberOfReachableCountries</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode, int maxStops)</argsstring>
+        <name>numberOfReachableCountries</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxStops</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the total number of reachable countries within a specified maximum number of stops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code within the given maximum number of stops. It then extracts the country names associated with those airports and calculates the total count of unique reachable countries.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing the airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the starting airport. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxStops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of stops allowed in the search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total number of unique reachable countries within the specified number of stops.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges, where the first edge weight represents the airport information.</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph;<sp/><sp/>//<sp/>Assume<sp/>a<sp/>properly<sp/>initialized<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">std::string<sp/>startAirportCode<sp/>=<sp/>&quot;JFK&quot;;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>maxStopsAllowed<sp/>=<sp/>3;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>totalReachableCountries<sp/>=<sp/>numberOfReachableCountries(airportGraph,<sp/>startAirportCode,<sp/>maxStopsAllowed);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>totalReachableCountries<sp/>now<sp/>contains<sp/>the<sp/>count<sp/>of<sp/>unique<sp/>reachable<sp/>countries<sp/>within<sp/>the<sp/>specified<sp/>stops</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="468" column="5" bodyfile="statistics.h" bodystart="468" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a4c60a44e0dca2dec742f08488c663f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; std::string &gt;</type>
+        <definition>vector&lt; std::string &gt; maxTrip</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, const std::string &amp;airportCode)</argsstring>
+        <name>maxTrip</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>airportCode</declname>
+        </param>
+        <briefdescription>
+<para>Finds the maximum trip from the provided airport code within a specified maximum number of stops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function uses the vectorOfReachableAirports function to find airports reachable from the provided airport code within the given maximum number of stops. It then identifies the last non-empty level in the reachability hierarchy and constructs trips from the starting airport code to each airport at that level.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing the airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>airportCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The code of the starting airport. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of strings representing the trips from the provided airport code to each airport at the last reachable level.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges, where the first edge weight represents the airport information.</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph;<sp/><sp/>//<sp/>Assume<sp/>a<sp/>properly<sp/>initialized<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">std::string<sp/>startAirportCode<sp/>=<sp/>&quot;JFK&quot;;</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;std::string&gt;<sp/>maxTrips<sp/>=<sp/>maxTrip(airportGraph,<sp/>startAirportCode);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>maxTrips<sp/>now<sp/>contains<sp/>trips<sp/>from<sp/>the<sp/>provided<sp/>airport<sp/>code<sp/>to<sp/>each<sp/>airport<sp/>at<sp/>the<sp/>last<sp/>reachable<sp/>level</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="507" column="8" bodyfile="statistics.h" bodystart="507" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/dc5/statistics_8h_1a88b3122890921d6afd284952b64a183c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt; string &gt; topAirports</definition>
+        <argsstring>(Graph&lt; std::string &gt; &amp;graph, int k)</argsstring>
+        <name>topAirports</name>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; std::string &gt; &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Finds the top K airports based on the number of outgoing flights. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function calculates the number of outgoing flights for each airport in the provided graph and then identifies the top K airports with the highest number of outgoing flights.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph representing airport connections. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of top airports to retrieve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of strings representing the top K airports based on the number of outgoing flights.</para>
+</simplesect>
+<simplesect kind="note"><para>The input graph should represent airport connections using vertices and edges, where the first edge weight represents the airport information.</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph;<sp/><sp/>//<sp/>Assume<sp/>a<sp/>properly<sp/>initialized<sp/>graph</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>k<sp/>=<sp/>5;<sp/><sp/>//<sp/>Number<sp/>of<sp/>top<sp/>airports<sp/>to<sp/>retrieve</highlight></codeline>
+<codeline><highlight class="normal">std::vector&lt;std::string&gt;<sp/>topAirportCodes<sp/>=<sp/>topAirports(airportGraph,<sp/>k);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>topAirportCodes<sp/>now<sp/>contains<sp/>the<sp/>codes<sp/>of<sp/>the<sp/>top<sp/>K<sp/>airports<sp/>based<sp/>on<sp/>outgoing<sp/>flights</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="statistics.h" line="541" column="8" bodyfile="statistics.h" bodystart="541" bodyend="572"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PROJETO2AED_STATISTICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJETO2AED_STATISTICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d0/d76/extract_from_database_8h" kindref="compound">extractFromDatabase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/db6/_graph_8h" kindref="compound">Graph.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" kindref="member">getCityName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>cityName;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>city<sp/>name<sp/>(assuming<sp/>it<sp/>is<sp/>the<sp/>fourth<sp/>field<sp/>separated<sp/>by<sp/>commas)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cityName;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d7/dc5/statistics_8h_1a7ade6cbb21815683ad69a67b4ea08684" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a7ade6cbb21815683ad69a67b4ea08684" kindref="member">getCountryName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>countryName;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>country<sp/>name<sp/>(assuming<sp/>it<sp/>is<sp/>the<sp/>fifth<sp/>field<sp/>separated<sp/>by<sp/>commas)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>countryName;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="d7/dc5/statistics_8h_1aacf264f427569269eab36c2960d5e681" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1aacf264f427569269eab36c2960d5e681" kindref="member">getAirportName</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airportName;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>airport<sp/>name<sp/>(assuming<sp/>it<sp/>is<sp/>the<sp/>third<sp/>field<sp/>separated<sp/>by<sp/>commas)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportName,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>airportName;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="d7/dc5/statistics_8h_1a83e40fd04baf45d2913fe2c0a8b55155" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a83e40fd04baf45d2913fe2c0a8b55155" kindref="member">getAirportCode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airportCode;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>airport<sp/>code<sp/>(assuming<sp/>it<sp/>is<sp/>the<sp/>second<sp/>field<sp/>separated<sp/>by<sp/>commas)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportCode,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportCode,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>airportCode;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" kindref="member">getId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">&amp;<sp/>info)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>identifier<sp/>(assuming<sp/>it<sp/>is<sp/>the<sp/>first<sp/>field<sp/>separated<sp/>by<sp/>a<sp/>colon)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(ss,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="d7/dc5/statistics_8h_1a0499b196ab699d8c0aa1d593b7aa29f9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a0499b196ab699d8c0aa1d593b7aa29f9" kindref="member">numberOfFlightsOut</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airportCode);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>(int)<sp/>vertex-&gt;getAdj().size();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="d7/dc5/statistics_8h_1a6f171cc70bac7a96e700a54fe2cb48fe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a6f171cc70bac7a96e700a54fe2cb48fe" kindref="member">numberOfAirlinesOut</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airportCode);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airlineCode;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>airlines;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>vertex-&gt;getAdj().size();<sp/>i++){</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airlineCode<sp/>=<sp/>vertex-&gt;getAdj()[i].getWeight();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(airlines.begin(),<sp/>airlines.end(),<sp/>airlineCode)<sp/>==<sp/>airlines.end()){</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airlines.push_back(airlineCode);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="d7/dc5/statistics_8h_1a55ec00d659cee48cab6e0a1fbe40cdc6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a55ec00d659cee48cab6e0a1fbe40cdc6" kindref="member">numberOfFlightsPerAirline</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airlineCode)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>:<sp/>graph.<ref refid="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" kindref="member">getVertexSet</ref>()){</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>vertex-&gt;getAdj().size();<sp/>i++){</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj()[i].getWeight()<sp/>==<sp/>airlineCode){</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206" refid="d7/dc5/statistics_8h_1affbbf1fb015bd9eb60eb4d8c5fe939bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1affbbf1fb015bd9eb60eb4d8c5fe939bf" kindref="member">numberOfFlightsPerCity</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/>std::string&amp;<sp/>city)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>:<sp/>graph.<ref refid="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" kindref="member">getVertexSet</ref>()){</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj().empty())<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" kindref="member">getId</ref>(vertex-&gt;getInfo());</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="d7/dc5/statistics_8h_1a36fb656b725528a3af60a4527db5bbe9" kindref="member">getId</ref>(vertex-&gt;getInfo())<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;P&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airportCity<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" kindref="member">getCityName</ref>(vertex-&gt;getInfo());</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airportCode<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1a83e40fd04baf45d2913fe2c0a8b55155" kindref="member">getAirportCode</ref>(vertex-&gt;getInfo());</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform(airportCity.begin(),<sp/>airportCity.end(),<sp/>airportCity.begin(),<sp/>::tolower);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transform(city.begin(),<sp/>city.end(),<sp/>city.begin(),<sp/>::tolower);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(airportCity.find(city)<sp/>!=<sp/>string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/><ref refid="d7/dc5/statistics_8h_1a0499b196ab699d8c0aa1d593b7aa29f9" kindref="member">numberOfFlightsOut</ref>(graph,<sp/>airportCode);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="d7/dc5/statistics_8h_1a13156e83fba163056d470cebcfcfe403" refkind="member"><highlight class="normal">vector&lt;string&gt;<sp/><ref refid="d7/dc5/statistics_8h_1a13156e83fba163056d470cebcfcfe403" kindref="member">listOfDestinations</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airportCode);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>airports;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>vertex-&gt;getAdj().size();<sp/>i++){</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(airports.begin(),<sp/>airports.end(),<sp/>vertex-&gt;getAdj()[i].getDest()-&gt;getInfo())<sp/>==<sp/>airports.end()){</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airports.push_back(vertex-&gt;getAdj()[i].getDest()-&gt;getInfo());</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>airports;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="d7/dc5/statistics_8h_1ae56081c887cc17a9eb6644028166f3c8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1ae56081c887cc17a9eb6644028166f3c8" kindref="member">numberOfDestinationsAirports</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;&amp;<sp/>airports)<sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>airports.size();</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="d7/dc5/statistics_8h_1a4b4ef164bd701dbdd2eb27c7bac4b430" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1a4b4ef164bd701dbdd2eb27c7bac4b430" kindref="member">numberOfDestinationsCities</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;&amp;<sp/>airports)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>cities;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airport);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj()[0].getWeight()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;AIRPORT&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>info<sp/>=<sp/>vertex-&gt;getAdj()[0].getDest()-&gt;getInfo();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>cityName;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>cityName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(cities.begin(),<sp/>cities.end(),<sp/>cityName)<sp/>==<sp/>cities.end()){</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cities.push_back(cityName);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>cities.size();</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314" refid="d7/dc5/statistics_8h_1aaad0face8559efd3dc6f26a66c1e4cf8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1aaad0face8559efd3dc6f26a66c1e4cf8" kindref="member">numberOfDestinationsCountries</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>vector&lt;string&gt;&amp;<sp/>airports)<sp/>{</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>countries;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports)<sp/>{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airport);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj()[0].getWeight()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;AIRPORT&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>info<sp/>=<sp/>vertex-&gt;getAdj()[0].getDest()-&gt;getInfo();</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>countryName;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringstream<sp/>ss(info);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>countryName,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(countries.begin(),<sp/>countries.end(),<sp/>countryName)<sp/>==<sp/>countries.end()){</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countries.push_back(countryName);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>countries.size();</highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349" refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" refkind="member"><highlight class="normal">vector&lt;vector&lt;string&gt;&gt;<sp/><ref refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kindref="member">vectorOfReachableAirports</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxStops){</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;vector&lt;string&gt;&gt;<sp/>airports;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>airportsToVisit;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>airportsVisited;</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>airportsToVisit.push_back(airportCode);</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>airports.push_back(airportsToVisit);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>maxStops;<sp/>++i){</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airportsToVisit.clear();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports[i]){</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airport);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>1;<sp/>j<sp/>&lt;<sp/>vertex-&gt;getAdj().size();<sp/>++j){</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(airportsVisited.begin(),<sp/>airportsVisited.end(),<sp/>vertex-&gt;getAdj()[j].getDest()-&gt;getInfo())<sp/>==<sp/>airportsVisited.end()){</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(airportsToVisit.begin(),<sp/>airportsToVisit.end(),<sp/>vertex-&gt;getAdj()[j].getDest()-&gt;getInfo())<sp/>==<sp/>airportsToVisit.end()){</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airportsToVisit.push_back(vertex-&gt;getAdj()[j].getDest()-&gt;getInfo());</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airportsVisited.push_back(vertex-&gt;getAdj()[j].getDest()-&gt;getInfo());</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>airports.push_back(airportsToVisit);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>airports;</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395" refid="d7/dc5/statistics_8h_1ab1a37a847e4a824fb7cb3dec4e2fad39" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1ab1a37a847e4a824fb7cb3dec4e2fad39" kindref="member">numberOfReachableAirports</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxStops)<sp/>{</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>airports<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kindref="member">vectorOfReachableAirports</ref>(graph,<sp/>airportCode,<sp/>maxStops);</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports){</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>(int)<sp/>airport.size();</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>count-1;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428" refid="d7/dc5/statistics_8h_1aa6a30697e1723f4f93c19712d4e57127" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1aa6a30697e1723f4f93c19712d4e57127" kindref="member">numberOfReachableCities</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxStops)<sp/>{</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>airports<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kindref="member">vectorOfReachableAirports</ref>(graph,<sp/>airportCode,<sp/>maxStops);</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>cities;</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports){</highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airportCoded:<sp/>airport){</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airportCoded);</highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj()[0].getWeight()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;AIRPORT&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>cityName<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1a7d3f4aab3e50278c8e0c92942e4e3b54" kindref="member">getCityName</ref>(vertex-&gt;getAdj()[0].getDest()-&gt;getInfo())<sp/>;</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(cities.begin(),<sp/>cities.end(),<sp/>cityName)<sp/>==<sp/>cities.end()){</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cities.push_back(cityName);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>cities.size();</highlight></codeline>
+<codeline lineno="443"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="468" refid="d7/dc5/statistics_8h_1aa2a3366d3aaacead421df312f52dc923" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d7/dc5/statistics_8h_1aa2a3366d3aaacead421df312f52dc923" kindref="member">numberOfReachableCountries</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxStops)<sp/>{</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>airports<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kindref="member">vectorOfReachableAirports</ref>(graph,<sp/>airportCode,<sp/>maxStops);</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>countries;</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport:<sp/>airports){</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airportCoded:<sp/>airport){</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex<sp/>=<sp/>graph.<ref refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" kindref="member">findVertex</ref>(airportCoded);</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(vertex-&gt;getAdj()[0].getWeight()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;AIRPORT&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>countryName<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1a7ade6cbb21815683ad69a67b4ea08684" kindref="member">getCountryName</ref>(vertex-&gt;getAdj()[0].getDest()-&gt;getInfo());</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(find(countries.begin(),<sp/>countries.end(),<sp/>countryName)<sp/>==<sp/>countries.end()){</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countries.push_back(countryName);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>countries.size();</highlight></codeline>
+<codeline lineno="483"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"></highlight></codeline>
+<codeline lineno="507" refid="d7/dc5/statistics_8h_1a4c60a44e0dca2dec742f08488c663f75" refkind="member"><highlight class="normal">vector&lt;std::string&gt;<sp/><ref refid="d7/dc5/statistics_8h_1a4c60a44e0dca2dec742f08488c663f75" kindref="member">maxTrip</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>airportCode){</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;std::string&gt;<sp/>trips;</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>airports<sp/>=<sp/><ref refid="d7/dc5/statistics_8h_1abc2dae0582c8270aef369c6c3136abac" kindref="member">vectorOfReachableAirports</ref>(graph,<sp/>airportCode,<sp/>16);</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>end<sp/>=<sp/>airports.size()-1;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(airports[end].empty()){</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end--;</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>airport<sp/>:<sp/>airports[end])<sp/>{</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trips.push_back(airportCode<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>--&gt;<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>airport);</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>trips;</highlight></codeline>
+<codeline lineno="518"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"></highlight></codeline>
+<codeline lineno="541" refid="d7/dc5/statistics_8h_1a88b3122890921d6afd284952b64a183c" refkind="member"><highlight class="normal">vector&lt;string&gt;<sp/><ref refid="d7/dc5/statistics_8h_1a88b3122890921d6afd284952b64a183c" kindref="member">topAirports</ref>(<ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;std::string&gt;</ref><sp/>&amp;graph,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>{</highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/>pair&lt;int,<sp/>string&gt;<sp/>pairs;</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;pair&lt;int,<sp/>string&gt;&gt;<sp/>top;</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vertex:<sp/>graph.<ref refid="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" kindref="member">getVertexSet</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!vertex-&gt;getAdj().empty())<sp/>{</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pairs.first<sp/>=<sp/>(int)<sp/>vertex-&gt;getAdj().size();</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pairs.second<sp/>=<sp/>vertex-&gt;getInfo();</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(top.empty()){</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top.push_back(pairs);</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>added<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>top.size();<sp/>++i){</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pairs.first<sp/>&gt;<sp/>top[i].first){</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top.insert(top.begin()+i,<sp/>pairs);</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>added<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!added){</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top.push_back(pairs);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>now<sp/>you<sp/>should<sp/>return<sp/>a<sp/>vector<sp/>of<sp/>pairs<sp/>with<sp/>only<sp/>k<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>topK;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>k;<sp/>++i){</highlight></codeline>
+<codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>topK.push_back(top[i].second);</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>topK;</highlight></codeline>
+<codeline lineno="572"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="573"><highlight class="normal"></highlight></codeline>
+<codeline lineno="574"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PROJETO2AED_STATISTICS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="statistics.h"/>
+  </compounddef>
+</doxygen>

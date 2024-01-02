@@ -1,0 +1,449 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="da/d9a/class_graph" kind="class" language="C++" prot="public">
+    <compoundname>Graph</compoundname>
+    <includes refid="da/db6/_graph_8h" local="no">Graph.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="da/d9a/class_graph_1a73d4e735fc0a7c83c9c689a2b53fa623" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; * &gt;</type>
+        <definition>vector&lt;Vertex&lt;T&gt; *&gt; Graph&lt; T &gt;::vertexSet</definition>
+        <argsstring></argsstring>
+        <name>vertexSet</name>
+        <qualifiedname>Graph::vertexSet</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="67" column="12" bodyfile="Graph.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d9a/class_graph_1a1e0cd13bd9e91a125a484a0817c030a1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Graph&lt; T &gt;::_index_</definition>
+        <argsstring></argsstring>
+        <name>_index_</name>
+        <qualifiedname>Graph::_index_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="68" column="9" bodyfile="Graph.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d9a/class_graph_1a261998fc1e44c878c595c2b0a05680be" prot="private" static="no" mutable="no">
+        <type>stack&lt; <ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; &gt;</type>
+        <definition>stack&lt;Vertex&lt;T&gt; &gt; Graph&lt; T &gt;::_stack_</definition>
+        <argsstring></argsstring>
+        <name>_stack_</name>
+        <qualifiedname>Graph::_stack_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="69" column="11" bodyfile="Graph.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="da/d9a/class_graph_1ab06fb542caac016248829c9e6fd11ec4" prot="private" static="no" mutable="no">
+        <type>list&lt; list&lt; T &gt; &gt;</type>
+        <definition>list&lt;list&lt;T&gt; &gt; Graph&lt; T &gt;::_list_sccs_</definition>
+        <argsstring></argsstring>
+        <name>_list_sccs_</name>
+        <qualifiedname>Graph::_list_sccs_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="70" column="10" bodyfile="Graph.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="da/d9a/class_graph_1ab2bb8011642e0d5e6a71e0981d661056" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Graph&lt; T &gt;::dfsVisit</definition>
+        <argsstring>(Vertex&lt; T &gt; *v, vector&lt; T &gt; &amp;res) const</argsstring>
+        <name>dfsVisit</name>
+        <qualifiedname>Graph::dfsVisit</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>vector&lt; T &gt; &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+<para>Auxiliary function for DFS that visits a vertex and its adjacent vertices recursively. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates a parameter with the list of visited node contents during DFS traversal.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the current vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>res</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to store the contents of visited vertices in DFS order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="72" column="10" bodyfile="Graph.h" bodystart="412" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a06743c0b3e219cfeefa5aade38556cb7" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::dfsIsDAG</definition>
+        <argsstring>(Vertex&lt; T &gt; *v) const</argsstring>
+        <name>dfsIsDAG</name>
+        <qualifiedname>Graph::dfsIsDAG</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="73" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+        <definition>Vertex&lt; T &gt; * Graph&lt; T &gt;::findVertex</definition>
+        <argsstring>(const T &amp;in) const</argsstring>
+        <name>findVertex</name>
+        <qualifiedname>Graph::findVertex</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="75" column="12" bodyfile="Graph.h" bodystart="199" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a0853eac15cdf0f06d63f4b8a7820ec71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Graph&lt; T &gt;::getNumVertex</definition>
+        <argsstring>() const</argsstring>
+        <name>getNumVertex</name>
+        <qualifiedname>Graph::getNumVertex</qualifiedname>
+        <briefdescription>
+<para>Gets the number of vertices in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of vertices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="76" column="9" bodyfile="Graph.h" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::addVertex</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>addVertex</name>
+        <qualifiedname>Graph::addVertex</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="77" column="10" bodyfile="Graph.h" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1af9c903104ad69a7782979fa9caedf163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::removeVertex</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>removeVertex</name>
+        <qualifiedname>Graph::removeVertex</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+<para>Removes a vertex with a given content from the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the vertex with the specified content (in) from the graph, including all outgoing and incoming edges. Returns true if the removal is successful, and false if a vertex with the given content does not exist.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the vertex to be removed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="78" column="10" bodyfile="Graph.h" bodystart="361" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::addEdge</definition>
+        <argsstring>(const T &amp;sourc, const T &amp;dest, string w)</argsstring>
+        <name>addEdge</name>
+        <qualifiedname>Graph::addEdge</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>sourc</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="79" column="10" bodyfile="Graph.h" bodystart="260" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a1106092a37366486cf55576f9ec01692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::removeEdge</definition>
+        <argsstring>(const T &amp;sourc, const T &amp;dest)</argsstring>
+        <name>removeEdge</name>
+        <qualifiedname>Graph::removeEdge</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>sourc</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="80" column="10" bodyfile="Graph.h" bodystart="284" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1ad9ef501254809330045c899c512d3a7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Graph&lt; T &gt;::removeEdgeByWeight</definition>
+        <argsstring>(const T &amp;sourc, const T &amp;dest, const string &amp;weight)</argsstring>
+        <name>removeEdgeByWeight</name>
+        <qualifiedname>Graph::removeEdgeByWeight</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>sourc</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>weight</declname>
+        </param>
+        <briefdescription>
+<para>Removes an edge from a graph by its weight. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The edge is identified by the source (sourc) and destination (dest) contents, and the weight of the edge. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sourc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source vertex content. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination vertex content. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight of the edge. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="81" column="10" bodyfile="Graph.h" bodystart="320" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; <ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; * &gt;</type>
+        <definition>vector&lt; Vertex&lt; T &gt; * &gt; Graph&lt; T &gt;::getVertexSet</definition>
+        <argsstring>() const</argsstring>
+        <name>getVertexSet</name>
+        <qualifiedname>Graph::getVertexSet</qualifiedname>
+        <briefdescription>
+<para>Gets the vertex set of the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vector of vertices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="82" column="12" bodyfile="Graph.h" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a911798b1a89f8c4ae90ba3eee849cff8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt; T &gt; Graph&lt; T &gt;::dfs</definition>
+        <argsstring>() const</argsstring>
+        <name>dfs</name>
+        <qualifiedname>Graph::dfs</qualifiedname>
+        <briefdescription>
+<para>Performs a depth-first search (DFS) traversal in the graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a vector containing the contents of the vertices in DFS order. Follows the DFS algorithm as described in theoretical classes.</para>
+<para><simplesect kind="return"><para>Vector with the contents of the vertices by DFS order. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="83" column="12" bodyfile="Graph.h" bodystart="393" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1a510522c8221b321a82e687fe2f2cb484" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt; T &gt; Graph&lt; T &gt;::dfs</definition>
+        <argsstring>(const T &amp;source) const</argsstring>
+        <name>dfs</name>
+        <qualifiedname>Graph::dfs</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Performs a depth-first search (DFS) in the graph starting from the source node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a vector containing the contents of the vertices in DFS order starting from the specified source node. If the source node is not found, an empty vector is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the source node for DFS. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector with the contents of the vertices by DFS order from the source node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="84" column="12" bodyfile="Graph.h" bodystart="434" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="da/d9a/class_graph_1aa47a4130165550e208e7a063fce6983a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>vector&lt; T &gt;</type>
+        <definition>vector&lt; T &gt; Graph&lt; T &gt;::bfs</definition>
+        <argsstring>(const T &amp;source) const</argsstring>
+        <name>bfs</name>
+        <qualifiedname>Graph::bfs</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Performs a breadth-first search (BFS) in the graph starting from the source node. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a vector containing the contents of the vertices in BFS order starting from the specified source node. If the source node is not found, an empty vector is returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the source node for BFS. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector with the contents of the vertices by BFS order from the source node. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="85" column="12" bodyfile="Graph.h" bodystart="459" bodyend="482"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a graph. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Graph.h" line="66" column="1" bodyfile="Graph.h" bodystart="66" bodyend="86"/>
+    <listofallmembers>
+      <member refid="da/d9a/class_graph_1a1e0cd13bd9e91a125a484a0817c030a1" prot="private" virt="non-virtual"><scope>Graph</scope><name>_index_</name></member>
+      <member refid="da/d9a/class_graph_1ab06fb542caac016248829c9e6fd11ec4" prot="private" virt="non-virtual"><scope>Graph</scope><name>_list_sccs_</name></member>
+      <member refid="da/d9a/class_graph_1a261998fc1e44c878c595c2b0a05680be" prot="private" virt="non-virtual"><scope>Graph</scope><name>_stack_</name></member>
+      <member refid="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" prot="public" virt="non-virtual"><scope>Graph</scope><name>addEdge</name></member>
+      <member refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" prot="public" virt="non-virtual"><scope>Graph</scope><name>addVertex</name></member>
+      <member refid="da/d9a/class_graph_1aa47a4130165550e208e7a063fce6983a" prot="public" virt="non-virtual"><scope>Graph</scope><name>bfs</name></member>
+      <member refid="da/d9a/class_graph_1a911798b1a89f8c4ae90ba3eee849cff8" prot="public" virt="non-virtual"><scope>Graph</scope><name>dfs</name></member>
+      <member refid="da/d9a/class_graph_1a510522c8221b321a82e687fe2f2cb484" prot="public" virt="non-virtual"><scope>Graph</scope><name>dfs</name></member>
+      <member refid="da/d9a/class_graph_1a06743c0b3e219cfeefa5aade38556cb7" prot="private" virt="non-virtual"><scope>Graph</scope><name>dfsIsDAG</name></member>
+      <member refid="da/d9a/class_graph_1ab2bb8011642e0d5e6a71e0981d661056" prot="private" virt="non-virtual"><scope>Graph</scope><name>dfsVisit</name></member>
+      <member refid="da/d9a/class_graph_1a8b7b7465fbfd562e2a469f90a437ab75" prot="public" virt="non-virtual"><scope>Graph</scope><name>findVertex</name></member>
+      <member refid="da/d9a/class_graph_1a0853eac15cdf0f06d63f4b8a7820ec71" prot="public" virt="non-virtual"><scope>Graph</scope><name>getNumVertex</name></member>
+      <member refid="da/d9a/class_graph_1a923b43995f81ad9319bbc81a1e433e64" prot="public" virt="non-virtual"><scope>Graph</scope><name>getVertexSet</name></member>
+      <member refid="da/d9a/class_graph_1a1106092a37366486cf55576f9ec01692" prot="public" virt="non-virtual"><scope>Graph</scope><name>removeEdge</name></member>
+      <member refid="da/d9a/class_graph_1ad9ef501254809330045c899c512d3a7c" prot="public" virt="non-virtual"><scope>Graph</scope><name>removeEdgeByWeight</name></member>
+      <member refid="da/d9a/class_graph_1af9c903104ad69a7782979fa9caedf163" prot="public" virt="non-virtual"><scope>Graph</scope><name>removeVertex</name></member>
+      <member refid="da/d9a/class_graph_1a73d4e735fc0a7c83c9c689a2b53fa623" prot="private" virt="non-virtual"><scope>Graph</scope><name>vertexSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

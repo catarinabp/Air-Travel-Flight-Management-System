@@ -1,10 +1,57 @@
+/**
+ * @file main.cpp
+ * @brief Main file for the Flight System project.
+ */
 #include <iostream>
 #include <algorithm>
 #include "menu.h"
 #include "statistics.h"
 #include "search.h"
 
+/**
+ * @brief User preferences for the Flight System.
+ */
 UserPreferences preferences;
+
+/**
+ * @mainpage Welcome to Projeto 2 - AED Documentation
+ *
+ * The goal of this project is to create and Air Travel Flight Management System.
+ *
+ * @section intro_sec Introduction
+ *
+ * Air transport plays a crucial role in global connectivity, triggering significant impacts on mobility, trade and
+ * cultural interactions. The physical distance between countries and continents is thus shortened by the efficient
+ * interconnection provided today by the airlines around the world. The ability to plan and understand the
+ * complex flight network is extremely relevant for travelers and companies, so that decisions about travel and
+ * associated investments are as informed and efficient as possible.
+ *
+ * In this context, the implementation of a system capable of facilitating access and understanding of the air
+ * transport network becomes an important tool. The main objective of this project is precisely to develop a
+ * flight management system for the air travel network of the airlines around the world that provides effective
+ * assistance to users who wish to explore and plan travel. The developed system is expected to meet the
+ * functional requirements, described in detail in this document, and to stand out for its usability and ability in
+ * providing relevant information in an intuitive and accessible manner.
+ *
+ * To achieve this purpose, real data were available that covers information about existing airports, including
+ * their geographic location, details about available flights, specifying departure and arrival airports, as well as
+ * the operating airline. A comprehensive list of airlines was also available. In a dataset.zip file, was found
+ * all this information about a real air travel network. A detailed description of the provided dataset is given
+ * below and the following figure was obtained from this dataset, illustrating the position of the airports and
+ * existing flights between them.
+ *
+ * @section install_sec Installation
+ *
+ * Just download and run the main.cpp file.
+ *
+ * @section usage_sec Usage
+ *
+ * Always be aware of the rules for inputs.
+ *
+ * @section names_sec Developed by
+ *
+ * This project was developed by Bernardo Brandão, Ana Catarina Patricio e Pedro Marinho.
+ */
 
 int main(int argc, char* argv[]) {
     int numberOfAirports = 0;
@@ -119,7 +166,8 @@ int main(int argc, char* argv[]) {
         if (filter == 6) {
             std::string city;
             std::cout << "Please type the city's name: ";
-            std::cin >> city;
+            cin.ignore(100, '\n');
+            getline(cin, city);
             std::cout << endl;
             std::cout << "Number of flights from " << city << " is " << numberOfFlightsPerCity(graph,city) << std::endl;
             std::cout << "\nType 1 to return: ";

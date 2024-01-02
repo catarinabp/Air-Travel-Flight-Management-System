@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="d0/d76/extract_from_database_8h" kind="file" language="C++">
+    <compoundname>extractFromDatabase.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">string</includes>
+    <includes refid="da/db6/_graph_8h" local="yes">Graph.h</includes>
+    <includedby refid="d7/dc5/statistics_8h" local="yes">statistics.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>Graph.h</label>
+        <link refid="da/db6/_graph_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>extractFromDatabase.h</label>
+        <link refid="d0/d76/extract_from_database_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cstddef</label>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="12">
+        <label>list</label>
+      </node>
+      <node id="10">
+        <label>queue</label>
+      </node>
+      <node id="4">
+        <label>sstream</label>
+      </node>
+      <node id="11">
+        <label>stack</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>utility</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>extractFromDatabase.h</label>
+        <link refid="d0/d76/extract_from_database_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="2">
+        <label>statistics.h</label>
+        <link refid="d7/dc5/statistics_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="d0/d76/extract_from_database_8h_1a9746b1d2bd0c0c1b6790735c3cbdc42d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; string &gt;</type>
+        <definition>Graph&lt; string &gt; extractFromDatabase</definition>
+        <argsstring>(int &amp;numberOfAirports, int &amp;numberOfAirlines, int &amp;numberOfFlights)</argsstring>
+        <name>extractFromDatabase</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>numberOfAirports</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>numberOfAirlines</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>numberOfFlights</declname>
+        </param>
+        <briefdescription>
+<para>Extracts airport, airline, and flight information from CSV files to create a graph. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function reads airport, airline, and flight information from CSV files and constructs a graph representing the connections between airports and airlines.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>numberOfAirports</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to store the total number of airports extracted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberOfAirlines</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to store the total number of airlines extracted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberOfFlights</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to store the total number of flights extracted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A graph representing airport and airline connections.</para>
+</simplesect>
+<simplesect kind="note"><para>Assumes the existence of three CSV files: airports.csv, flights.csv, and airlines.csv. The format of these CSV files must be suitable for parsing (comma-separated values).</para>
+</simplesect>
+Example Usage: <programlisting><codeline><highlight class="normal">int<sp/>numAirports,<sp/>numAirlines,<sp/>numFlights;</highlight></codeline>
+<codeline><highlight class="normal">Graph&lt;std::string&gt;<sp/>airportGraph<sp/>=<sp/>extractFromDatabase(numAirports,<sp/>numAirlines,<sp/>numFlights);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>airportGraph<sp/>now<sp/>contains<sp/>the<sp/>extracted<sp/>information<sp/>from<sp/>CSV<sp/>files.</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="extractFromDatabase.h" line="34" column="7" bodyfile="extractFromDatabase.h" bodystart="34" bodyend="77"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PROJETO2AED_EXTRACTFROMDATABASE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJETO2AED_EXTRACTFROMDATABASE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/db6/_graph_8h" kindref="compound">Graph.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="d0/d76/extract_from_database_8h_1a9746b1d2bd0c0c1b6790735c3cbdc42d" refkind="member"><highlight class="normal"><ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;string&gt;</ref><sp/><ref refid="d0/d76/extract_from_database_8h_1a9746b1d2bd0c0c1b6790735c3cbdc42d" kindref="member">extractFromDatabase</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;numberOfAirports,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;numberOfAirlines,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;numberOfFlights)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="da/d9a/class_graph" kindref="compound">Graph&lt;string&gt;</ref><sp/>mainGraph;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>file2(</highlight><highlight class="stringliteral">&quot;../csv/airports.csv&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(file2,<sp/>line);<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>to<sp/>skip<sp/>the<sp/>first<sp/>line<sp/>of<sp/>the<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(file2,line,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringstream<sp/>ss(line);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airportCode,<sp/>info;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>airportCode,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" kindref="member">addVertex</ref>(airportCode);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" kindref="member">addVertex</ref>(</highlight><highlight class="stringliteral">&quot;P:&quot;</highlight><highlight class="normal"><sp/>+<sp/>line);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" kindref="member">addEdge</ref>(airportCode,<sp/></highlight><highlight class="stringliteral">&quot;P:&quot;</highlight><highlight class="normal"><sp/>+<sp/>line,<sp/></highlight><highlight class="stringliteral">&quot;AIRPORT&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>numberOfAirports<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>file3(</highlight><highlight class="stringliteral">&quot;../csv/flights.csv&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(file3,<sp/>line,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>to<sp/>skip<sp/>the<sp/>first<sp/>line<sp/>of<sp/>the<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(file3,line,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringstream<sp/>ss(line);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>source,<sp/>target,<sp/>airline;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>source,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>target,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>airline,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" kindref="member">addEdge</ref>(source,<sp/>target,<sp/>airline);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>numberOfFlights<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>file(</highlight><highlight class="stringliteral">&quot;../csv/airlines.csv&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>getline(file,<sp/>line);<sp/></highlight><highlight class="comment">//<sp/>this<sp/>is<sp/>to<sp/>skip<sp/>the<sp/>first<sp/>line<sp/>of<sp/>the<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(file,<sp/>line,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stringstream<sp/>ss(line);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>airlineCode,<sp/>info;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(ss,<sp/>airlineCode,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" kindref="member">addVertex</ref>(</highlight><highlight class="stringliteral">&quot;C:&quot;</highlight><highlight class="normal"><sp/>+<sp/>airlineCode);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a00be284ea2be3b3d0f0d2e493b70245b" kindref="member">addVertex</ref>(</highlight><highlight class="stringliteral">&quot;L:&quot;</highlight><highlight class="normal"><sp/>+<sp/>line);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainGraph.<ref refid="da/d9a/class_graph_1a3a63892ebe746c36a837188857078171" kindref="member">addEdge</ref>(</highlight><highlight class="stringliteral">&quot;C:&quot;</highlight><highlight class="normal"><sp/>+<sp/>airlineCode,<sp/></highlight><highlight class="stringliteral">&quot;L:&quot;</highlight><highlight class="normal"><sp/>+<sp/>line,<sp/></highlight><highlight class="stringliteral">&quot;AIRLINE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count++;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>numberOfAirlines<sp/>=<sp/>count;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mainGraph;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PROJETO2AED_EXTRACTFROMDATABASE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="extractFromDatabase.h"/>
+  </compounddef>
+</doxygen>
