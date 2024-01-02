@@ -110,7 +110,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Please type the airport's code: ";
             std::cin >> airportCode;
             std::cout << endl;
-            std::cout << "The number of flights out from " << airportCode << "Airport is "
+            std::cout << "The number of flights out from " << airportCode << " Airport is "
                       << numberOfFlightsOut(graph, airportCode) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Please type the airport's code: ";
             std::cin >> airportCode;
             std::cout << endl;
-            std::cout << "The number of different airlines with flights departing from " << airportCode << "airport is "
+            std::cout << "The number of different airlines with flights departing from " << airportCode << " airport is "
                       << numberOfAirlinesOut(graph, airportCode) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
@@ -148,7 +148,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Please type the airline's code: ";
             std::cin >> airlineCode;
             std::cout << endl;
-            std::cout << "Number of flights of " << airlineCode << "airline is "
+            std::cout << "Number of flights of " << airlineCode << " airline is "
                       << numberOfFlightsPerAirline(graph, airlineCode) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
@@ -188,7 +188,7 @@ int main(int argc, char* argv[]) {
             std::cin >> airportCode;
             std::cout << endl;
             std::cout << "The list of destination airports reachable from " << airportCode
-                      << "airport is the following: " << std::endl;
+                      << " airport is the following: " << std::endl;
             for(const auto& top: listOfDestinations(graph, airportCode)) {
                 std::cout << top << std::endl;
             }
@@ -210,7 +210,7 @@ int main(int argc, char* argv[]) {
             std::cin >> airportCode;
             std::cout << endl;
             std::cout << "The number of destinations from " << airportCode
-                      << "airport is: " << numberOfDestinationsAirports(listOfDestinations(graph,airportCode)) << std::endl;
+                      << " airport is: " << numberOfDestinationsAirports(listOfDestinations(graph,airportCode)) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -229,7 +229,7 @@ int main(int argc, char* argv[]) {
             std::cin >> airportCode;
             std::cout << endl;
             std::cout << "The number of destiny cities from " << airportCode
-                      << "airport is: " << numberOfDestinationsCities(graph, listOfDestinations(graph,airportCode)) << std::endl;
+                      << " airport is: " << numberOfDestinationsCities(graph, listOfDestinations(graph,airportCode)) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -248,7 +248,7 @@ int main(int argc, char* argv[]) {
             std::cin >> airportCode;
             std::cout << endl;
             std::cout << "The number of destiny countries from " << airportCode
-                      << "airport is: " << numberOfDestinationsCountries(graph, listOfDestinations(graph,airportCode)) << std::endl;
+                      << " airport is: " << numberOfDestinationsCountries(graph, listOfDestinations(graph,airportCode)) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -267,7 +267,7 @@ int main(int argc, char* argv[]) {
             std::cin >> airportCode;
             std::cout << endl;
             std::cout << "The maximum trip(s) and corresponding pair(s) of source-destination airports from " << airportCode
-                          << "airport are the following: " << endl;
+                          << " airport are the following: " << endl;
             for(const auto& top: maxTrip(graph,airportCode)) {
                 std::cout << top << std::endl;
             }
@@ -312,7 +312,7 @@ int main(int argc, char* argv[]) {
             std::cin >> stops;
             std::cout << endl;
             std::cout << "The number of destination airports reachable from " << airportCode
-                      << "airport and with a max of " << stops << "stops is: " << numberOfReachableAirports(graph, airportCode, stops) << std::endl;
+                      << " airport and with a max of " << stops << " stops is: " << numberOfReachableAirports(graph, airportCode, stops) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -334,7 +334,7 @@ int main(int argc, char* argv[]) {
             std::cin >> stops;
             std::cout << endl;
             std::cout << "The number of destination cities reachable from " << airportCode
-                      << "airport and with a max of " << stops << "stops is: " << numberOfReachableCities(graph, airportCode, stops) << std::endl;
+                      << " airport and with a max of " << stops << " stops is: " << numberOfReachableCities(graph, airportCode, stops) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -356,7 +356,7 @@ int main(int argc, char* argv[]) {
             std::cin >> stops;
             std::cout << endl;
             std::cout << "The number of destination airports reachable from " << airportCode
-                      << "airport and with a max of " << stops << "stops is: " << numberOfReachableCountries(graph, airportCode, stops) << std::endl;
+                      << " airport and with a max of " << stops << " stops is: " << numberOfReachableCountries(graph, airportCode, stops) << std::endl;
             std::cout << "\nType 1 to return: ";
             int userInput;
             std::cin >> userInput;
@@ -447,7 +447,7 @@ int main(int argc, char* argv[]) {
                 }
             }
             if(count == 0) {
-                cout << "There are no flights from " << source << " to " << destination << "with the selected preferences" << endl;
+                cout << "There are no flights from " << source << " to " << destination << " with the selected preferences." << endl;
             }
             std::cout << "\nType 1 to return: ";
             int userInput;
@@ -463,7 +463,7 @@ int main(int argc, char* argv[]) {
         if(filter == 17) {
             cout << "Always right the code of Airline / Airport." << endl;
             cout << "Always right the name of City / Country." << endl;
-            cout << "Leave blank to apply default (null). " << endl;
+            cout << "Leave blank to apply default (null)." << endl;
             cout << endl;
             cout << "Write the code of the preferred Airlines you want to add to the list: " << endl;
             string preferredAirlines;
@@ -561,7 +561,7 @@ int main(int argc, char* argv[]) {
             cout << endl;
             cout << "Always right the code of Airline / Airport." << endl;
             cout << "Always right the name of City / Country." << endl;
-            cout << "Leave blank to apply default (null). " << endl;
+            cout << "Leave blank to apply default (null)." << endl;
             cout << endl;
             cout << "Write the code of the preferred Countries you want to add to the list: " << endl;
             string preferredCountries;
@@ -577,7 +577,7 @@ int main(int argc, char* argv[]) {
             cout << endl;
             cout << "Always right the code of Airline / Airport." << endl;
             cout << "Always right the name of City / Country." << endl;
-            cout << "Leave blank to apply default (null). " << endl;
+            cout << "Leave blank to apply default (null)." << endl;
             cout << endl;
             cout << "Write the code of the avoided Countries you want to add to the list: " << endl;
             string avoidedCountries;
@@ -591,7 +591,7 @@ int main(int argc, char* argv[]) {
                 }
             }
             cout << endl;
-            cout << "Wait, processing." << endl;
+            cout << "Please wait, it's processing..." << endl;
             cout << endl;
             graph = filterGraph(extractFromDatabase(numberOfAirports, numberOfAirlines, numberOfFlights), preferences);
             cout << endl;
