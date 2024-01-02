@@ -10,6 +10,7 @@ class menu {
 public:
     static void Menu(const UserPreferences& preferences);
     static void displayPreferences(const UserPreferences& preferences);
+    static void Guide();
 };
 
 #endif //PROJETO2AED_MENU_H

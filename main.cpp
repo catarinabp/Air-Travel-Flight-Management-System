@@ -14,21 +14,20 @@ int main(int argc, char* argv[]) {
 
     int filter;
     int again = 1;
+    int c = 0;
 
     while (again == 1) {
 
         std::cout << std::endl;
         menu::Menu(preferences); //Call menu
+
+        if (c == 0) {
+            menu::Guide(); //Call guide for the first time
+            std::cout << endl;
+        }
+        c = c+1; //guide won't be printed again without user asking for it
         std::cout << "Please choose the option you prefer by writing the number that corresponds to it and then pressing return: " << std::endl;
         std::cin >> filter;
-
-        if (0 > filter && filter > 17) {
-            std::cout << std::endl;
-            std::cout << "Sorry, that is not a valid option." << std::endl;
-            std::cout << std::endl;
-            std::cout << "Please choose the option you prefer by writing the number that corresponds to it and then pressing return: " << std::endl;
-            std::cin >> filter;
-        }
 
         //Global number of airports
         if (filter == 1) {
@@ -556,6 +555,21 @@ int main(int argc, char* argv[]) {
 
             // Validate user input if necessary
             while(userInput != 1) {
+                std::cout << "Invalid input. Type 1 to return: ";
+                std::cin >> userInput;
+            }
+        }
+
+        //Menu guide
+        if (filter == 18) {
+            menu::Guide();
+            std::cout << endl;
+            std::cout << "\nType 1 to return: ";
+            int userInput;
+            std::cin >> userInput;
+
+            // Validate user input if necessary
+            while (userInput != 1) {
                 std::cout << "Invalid input. Type 1 to return: ";
                 std::cin >> userInput;
             }
