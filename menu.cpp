@@ -16,7 +16,7 @@ void menu::Menu(const UserPreferences& preferences) {
     cout << "                 " << 7 << "- List of destination airports reachable from an airport;" << endl;
     cout << "                 " << 8 << "- Number of destinations from an airport;" << endl;
     cout << "                 " << 9 << "- Number of destiny cities from an airport;" << endl;
-    cout << "                 " << 10 << "- Number of number of destiny countries from an airport;" << endl;
+    cout << "                 " << 10 << "- Number destiny countries from an airport;" << endl;
     cout << "                 " << 11 << "- Maximum trip and corresponding pair of source-destination airports;" << endl;
     cout << "                 " << 12 << "- Top-k airport(s) with the greatest air traffic capacity (with the greatest number of flights;" << endl;
     cout << "                 " << 13 << "- Number of destination airports reachable from an airport within X stops;" << endl;
