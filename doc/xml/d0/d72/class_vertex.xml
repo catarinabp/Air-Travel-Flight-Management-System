@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="d0/d72/class_vertex" kind="class" language="C++" prot="public">
+    <compoundname>Vertex</compoundname>
+    <includes refid="da/db6/_graph_8h" local="no">Graph.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d72/class_vertex_1a415d7811eef6cdd992f0dca1f35a49cd" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T Vertex&lt; T &gt;::info</definition>
+        <argsstring></argsstring>
+        <name>info</name>
+        <qualifiedname>Vertex::info</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="24" column="7" bodyfile="Graph.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d72/class_vertex_1a5d9dfdd2caee11e300ff5142799345a1" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="d7/d77/class_edge" kindref="compound">Edge</ref>&lt; T &gt; &gt;</type>
+        <definition>vector&lt;Edge&lt;T&gt; &gt; Vertex&lt; T &gt;::adj</definition>
+        <argsstring></argsstring>
+        <name>adj</name>
+        <qualifiedname>Vertex::adj</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="25" column="12" bodyfile="Graph.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d72/class_vertex_1a187a2fe4ff50261cf3c15b8cda7dfc56" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::visited</definition>
+        <argsstring></argsstring>
+        <name>visited</name>
+        <qualifiedname>Vertex::visited</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="26" column="10" bodyfile="Graph.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d72/class_vertex_1ae575d4b9a6b1ada3f9626c458c060f54" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::processing</definition>
+        <argsstring></argsstring>
+        <name>processing</name>
+        <qualifiedname>Vertex::processing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="27" column="10" bodyfile="Graph.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="d0/d72/class_vertex_1aefa9b76cd57411c5354e5620dc2d84dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Graph&lt; T &gt;</definition>
+        <argsstring></argsstring>
+        <name>Graph&lt; T &gt;</name>
+        <qualifiedname>Vertex::Graph&lt; T &gt;</qualifiedname>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; T &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="41" column="10" bodyfile="Graph.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/d72/class_vertex_1a2877afde591d5cac1444d048151e585e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vertex&lt; T &gt;::addEdge</definition>
+        <argsstring>(Vertex&lt; T &gt; *dest, std::string w)</argsstring>
+        <name>addEdge</name>
+        <qualifiedname>Vertex::addEdge</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="29" column="10" bodyfile="Graph.h" bodystart="274" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1ab2b5b43fb1709a901b78718436763a84" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::removeEdgeTo</definition>
+        <argsstring>(Vertex&lt; T &gt; *d)</argsstring>
+        <name>removeEdgeTo</name>
+        <qualifiedname>Vertex::removeEdgeTo</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="30" column="10" bodyfile="Graph.h" bodystart="298" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1a7f4e8e4773d667ed3e892538fa59f865" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::removeEdgeToByWeight</definition>
+        <argsstring>(Vertex&lt; T &gt; *d, const string &amp;weight)</argsstring>
+        <name>removeEdgeToByWeight</name>
+        <qualifiedname>Vertex::removeEdgeToByWeight</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>weight</declname>
+        </param>
+        <briefdescription>
+<para>Removes an edge from a vertex by its weight. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The edge is identified by the destination (d) vertex and the weight of the edge. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Weight of the edge. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="31" column="10" bodyfile="Graph.h" bodystart="336" bodyend="348"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d72/class_vertex_1afcbdd4d4198b672356559cb8fa088408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Vertex&lt; T &gt;::Vertex</definition>
+        <argsstring>(T in)</argsstring>
+        <name>Vertex</name>
+        <qualifiedname>Vertex::Vertex</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Content of the vertex. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="33" column="5" bodyfile="Graph.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1a48eae2f7af2362634adab02b7b2dbec6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T Vertex&lt; T &gt;::getInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getInfo</name>
+        <qualifiedname>Vertex::getInfo</qualifiedname>
+        <briefdescription>
+<para>Gets the content of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The content of the vertex. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="34" column="7" bodyfile="Graph.h" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1a68c9c8792b2752b7540e2f8c14f686a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vertex&lt; T &gt;::setInfo</definition>
+        <argsstring>(T in)</argsstring>
+        <name>setInfo</name>
+        <qualifiedname>Vertex::setInfo</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+<para>Sets the content of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>in</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new content. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="35" column="10" bodyfile="Graph.h" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1aa2bb17f6ebd98a67f8da1f689b22fadc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::isVisited</definition>
+        <argsstring>() const</argsstring>
+        <name>isVisited</name>
+        <qualifiedname>Vertex::isVisited</qualifiedname>
+        <briefdescription>
+<para>Checks if the vertex has been visited. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the vertex has been visited, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="36" column="10" bodyfile="Graph.h" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1aa1a1921cded8cb209382407b5a9433f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vertex&lt; T &gt;::setVisited</definition>
+        <argsstring>(bool v)</argsstring>
+        <name>setVisited</name>
+        <qualifiedname>Vertex::setVisited</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Sets the visited status of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The visited status. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="37" column="10" bodyfile="Graph.h" bodystart="220" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1aaa41dfa4ce1a19b4e529cc6cdc23b764" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Vertex&lt; T &gt;::isProcessing</definition>
+        <argsstring>() const</argsstring>
+        <name>isProcessing</name>
+        <qualifiedname>Vertex::isProcessing</qualifiedname>
+        <briefdescription>
+<para>Checks if the vertex is being processed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the vertex is being processed, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="38" column="10" bodyfile="Graph.h" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1ac7b2e53890abfbcd4d7ce3b7d34ee932" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vertex&lt; T &gt;::setProcessing</definition>
+        <argsstring>(bool p)</argsstring>
+        <name>setProcessing</name>
+        <qualifiedname>Vertex::setProcessing</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Sets the processing status of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The processing status. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="39" column="10" bodyfile="Graph.h" bodystart="155" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1a0b0341340972782503ff5065f46673fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const vector&lt; <ref refid="d7/d77/class_edge" kindref="compound">Edge</ref>&lt; T &gt; &gt; &amp;</type>
+        <definition>const vector&lt; Edge&lt; T &gt; &gt; &amp; Vertex&lt; T &gt;::getAdj</definition>
+        <argsstring>() const</argsstring>
+        <name>getAdj</name>
+        <qualifiedname>Vertex::getAdj</qualifiedname>
+        <briefdescription>
+<para>Gets the adjacency list of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The adjacency list of the vertex. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="40" column="18" bodyfile="Graph.h" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d72/class_vertex_1aacc5763deca4f0f308756b69f9598584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Vertex&lt; T &gt;::setAdj</definition>
+        <argsstring>(const vector&lt; Edge&lt; T &gt; &gt; &amp;adj)</argsstring>
+        <name>setAdj</name>
+        <qualifiedname>Vertex::setAdj</qualifiedname>
+        <param>
+          <type>const vector&lt; <ref refid="d7/d77/class_edge" kindref="compound">Edge</ref>&lt; T &gt; &gt; &amp;</type>
+          <declname>adj</declname>
+        </param>
+        <briefdescription>
+<para>Sets the adjacency list of the vertex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>adj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new adjacency list. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="41" column="10" bodyfile="Graph.h" bodystart="238" bodyend="240"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a vertex in the graph. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Graph.h" line="23" column="1" bodyfile="Graph.h" bodystart="23" bodyend="43"/>
+    <listofallmembers>
+      <member refid="d0/d72/class_vertex_1a2877afde591d5cac1444d048151e585e" prot="private" virt="non-virtual"><scope>Vertex</scope><name>addEdge</name></member>
+      <member refid="d0/d72/class_vertex_1a5d9dfdd2caee11e300ff5142799345a1" prot="private" virt="non-virtual"><scope>Vertex</scope><name>adj</name></member>
+      <member refid="d0/d72/class_vertex_1a0b0341340972782503ff5065f46673fe" prot="public" virt="non-virtual"><scope>Vertex</scope><name>getAdj</name></member>
+      <member refid="d0/d72/class_vertex_1a48eae2f7af2362634adab02b7b2dbec6" prot="public" virt="non-virtual"><scope>Vertex</scope><name>getInfo</name></member>
+      <member refid="d0/d72/class_vertex_1aefa9b76cd57411c5354e5620dc2d84dd" prot="public" virt="non-virtual"><scope>Vertex</scope><name>Graph&lt; T &gt;</name></member>
+      <member refid="d0/d72/class_vertex_1a415d7811eef6cdd992f0dca1f35a49cd" prot="private" virt="non-virtual"><scope>Vertex</scope><name>info</name></member>
+      <member refid="d0/d72/class_vertex_1aaa41dfa4ce1a19b4e529cc6cdc23b764" prot="public" virt="non-virtual"><scope>Vertex</scope><name>isProcessing</name></member>
+      <member refid="d0/d72/class_vertex_1aa2bb17f6ebd98a67f8da1f689b22fadc" prot="public" virt="non-virtual"><scope>Vertex</scope><name>isVisited</name></member>
+      <member refid="d0/d72/class_vertex_1ae575d4b9a6b1ada3f9626c458c060f54" prot="private" virt="non-virtual"><scope>Vertex</scope><name>processing</name></member>
+      <member refid="d0/d72/class_vertex_1ab2b5b43fb1709a901b78718436763a84" prot="private" virt="non-virtual"><scope>Vertex</scope><name>removeEdgeTo</name></member>
+      <member refid="d0/d72/class_vertex_1a7f4e8e4773d667ed3e892538fa59f865" prot="private" virt="non-virtual"><scope>Vertex</scope><name>removeEdgeToByWeight</name></member>
+      <member refid="d0/d72/class_vertex_1aacc5763deca4f0f308756b69f9598584" prot="public" virt="non-virtual"><scope>Vertex</scope><name>setAdj</name></member>
+      <member refid="d0/d72/class_vertex_1a68c9c8792b2752b7540e2f8c14f686a4" prot="public" virt="non-virtual"><scope>Vertex</scope><name>setInfo</name></member>
+      <member refid="d0/d72/class_vertex_1ac7b2e53890abfbcd4d7ce3b7d34ee932" prot="public" virt="non-virtual"><scope>Vertex</scope><name>setProcessing</name></member>
+      <member refid="d0/d72/class_vertex_1aa1a1921cded8cb209382407b5a9433f3" prot="public" virt="non-virtual"><scope>Vertex</scope><name>setVisited</name></member>
+      <member refid="d0/d72/class_vertex_1afcbdd4d4198b672356559cb8fa088408" prot="public" virt="non-virtual"><scope>Vertex</scope><name>Vertex</name></member>
+      <member refid="d0/d72/class_vertex_1a187a2fe4ff50261cf3c15b8cda7dfc56" prot="private" virt="non-virtual"><scope>Vertex</scope><name>visited</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

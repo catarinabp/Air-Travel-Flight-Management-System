@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Welcome to Projeto 2 - AED Documentation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The goal of this project is to create and Air Travel Flight Management System.</para>
+<sect1 id="index_1intro_sec">
+<title>Introduction</title><para>Air transport plays a crucial role in global connectivity, triggering significant impacts on mobility, trade and cultural interactions. The physical distance between countries and continents is thus shortened by the efficient interconnection provided today by the airlines around the world. The ability to plan and understand the complex flight network is extremely relevant for travelers and companies, so that decisions about travel and associated investments are as informed and efficient as possible.</para>
+<para>In this context, the implementation of a system capable of facilitating access and understanding of the air transport network becomes an important tool. The main objective of this project is precisely to develop a flight management system for the air travel network of the airlines around the world that provides effective assistance to users who wish to explore and plan travel. The developed system is expected to meet the functional requirements, described in detail in this document, and to stand out for its usability and ability in providing relevant information in an intuitive and accessible manner.</para>
+<para>To achieve this purpose, real data were available that covers information about existing airports, including their geographic location, details about available flights, specifying departure and arrival airports, as well as the operating airline. A comprehensive list of airlines was also available. In a dataset.zip file, was found all this information about a real air travel network. A detailed description of the provided dataset is given below and the following figure was obtained from this dataset, illustrating the position of the airports and existing flights between them.</para>
+</sect1>
+<sect1 id="index_1install_sec">
+<title>Installation</title><para>Just download and run the <ref refid="df/d0a/main_8cpp" kindref="compound">main.cpp</ref> file.</para>
+</sect1>
+<sect1 id="index_1usage_sec">
+<title>Usage</title><para>Always be aware of the rules for inputs.</para>
+</sect1>
+<sect1 id="index_1names_sec">
+<title>Developed by</title><para>This project was developed by Bernardo Brandão, Ana Catarina Patricio e Pedro Marinho. </para>
+</sect1>
+    </detaileddescription>
+    <location file="main.cpp"/>
+  </compounddef>
+</doxygen>

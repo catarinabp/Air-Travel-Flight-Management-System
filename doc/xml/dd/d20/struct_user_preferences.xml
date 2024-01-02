@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dd/d20/struct_user_preferences" kind="struct" language="C++" prot="public">
+    <compoundname>UserPreferences</compoundname>
+    <includes refid="df/d81/user_preferences_8h" local="no">userPreferences.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1a86c43f59ac9b15194b7140db4350514e" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::preferredAirlines</definition>
+        <argsstring></argsstring>
+        <name>preferredAirlines</name>
+        <qualifiedname>UserPreferences::preferredAirlines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="31" column="17" bodyfile="userPreferences.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1ab004aa38eb0912baaf5ee27bd5297703" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::avoidedAirlines</definition>
+        <argsstring></argsstring>
+        <name>avoidedAirlines</name>
+        <qualifiedname>UserPreferences::avoidedAirlines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="32" column="17" bodyfile="userPreferences.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1a5bc749253324b4cb91d5bf0c116ba09f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::avoidedCountries</definition>
+        <argsstring></argsstring>
+        <name>avoidedCountries</name>
+        <qualifiedname>UserPreferences::avoidedCountries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="33" column="17" bodyfile="userPreferences.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1afadc2ebbf67ca62e5c044a8d45950b27" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::preferredCountries</definition>
+        <argsstring></argsstring>
+        <name>preferredCountries</name>
+        <qualifiedname>UserPreferences::preferredCountries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="34" column="17" bodyfile="userPreferences.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1afb23bf710d1b7678727d2d87359ea99a" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::avoidedAirports</definition>
+        <argsstring></argsstring>
+        <name>avoidedAirports</name>
+        <qualifiedname>UserPreferences::avoidedAirports</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="35" column="17" bodyfile="userPreferences.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1abd260a1b5c0fc94377652d64bcccc622" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::preferredAirports</definition>
+        <argsstring></argsstring>
+        <name>preferredAirports</name>
+        <qualifiedname>UserPreferences::preferredAirports</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="36" column="17" bodyfile="userPreferences.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1a4599f3bdf7263a3c3aaf96881cdd5c59" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::avoidedCities</definition>
+        <argsstring></argsstring>
+        <name>avoidedCities</name>
+        <qualifiedname>UserPreferences::avoidedCities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="37" column="17" bodyfile="userPreferences.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d20/struct_user_preferences_1ac635edc7b60fd591baf5e3d046740222" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; UserPreferences::preferredCities</definition>
+        <argsstring></argsstring>
+        <name>preferredCities</name>
+        <qualifiedname>UserPreferences::preferredCities</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="userPreferences.h" line="38" column="17" bodyfile="userPreferences.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="userPreferences.h" line="30" column="1" bodyfile="userPreferences.h" bodystart="30" bodyend="39"/>
+    <listofallmembers>
+      <member refid="dd/d20/struct_user_preferences_1ab004aa38eb0912baaf5ee27bd5297703" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>avoidedAirlines</name></member>
+      <member refid="dd/d20/struct_user_preferences_1afb23bf710d1b7678727d2d87359ea99a" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>avoidedAirports</name></member>
+      <member refid="dd/d20/struct_user_preferences_1a4599f3bdf7263a3c3aaf96881cdd5c59" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>avoidedCities</name></member>
+      <member refid="dd/d20/struct_user_preferences_1a5bc749253324b4cb91d5bf0c116ba09f" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>avoidedCountries</name></member>
+      <member refid="dd/d20/struct_user_preferences_1a86c43f59ac9b15194b7140db4350514e" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>preferredAirlines</name></member>
+      <member refid="dd/d20/struct_user_preferences_1abd260a1b5c0fc94377652d64bcccc622" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>preferredAirports</name></member>
+      <member refid="dd/d20/struct_user_preferences_1ac635edc7b60fd591baf5e3d046740222" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>preferredCities</name></member>
+      <member refid="dd/d20/struct_user_preferences_1afadc2ebbf67ca62e5c044a8d45950b27" prot="public" virt="non-virtual"><scope>UserPreferences</scope><name>preferredCountries</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

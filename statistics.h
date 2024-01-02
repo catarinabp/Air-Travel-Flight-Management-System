@@ -203,24 +203,20 @@ int numberOfFlightsPerAirline(Graph<std::string> &graph, const std::string& airl
  *
  * @pre The graph must be properly initialized.
  */
-int numberOfFlightsPerCity(Graph<std::string> &graph, const std::string& city) {
+int numberOfFlightsPerCity(Graph<std::string> &graph, std::string& city) {
     int count = 0;
     for(auto vertex : graph.getVertexSet()){
-        if(vertex->getAdj().empty()){
-            string info = vertex->getInfo();
-            string cityName;
-            string airportCode;
-            stringstream ss(info);
-            getline(ss, cityName, ':');
-            if(cityName == "P") {
-                getline(ss, airportCode, ',');
-                getline(ss, cityName, ',');
-                getline(ss, cityName, ',');
-                if(cityName == city){
+        if(vertex->getAdj().empty()) {
+            string id = getId(vertex->getInfo());
+            if(getId(vertex->getInfo()) == "P") {
+                string airportCity = getCityName(vertex->getInfo());
+                string airportCode = getAirportCode(vertex->getInfo());
+                transform(airportCity.begin(), airportCity.end(), airportCity.begin(), ::tolower);
+                transform(city.begin(), city.end(), city.begin(), ::tolower);
+                if(airportCity.find(city) != string::npos) {
                     count += numberOfFlightsOut(graph, airportCode);
                 }
             }
-
         }
 
     }

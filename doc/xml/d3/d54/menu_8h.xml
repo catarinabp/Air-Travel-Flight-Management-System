@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="d3/d54/menu_8h" kind="file" language="C++">
+    <compoundname>menu.h</compoundname>
+    <includes refid="df/d81/user_preferences_8h" local="yes">UserPreferences.h</includes>
+    <includedby refid="df/d0a/main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="d0/d25/menu_8cpp" local="yes">menu.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>menu.h</label>
+        <link refid="d3/d54/menu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>UserPreferences.h</label>
+        <link refid="df/d81/user_preferences_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>main.cpp</label>
+        <link refid="df/d0a/main_8cpp"/>
+      </node>
+      <node id="3">
+        <label>menu.cpp</label>
+        <link refid="d0/d25/menu_8cpp"/>
+      </node>
+      <node id="1">
+        <label>menu.h</label>
+        <link refid="d3/d54/menu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d7/d3d/classmenu" prot="public">menu</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>PROJETO2AED_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJETO2AED_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d81/user_preferences_8h" kindref="compound">UserPreferences.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="d7/d3d/classmenu" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d7/d3d/classmenu" kindref="compound">menu</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d3d/classmenu_1a79821bec2967b5737c86fe7b76e918c2" kindref="member">Menu</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d20/struct_user_preferences" kindref="compound">UserPreferences</ref>&amp;<sp/><ref refid="df/d0a/main_8cpp_1a7bd7a149ad56b9579b550c7e7c46010e" kindref="member">preferences</ref>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" kindref="member">displayPreferences</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d20/struct_user_preferences" kindref="compound">UserPreferences</ref>&amp;<sp/><ref refid="df/d0a/main_8cpp_1a7bd7a149ad56b9579b550c7e7c46010e" kindref="member">preferences</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PROJETO2AED_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="menu.h"/>
+  </compounddef>
+</doxygen>

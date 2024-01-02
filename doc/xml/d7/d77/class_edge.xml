@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="d7/d77/class_edge" kind="class" language="C++" prot="public">
+    <compoundname>Edge</compoundname>
+    <includes refid="da/db6/_graph_8h" local="no">Graph.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d7/d77/class_edge_1ae4d65678b91bd9d814af4720ad87cd0c" prot="private" static="no" mutable="no">
+        <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+        <definition>Vertex&lt;T&gt;* Edge&lt; T &gt;::dest</definition>
+        <argsstring></argsstring>
+        <name>dest</name>
+        <qualifiedname>Edge::dest</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="50" column="13" bodyfile="Graph.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d77/class_edge_1a7b1763bb85d4cc63d292752c2bbaf6d0" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Edge&lt; T &gt;::weight</definition>
+        <argsstring></argsstring>
+        <name>weight</name>
+        <qualifiedname>Edge::weight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="51" column="17" bodyfile="Graph.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="d7/d77/class_edge_1aefa9b76cd57411c5354e5620dc2d84dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Graph&lt; T &gt;</definition>
+        <argsstring></argsstring>
+        <name>Graph&lt; T &gt;</name>
+        <qualifiedname>Edge::Graph&lt; T &gt;</qualifiedname>
+        <param>
+          <type><ref refid="da/d9a/class_graph" kindref="compound">Graph</ref>&lt; T &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="57" column="10" bodyfile="Graph.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="d7/d77/class_edge_1a2e120a12dec663fa334633b4f26cbed8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class Vertex&lt; T &gt;</definition>
+        <argsstring></argsstring>
+        <name>Vertex&lt; T &gt;</name>
+        <qualifiedname>Edge::Vertex&lt; T &gt;</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="57" column="10" bodyfile="Graph.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="d7/d77/class_edge_1a303637c9cbcac1005c164591956fed51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Edge&lt; T &gt;::Edge</definition>
+        <argsstring>(Vertex&lt; T &gt; *d, std::string w)</argsstring>
+        <name>Edge</name>
+        <qualifiedname>Edge::Edge</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="d7/d77/class_edge" kindref="compound">Edge</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="d7/d77/class_edge" kindref="compound">Edge</ref> weight. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="53" column="5" bodyfile="Graph.h" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d77/class_edge_1a9a2de066dff8513dd788d553fc1d0c81" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+        <definition>Vertex&lt; T &gt; * Edge&lt; T &gt;::getDest</definition>
+        <argsstring>() const</argsstring>
+        <name>getDest</name>
+        <qualifiedname>Edge::getDest</qualifiedname>
+        <briefdescription>
+<para>Gets the destination vertex of the edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The destination vertex. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="54" column="12" bodyfile="Graph.h" bodystart="164" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d77/class_edge_1a163ee9f75e35701e6a04ea1c987e4094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Edge&lt; T &gt;::setDest</definition>
+        <argsstring>(Vertex&lt; T &gt; *dest)</argsstring>
+        <name>setDest</name>
+        <qualifiedname>Edge::setDest</qualifiedname>
+        <param>
+          <type><ref refid="d0/d72/class_vertex" kindref="compound">Vertex</ref>&lt; T &gt; *</type>
+          <declname>dest</declname>
+          <defname>d</defname>
+        </param>
+        <briefdescription>
+<para>Sets the destination vertex of the edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination vertex. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="55" column="10" bodyfile="Graph.h" bodystart="173" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d77/class_edge_1a685f283c31bf5553acca4eea34d19d15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Edge&lt; T &gt;::getWeight</definition>
+        <argsstring>() const</argsstring>
+        <name>getWeight</name>
+        <qualifiedname>Edge::getWeight</qualifiedname>
+        <briefdescription>
+<para>Gets the weight of the edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The weight of the edge. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="56" column="17" bodyfile="Graph.h" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d77/class_edge_1a43954e1d4b8c5bafaf39346cd689b39e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Edge&lt; T &gt;::setWeight</definition>
+        <argsstring>(std::string weight)</argsstring>
+        <name>setWeight</name>
+        <qualifiedname>Edge::setWeight</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>weight</declname>
+        </param>
+        <briefdescription>
+<para>Sets the weight of the edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>weight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new weight. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Graph.h" line="57" column="10" bodyfile="Graph.h" bodystart="191" bodyend="193"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents an edge in the graph. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Graph.h" line="49" column="1" bodyfile="Graph.h" bodystart="49" bodyend="60"/>
+    <listofallmembers>
+      <member refid="d7/d77/class_edge_1ae4d65678b91bd9d814af4720ad87cd0c" prot="private" virt="non-virtual"><scope>Edge</scope><name>dest</name></member>
+      <member refid="d7/d77/class_edge_1a303637c9cbcac1005c164591956fed51" prot="public" virt="non-virtual"><scope>Edge</scope><name>Edge</name></member>
+      <member refid="d7/d77/class_edge_1a9a2de066dff8513dd788d553fc1d0c81" prot="public" virt="non-virtual"><scope>Edge</scope><name>getDest</name></member>
+      <member refid="d7/d77/class_edge_1a685f283c31bf5553acca4eea34d19d15" prot="public" virt="non-virtual"><scope>Edge</scope><name>getWeight</name></member>
+      <member refid="d7/d77/class_edge_1aefa9b76cd57411c5354e5620dc2d84dd" prot="public" virt="non-virtual"><scope>Edge</scope><name>Graph&lt; T &gt;</name></member>
+      <member refid="d7/d77/class_edge_1a163ee9f75e35701e6a04ea1c987e4094" prot="public" virt="non-virtual"><scope>Edge</scope><name>setDest</name></member>
+      <member refid="d7/d77/class_edge_1a43954e1d4b8c5bafaf39346cd689b39e" prot="public" virt="non-virtual"><scope>Edge</scope><name>setWeight</name></member>
+      <member refid="d7/d77/class_edge_1a2e120a12dec663fa334633b4f26cbed8" prot="public" virt="non-virtual"><scope>Edge</scope><name>Vertex&lt; T &gt;</name></member>
+      <member refid="d7/d77/class_edge_1a7b1763bb85d4cc63d292752c2bbaf6d0" prot="private" virt="non-virtual"><scope>Edge</scope><name>weight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
