@@ -10,7 +10,16 @@
 #include "UserPreferences.h"
 #include "search.h"
 
-
+/**
+ * @brief Prints information corresponding to the provided airport code in the given graph.
+ *
+ * This function takes an airport code and looks up the corresponding vertex in the graph.
+ * If the vertex has an outgoing edge of type "AIRPORT," it prints information about the destination airport,
+ * including its name, city, and country.
+ *
+ * @param graph The graph containing airport information.
+ * @param code The airport code for which information is to be printed.
+ */
 void codeToInfo(const Graph<string> &graph, string code) {
     auto vertex = graph.findVertex(code);
     if(vertex->getAdj()[0].getWeight() == "AIRPORT") {
