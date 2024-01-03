@@ -90,6 +90,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af42a128da9a8bd64b49002faa12bbf2d" id="r_af42a128da9a8bd64b49002faa12bbf2d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af42a128da9a8bd64b49002faa12bbf2d">displayPreferences</a> (const <a class="el" href="../../dd/d20/struct_user_preferences.html">UserPreferences</a> &amp;<a class="el" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>)</td></tr>
 <tr class="memdesc:af42a128da9a8bd64b49002faa12bbf2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the user preferences on the menu.  <br /></td></tr>
 <tr class="separator:af42a128da9a8bd64b49002faa12bbf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd0bbcbbe8201a1cb210395a2bf70e94" id="r_acd0bbcbbe8201a1cb210395a2bf70e94"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0bbcbbe8201a1cb210395a2bf70e94">Guide</a> ()</td></tr>
+<tr class="separator:acd0bbcbbe8201a1cb210395a2bf70e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing the menu and user interface. </p>
@@ -127,99 +129,99 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d25/menu_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d0/d25/menu_8cpp_source.html">menu.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                {</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a86c43f59ac9b15194b7140db4350514e">preferredAirlines</a>.empty()) {</div>
-<div class="line"><span class="lineno">   45</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Airlines: &quot;</span>;</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredAirlines) {</div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a86c43f59ac9b15194b7140db4350514e">preferredAirlines</a>.back()) {</div>
-<div class="line"><span class="lineno">   48</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">   49</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   50</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">   51</span>            }</div>
-<div class="line"><span class="lineno">   52</span>        }</div>
-<div class="line"><span class="lineno">   53</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ab004aa38eb0912baaf5ee27bd5297703">avoidedAirlines</a>.empty()) {</div>
-<div class="line"><span class="lineno">   56</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Airlines: &quot;</span>;</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedAirlines) {</div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ab004aa38eb0912baaf5ee27bd5297703">avoidedAirlines</a>.back()) {</div>
-<div class="line"><span class="lineno">   59</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">   60</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   61</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">   62</span>            }</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#abd260a1b5c0fc94377652d64bcccc622">preferredAirports</a>.empty()) {</div>
-<div class="line"><span class="lineno">   67</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Airports: &quot;</span>;</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredAirports) {</div>
-<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#abd260a1b5c0fc94377652d64bcccc622">preferredAirports</a>.back()) {</div>
-<div class="line"><span class="lineno">   70</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">   71</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   72</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">   73</span>            }</div>
-<div class="line"><span class="lineno">   74</span>        }</div>
-<div class="line"><span class="lineno">   75</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afb23bf710d1b7678727d2d87359ea99a">avoidedAirports</a>.empty()) {</div>
-<div class="line"><span class="lineno">   78</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Airports: &quot;</span>;</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedAirports) {</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afb23bf710d1b7678727d2d87359ea99a">avoidedAirports</a>.back()) {</div>
-<div class="line"><span class="lineno">   81</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">   82</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   83</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">   84</span>            }</div>
-<div class="line"><span class="lineno">   85</span>        }</div>
-<div class="line"><span class="lineno">   86</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   87</span>    }</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ac635edc7b60fd591baf5e3d046740222">preferredCities</a>.empty()) {</div>
-<div class="line"><span class="lineno">   89</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Cities: &quot;</span>;</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredCities) {</div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ac635edc7b60fd591baf5e3d046740222">preferredCities</a>.back()) {</div>
-<div class="line"><span class="lineno">   92</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">   93</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   94</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">   95</span>            }</div>
-<div class="line"><span class="lineno">   96</span>        }</div>
-<div class="line"><span class="lineno">   97</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a4599f3bdf7263a3c3aaf96881cdd5c59">avoidedCities</a>.empty()) {</div>
-<div class="line"><span class="lineno">  100</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Cities: &quot;</span>;</div>
-<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedCities) {</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a4599f3bdf7263a3c3aaf96881cdd5c59">avoidedCities</a>.back()) {</div>
-<div class="line"><span class="lineno">  103</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">  104</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  105</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">  106</span>            }</div>
-<div class="line"><span class="lineno">  107</span>        }</div>
-<div class="line"><span class="lineno">  108</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  109</span>    }</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afadc2ebbf67ca62e5c044a8d45950b27">preferredCountries</a>.empty()) {</div>
-<div class="line"><span class="lineno">  111</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Countries: &quot;</span>;</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredCountries) {</div>
-<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afadc2ebbf67ca62e5c044a8d45950b27">preferredCountries</a>.back()) {</div>
-<div class="line"><span class="lineno">  114</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">  115</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  116</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">  117</span>            }</div>
-<div class="line"><span class="lineno">  118</span>        }</div>
-<div class="line"><span class="lineno">  119</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  120</span>    }</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a5bc749253324b4cb91d5bf0c116ba09f">avoidedCountries</a>.empty()) {</div>
-<div class="line"><span class="lineno">  122</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Countries: &quot;</span>;</div>
-<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedCountries) {</div>
-<div class="line"><span class="lineno">  124</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a5bc749253324b4cb91d5bf0c116ba09f">avoidedCountries</a>.back()) {</div>
-<div class="line"><span class="lineno">  125</span>                std::cout &lt;&lt; top;</div>
-<div class="line"><span class="lineno">  126</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  127</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><span class="lineno">  128</span>            }</div>
-<div class="line"><span class="lineno">  129</span>        }</div>
-<div class="line"><span class="lineno">  130</span>        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span>}</div>
-<div class="ttc" id="amain_8cpp_html_a7bd7a149ad56b9579b550c7e7c46010e"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a></div><div class="ttdeci">UserPreferences preferences</div><div class="ttdoc">User preferences for the Flight System.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0a/main_8cpp_source.html#l00014">main.cpp:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d0/d25/menu_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../d0/d25/menu_8cpp_source.html">menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                                {</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a86c43f59ac9b15194b7140db4350514e">preferredAirlines</a>.empty()) {</div>
+<div class="line"><span class="lineno">   50</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Airlines: &quot;</span>;</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredAirlines) {</div>
+<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a86c43f59ac9b15194b7140db4350514e">preferredAirlines</a>.back()) {</div>
+<div class="line"><span class="lineno">   53</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">   54</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   55</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">   56</span>            }</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ab004aa38eb0912baaf5ee27bd5297703">avoidedAirlines</a>.empty()) {</div>
+<div class="line"><span class="lineno">   61</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Airlines: &quot;</span>;</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedAirlines) {</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ab004aa38eb0912baaf5ee27bd5297703">avoidedAirlines</a>.back()) {</div>
+<div class="line"><span class="lineno">   64</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">   65</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   66</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">   67</span>            }</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#abd260a1b5c0fc94377652d64bcccc622">preferredAirports</a>.empty()) {</div>
+<div class="line"><span class="lineno">   72</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Airports: &quot;</span>;</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredAirports) {</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#abd260a1b5c0fc94377652d64bcccc622">preferredAirports</a>.back()) {</div>
+<div class="line"><span class="lineno">   75</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">   76</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   77</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">   78</span>            }</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afb23bf710d1b7678727d2d87359ea99a">avoidedAirports</a>.empty()) {</div>
+<div class="line"><span class="lineno">   83</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Airports: &quot;</span>;</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedAirports) {</div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afb23bf710d1b7678727d2d87359ea99a">avoidedAirports</a>.back()) {</div>
+<div class="line"><span class="lineno">   86</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">   87</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   88</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ac635edc7b60fd591baf5e3d046740222">preferredCities</a>.empty()) {</div>
+<div class="line"><span class="lineno">   94</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Cities: &quot;</span>;</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredCities) {</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#ac635edc7b60fd591baf5e3d046740222">preferredCities</a>.back()) {</div>
+<div class="line"><span class="lineno">   97</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">   98</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   99</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">  100</span>            }</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a4599f3bdf7263a3c3aaf96881cdd5c59">avoidedCities</a>.empty()) {</div>
+<div class="line"><span class="lineno">  105</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Cities: &quot;</span>;</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedCities) {</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a4599f3bdf7263a3c3aaf96881cdd5c59">avoidedCities</a>.back()) {</div>
+<div class="line"><span class="lineno">  108</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">  109</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  110</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">  111</span>            }</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afadc2ebbf67ca62e5c044a8d45950b27">preferredCountries</a>.empty()) {</div>
+<div class="line"><span class="lineno">  116</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Preferred Countries: &quot;</span>;</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.preferredCountries) {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#afadc2ebbf67ca62e5c044a8d45950b27">preferredCountries</a>.back()) {</div>
+<div class="line"><span class="lineno">  119</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">  120</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  121</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">  122</span>            }</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="line"><span class="lineno">  124</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a5bc749253324b4cb91d5bf0c116ba09f">avoidedCountries</a>.empty()) {</div>
+<div class="line"><span class="lineno">  127</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avoided Countries: &quot;</span>;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; top: <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.avoidedCountries) {</div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span> (top == <a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>.<a class="code hl_variable" href="../../dd/d20/struct_user_preferences.html#a5bc749253324b4cb91d5bf0c116ba09f">avoidedCountries</a>.back()) {</div>
+<div class="line"><span class="lineno">  130</span>                std::cout &lt;&lt; top;</div>
+<div class="line"><span class="lineno">  131</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  132</span>                std::cout &lt;&lt; top &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><span class="lineno">  133</span>            }</div>
+<div class="line"><span class="lineno">  134</span>        }</div>
+<div class="line"><span class="lineno">  135</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+<div class="ttc" id="amain_8cpp_html_a7bd7a149ad56b9579b550c7e7c46010e"><div class="ttname"><a href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a></div><div class="ttdeci">UserPreferences preferences</div><div class="ttdoc">User preferences for the Flight System.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d0a/main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
 <div class="ttc" id="astruct_user_preferences_html_a4599f3bdf7263a3c3aaf96881cdd5c59"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#a4599f3bdf7263a3c3aaf96881cdd5c59">UserPreferences::avoidedCities</a></div><div class="ttdeci">std::vector&lt; std::string &gt; avoidedCities</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00037">userPreferences.h:37</a></div></div>
 <div class="ttc" id="astruct_user_preferences_html_a5bc749253324b4cb91d5bf0c116ba09f"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#a5bc749253324b4cb91d5bf0c116ba09f">UserPreferences::avoidedCountries</a></div><div class="ttdeci">std::vector&lt; std::string &gt; avoidedCountries</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00033">userPreferences.h:33</a></div></div>
 <div class="ttc" id="astruct_user_preferences_html_a86c43f59ac9b15194b7140db4350514e"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#a86c43f59ac9b15194b7140db4350514e">UserPreferences::preferredAirlines</a></div><div class="ttdeci">std::vector&lt; std::string &gt; preferredAirlines</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00031">userPreferences.h:31</a></div></div>
@@ -228,6 +230,46 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="astruct_user_preferences_html_ac635edc7b60fd591baf5e3d046740222"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#ac635edc7b60fd591baf5e3d046740222">UserPreferences::preferredCities</a></div><div class="ttdeci">std::vector&lt; std::string &gt; preferredCities</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00038">userPreferences.h:38</a></div></div>
 <div class="ttc" id="astruct_user_preferences_html_afadc2ebbf67ca62e5c044a8d45950b27"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#afadc2ebbf67ca62e5c044a8d45950b27">UserPreferences::preferredCountries</a></div><div class="ttdeci">std::vector&lt; std::string &gt; preferredCountries</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00034">userPreferences.h:34</a></div></div>
 <div class="ttc" id="astruct_user_preferences_html_afb23bf710d1b7678727d2d87359ea99a"><div class="ttname"><a href="../../dd/d20/struct_user_preferences.html#afb23bf710d1b7678727d2d87359ea99a">UserPreferences::avoidedAirports</a></div><div class="ttdeci">std::vector&lt; std::string &gt; avoidedAirports</div><div class="ttdef"><b>Definition</b> <a href="../../df/d81/user_preferences_8h_source.html#l00035">userPreferences.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acd0bbcbbe8201a1cb210395a2bf70e94" name="acd0bbcbbe8201a1cb210395a2bf70e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd0bbcbbe8201a1cb210395a2bf70e94">&#9670;&#160;</a></span>Guide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menu::Guide </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d25/menu_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../d0/d25/menu_8cpp_source.html">menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                 {</div>
+<div class="line"><span class="lineno">  140</span>    cout &lt;&lt; <span class="stringliteral">&quot;How should I write the arguments of the search filters?&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  141</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  142</span>    cout &lt;&lt; <span class="stringliteral">&quot;   Airport&#39;s code (acronym)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  143</span>    cout &lt;&lt; <span class="stringliteral">&quot;     - All uppercase letters (e.g. OPO)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  144</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  145</span>    cout &lt;&lt; <span class="stringliteral">&quot;   Airline&#39;s code (acronym)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  146</span>    cout &lt;&lt; <span class="stringliteral">&quot;     - All uppercase letters (e.g. TAP)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  147</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  148</span>    cout &lt;&lt; <span class="stringliteral">&quot;   City&#39;s /Country&#39;s name ***&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  149</span>    cout &lt;&lt; <span class="stringliteral">&quot;     - The first letter uppercase and the following lowercase &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  150</span>    cout &lt;&lt; <span class="stringliteral">&quot;       (e.g. Oporto, Portugal)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  151</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,7 +318,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 7 &lt;&lt; <span class="stringliteral">&quot;- List of destination airports reachable from an airport;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   17</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 8 &lt;&lt; <span class="stringliteral">&quot;- Number of destinations from an airport;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   18</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 9 &lt;&lt; <span class="stringliteral">&quot;- Number of destiny cities from an airport;&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   19</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 10 &lt;&lt; <span class="stringliteral">&quot;- Number of number of destiny countries from an airport;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   19</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 10 &lt;&lt; <span class="stringliteral">&quot;- Number destiny countries from an airport;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   20</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 11 &lt;&lt; <span class="stringliteral">&quot;- Maximum trip and corresponding pair of source-destination airports;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   21</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 12 &lt;&lt; <span class="stringliteral">&quot;- Top-k airport(s) with the greatest air traffic capacity (with the greatest number of flights;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   22</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 13 &lt;&lt; <span class="stringliteral">&quot;- Number of destination airports reachable from an airport within X stops;&quot;</span> &lt;&lt; endl;</div>
@@ -285,20 +327,25 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   25</span>    cout &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   26</span>    cout &lt;&lt; <span class="stringliteral">&quot;-------------------------------------------------- Best Flight Options ------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   27</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   28</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 16 &lt;&lt; <span class="stringliteral">&quot;- Best Flight Options ------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   28</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 16 &lt;&lt; <span class="stringliteral">&quot;- Best Flight Options;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   29</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   30</span>    cout &lt;&lt; <span class="stringliteral">&quot;--------------------------------------------------------PREFERENCES----------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   30</span>    cout &lt;&lt; <span class="stringliteral">&quot;------------------------------------------------------- PREFERENCES ---------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   31</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   32</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 17 &lt;&lt; <span class="stringliteral">&quot;- Edit system preferences --------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   32</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 17 &lt;&lt; <span class="stringliteral">&quot;- Edit system preferences;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   33</span>    cout &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="#af42a128da9a8bd64b49002faa12bbf2d">displayPreferences</a>(<a class="code hl_variable" href="../../df/d0a/main_8cpp.html#a7bd7a149ad56b9579b550c7e7c46010e">preferences</a>);</div>
-<div class="line"><span class="lineno">   35</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   36</span>    cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   37</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   38</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Press 0 to quit.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   39</span>    cout &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="aclassmenu_html_af42a128da9a8bd64b49002faa12bbf2d"><div class="ttname"><a href="#af42a128da9a8bd64b49002faa12bbf2d">menu::displayPreferences</a></div><div class="ttdeci">static void displayPreferences(const UserPreferences &amp;preferences)</div><div class="ttdoc">Displays the user preferences on the menu.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d25/menu_8cpp_source.html#l00042">menu.cpp:42</a></div></div>
+<div class="line"><span class="lineno">   35</span>    cout &lt;&lt; <span class="stringliteral">&quot;--------------------------------------------------------- GUIDE -------------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   36</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   37</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; 18 &lt;&lt; <span class="stringliteral">&quot;- Review how to write the arguments for the search filters;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   38</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   39</span>    cout &lt;&lt; <span class="stringliteral">&quot;-----------------------------------------------------------------------------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   40</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   41</span>    cout &lt;&lt; <span class="stringliteral">&quot;                 &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Press 0 to quit.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   42</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   43</span>    cout &lt;&lt; <span class="stringliteral">&quot;-----------------------------------------------------------------------------------------------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   44</span>    cout &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   45</span>}</div>
+<div class="ttc" id="aclassmenu_html_af42a128da9a8bd64b49002faa12bbf2d"><div class="ttname"><a href="#af42a128da9a8bd64b49002faa12bbf2d">menu::displayPreferences</a></div><div class="ttdeci">static void displayPreferences(const UserPreferences &amp;preferences)</div><div class="ttdoc">Displays the user preferences on the menu.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/d25/menu_8cpp_source.html#l00047">menu.cpp:47</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="menu.h" line="14" column="17" bodyfile="menu.cpp" bodystart="6" bodyend="40"/>
+        <location file="menu.h" line="14" column="17" bodyfile="menu.cpp" bodystart="6" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -60,7 +60,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="menu.h" line="20" column="17" bodyfile="menu.cpp" bodystart="42" bodyend="132"/>
+        <location file="menu.h" line="20" column="17" bodyfile="menu.cpp" bodystart="47" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d3d/classmenu_1acd0bbcbbe8201a1cb210395a2bf70e94" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void menu::Guide</definition>
+        <argsstring>()</argsstring>
+        <name>Guide</name>
+        <qualifiedname>menu::Guide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="menu.h" line="21" column="17" bodyfile="menu.cpp" bodystart="139" bodyend="151"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -68,9 +82,10 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="menu.h" line="8" column="1" bodyfile="menu.h" bodystart="8" bodyend="21"/>
+    <location file="menu.h" line="8" column="1" bodyfile="menu.h" bodystart="8" bodyend="22"/>
     <listofallmembers>
       <member refid="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" prot="public" virt="non-virtual"><scope>menu</scope><name>displayPreferences</name></member>
+      <member refid="d7/d3d/classmenu_1acd0bbcbbe8201a1cb210395a2bf70e94" prot="public" virt="non-virtual"><scope>menu</scope><name>Guide</name></member>
       <member refid="d7/d3d/classmenu_1a79821bec2967b5737c86fe7b76e918c2" prot="public" virt="non-virtual"><scope>menu</scope><name>Menu</name></member>
     </listofallmembers>
   </compounddef>

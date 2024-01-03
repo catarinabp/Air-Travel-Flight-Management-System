@@ -33,6 +33,7 @@
   <compound refid="d7/d3d/classmenu" kind="class"><name>menu</name>
     <member refid="d7/d3d/classmenu_1a79821bec2967b5737c86fe7b76e918c2" kind="function"><name>Menu</name></member>
     <member refid="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" kind="function"><name>displayPreferences</name></member>
+    <member refid="d7/d3d/classmenu_1acd0bbcbbe8201a1cb210395a2bf70e94" kind="function"><name>Guide</name></member>
   </compound>
   <compound refid="dd/d20/struct_user_preferences" kind="struct"><name>UserPreferences</name>
     <member refid="dd/d20/struct_user_preferences_1a86c43f59ac9b15194b7140db4350514e" kind="variable"><name>preferredAirlines</name></member>
@@ -79,6 +80,9 @@
   <compound refid="d3/d54/menu_8h" kind="file"><name>menu.h</name>
   </compound>
   <compound refid="d9/d85/search_8h" kind="file"><name>search.h</name>
+    <member refid="d9/d85/search_8h_1a33b1d6fbfa9c754b1d9893336a0999b7" kind="function"><name>codeToInfo</name></member>
+    <member refid="d9/d85/search_8h_1adf59ea458514da8bdb5c9b223aadabdf" kind="function"><name>validOptionAirport</name></member>
+    <member refid="d9/d85/search_8h_1ab644077ed076550c71fbe0b93c39778e" kind="function"><name>validOptionInt</name></member>
     <member refid="d9/d85/search_8h_1ab09b9d9712af2b067a5ab5dfc59b9ba6" kind="function"><name>findShortestPath</name></member>
     <member refid="d9/d85/search_8h_1a042f52f14efa68b742e287ebf911f497" kind="function"><name>backtrackPaths</name></member>
     <member refid="d9/d85/search_8h_1a489a16449e68d4c576501fdc5c357681" kind="function"><name>nameToCode</name></member>

@@ -13,5 +13,6 @@ var searchData=
   ['getweight_10',['getWeight',['../d7/d77/class_edge.html#a685f283c31bf5553acca4eea34d19d15',1,'Edge']]],
   ['graph_11',['Graph',['../da/d9a/class_graph.html',1,'']]],
   ['graph_2eh_12',['Graph.h',['../da/db6/_graph_8h.html',1,'']]],
-  ['graph_3c_20t_20_3e_13',['Graph&lt; T &gt;',['../d0/d72/class_vertex.html#aefa9b76cd57411c5354e5620dc2d84dd',1,'Vertex::Graph&lt; T &gt;'],['../d7/d77/class_edge.html#aefa9b76cd57411c5354e5620dc2d84dd',1,'Edge::Graph&lt; T &gt;']]]
+  ['graph_3c_20t_20_3e_13',['Graph&lt; T &gt;',['../d0/d72/class_vertex.html#aefa9b76cd57411c5354e5620dc2d84dd',1,'Vertex::Graph&lt; T &gt;'],['../d7/d77/class_edge.html#aefa9b76cd57411c5354e5620dc2d84dd',1,'Edge::Graph&lt; T &gt;']]],
+  ['guide_14',['Guide',['../d7/d3d/classmenu.html#acd0bbcbbe8201a1cb210395a2bf70e94',1,'menu']]]
 ];

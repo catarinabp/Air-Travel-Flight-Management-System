@@ -10,5 +10,6 @@ var searchData=
   ['getinfo_7',['getInfo',['../d0/d72/class_vertex.html#a48eae2f7af2362634adab02b7b2dbec6',1,'Vertex']]],
   ['getnumvertex_8',['getNumVertex',['../da/d9a/class_graph.html#a0853eac15cdf0f06d63f4b8a7820ec71',1,'Graph']]],
   ['getvertexset_9',['getVertexSet',['../da/d9a/class_graph.html#a923b43995f81ad9319bbc81a1e433e64',1,'Graph']]],
-  ['getweight_10',['getWeight',['../d7/d77/class_edge.html#a685f283c31bf5553acca4eea34d19d15',1,'Edge']]]
+  ['getweight_10',['getWeight',['../d7/d77/class_edge.html#a685f283c31bf5553acca4eea34d19d15',1,'Edge']]],
+  ['guide_11',['Guide',['../d7/d3d/classmenu.html#acd0bbcbbe8201a1cb210395a2bf70e94',1,'menu']]]
 ];

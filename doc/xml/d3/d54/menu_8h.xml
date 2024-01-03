@@ -60,9 +60,10 @@
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d3d/classmenu_1a79821bec2967b5737c86fe7b76e918c2" kindref="member">Menu</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d20/struct_user_preferences" kindref="compound">UserPreferences</ref>&amp;<sp/><ref refid="df/d0a/main_8cpp_1a7bd7a149ad56b9579b550c7e7c46010e" kindref="member">preferences</ref>);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d3d/classmenu_1af42a128da9a8bd64b49002faa12bbf2d" kindref="member">displayPreferences</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dd/d20/struct_user_preferences" kindref="compound">UserPreferences</ref>&amp;<sp/><ref refid="df/d0a/main_8cpp_1a7bd7a149ad56b9579b550c7e7c46010e" kindref="member">preferences</ref>);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PROJETO2AED_MENU_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d7/d3d/classmenu_1acd0bbcbbe8201a1cb210395a2bf70e94" kindref="member">Guide</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//PROJETO2AED_MENU_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="menu.h"/>
   </compounddef>
