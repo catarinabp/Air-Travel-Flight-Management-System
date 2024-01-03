@@ -8,6 +8,7 @@
 #include "statistics.h"
 #include "search.h"
 
+
 /**
  * @brief User preferences for the Flight System.
  */
@@ -106,9 +107,7 @@ int main(int argc, char* argv[]) {
 
         //Number of flights out from an Airport
         if (filter == 3) {
-            std::string airportCode;
-            std::cout << "Please type the airport's code: ";
-            std::cin >> airportCode;
+            std::string airportCode = validOptionAirport(graph);
             std::cout << endl;
             std::cout << "The number of flights out from " << airportCode << " Airport is "
                       << numberOfFlightsOut(graph, airportCode) << std::endl;
@@ -125,9 +124,7 @@ int main(int argc, char* argv[]) {
 
         //Number of different airlines with flights departing from an airport
         if (filter == 4) {
-            std::string airportCode;
-            std::cout << "Please type the airport's code: ";
-            std::cin >> airportCode;
+            std::string airportCode = validOptionAirport(graph);
             std::cout << endl;
             std::cout << "The number of different airlines with flights departing from " << airportCode << " airport is "
                       << numberOfAirlinesOut(graph, airportCode) << std::endl;
@@ -183,14 +180,12 @@ int main(int argc, char* argv[]) {
 
         //List of destination airports reachable from an airport
         if (filter == 7) {
-            std::string airportCode;
-            std::cout << "Please type the airport's code: ";
-            std::cin >> airportCode;
+            std::string airportCode = validOptionAirport(graph);
             std::cout << endl;
             std::cout << "The list of destination airports reachable from " << airportCode
                       << " airport is the following: " << std::endl;
-            for(const auto& top: listOfDestinations(graph, airportCode)) {
-                std::cout << top << std::endl;
+            for(const string& top: listOfDestinations(graph, airportCode)) {
+                codeToInfo(graph, top);
             }
             std::cout << "\nType 1 to return: ";
             int userInput;
@@ -369,7 +364,6 @@ int main(int argc, char* argv[]) {
         }
 
         if(filter == 16) {
-            std::cout << "Please";
             std::string source, destination;
             std::vector<std::string> sources, destinations;
             int sourceOption, destinationOption;
@@ -377,19 +371,19 @@ int main(int argc, char* argv[]) {
             std::cout << "1. Choose by airport Code;" << std::endl;
             std::cout << "2. Choose by airport Name;" << std::endl;
             std::cout << "3. Choose by City;" << std::endl;
-            std::cin >> sourceOption;
+            sourceOption = validOptionInt(1,3);
 
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             if(sourceOption == 1) {
-                std::cout << "Please type the airport code: " << std::endl;
-                std::cin >> source;
+                source = validOptionAirport(graph);
                 sources.push_back(source);
             }
             if(sourceOption == 2) {
                 std::cout << "Please type the airport name: " << std::endl;
                 std::getline(std::cin, source);
-                sources.push_back(nameToCode(graph, source));
+                source = nameToCode(graph, source);
+                sources.push_back(source);
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
             if(sourceOption == 3) {
@@ -402,19 +396,19 @@ int main(int argc, char* argv[]) {
             std::cout << "1. Choose by airport Code;" << std::endl;
             std::cout << "2. Choose by airport Name;" << std::endl;
             std::cout << "3. Choose by City;" << std::endl;
-            std::cin >> destinationOption;
+            destinationOption = validOptionInt(1,3);
 
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             if(destinationOption == 1) {
-                std::cout << "Please type the airport code: " << std::endl;
-                std::cin >> destination;
+                destination = validOptionAirport(graph);
                 destinations.push_back(destination);
             }
             if(destinationOption == 2) {
                 std::cout << "Please type the airport name: " << std::endl;
                 std::getline(std::cin, destination);
-                destinations.push_back(nameToCode(graph, destination));
+                destination = nameToCode(graph, destination);
+                destinations.push_back(destination);
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
             if(destinationOption == 3) {
@@ -447,7 +441,8 @@ int main(int argc, char* argv[]) {
                 }
             }
             if(count == 0) {
-                cout << "There are no flights from " << source << " to " << destination << " with the selected preferences." << endl;
+                cout << endl;
+                cout << "-----ERROR------ There are no flights from " << source << " to " << destination << " with the selected preferences." << endl;
             }
             std::cout << "\nType 1 to return: ";
             int userInput;

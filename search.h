@@ -8,6 +8,92 @@
 #include <algorithm>
 #include "Graph.h"
 #include "UserPreferences.h"
+#include "search.h"
+
+
+void codeToInfo(const Graph<string> &graph, string code) {
+    auto vertex = graph.findVertex(code);
+    if(vertex->getAdj()[0].getWeight() == "AIRPORT") {
+        vertex->getAdj()[0].getDest()->getInfo();
+        cout << code << "-> " << getAirportName(vertex->getAdj()[0].getDest()->getInfo()) << ", " << getCityName(vertex->getAdj()[0].getDest()->getInfo()) << ", " << getCountryName(vertex->getAdj()[0].getDest()->getInfo()) << endl;
+    }
+}
+
+/**
+ * @brief Takes user input for an airport code, validates its existence, and returns the corresponding airport information.
+ *
+ * This template function prompts the user to enter an airport code, checks if the entered code exists in the given graph,
+ * and returns the airport information if valid. It performs a case-insensitive comparison and continues to ask for input
+ * until a valid airport code is provided.
+ *
+ * @tparam T The type of data stored in the graph's vertices.
+ * @param originalGraph The original graph containing airport information.
+ *
+ * @return The airport information (code, name, city) corresponding to the valid airport code entered by the user.
+ */
+template <class T>
+string validOptionAirport(const Graph<T> &originalGraph) {
+    string codeToTry;
+    std::cout << endl;
+    std::cout << "Please type the airport code: " << std::endl;
+    std::cin >> codeToTry;
+    for (auto vertex: originalGraph.getVertexSet()) {
+        if (vertex->getAdj().empty()) {
+            string id = getId(vertex->getInfo());
+            if (getId(vertex->getInfo()) == "P") {
+                transform(codeToTry.begin(), codeToTry.end(), codeToTry.begin(), ::toupper);
+                if (getAirportCode(vertex->getInfo()) == codeToTry) {
+                    cout << "Selected airport: " << getAirportCode(vertex->getInfo()) << ", " << getAirportName(vertex->getInfo()) << ", " << getCityName(vertex->getInfo()) << endl;
+                    return getAirportCode(vertex->getInfo());
+                }
+            }
+        }
+    }
+    cout << endl;
+    cout << "That code doesn't exist! Please verify the spelling." << endl;
+    return validOptionAirport(originalGraph);
+}
+
+/**
+ * @brief Takes user input for an option within a specified range.
+ *
+ * This function prompts the user to enter an option within the specified range
+ * [down + 1, up + 1]. It continues to ask for input until a valid integer within
+ * the range is provided.
+ *
+ * @param down The lower bound of the allowed range (inclusive).
+ * @param up   The upper bound of the allowed range (inclusive).
+ *
+ * @return The valid option entered by the user within the specified range.
+ */
+int validOptionInt(int down, int up) {
+    int myNumber;
+
+    // Loop until a valid integer is entered
+    while (true) {
+        std::cout << endl;
+        std::cout << "Enter an option: ";
+
+        if (std::cin >> myNumber && myNumber > down-1 && myNumber < up+1) {
+            // Input was successful, break out of the loop
+            break;
+        } else {
+            // Input failed, handle the error
+            std::cout << "Invalid input. Please enter an option." << std::endl;
+
+            // Clear the fail state
+            std::cin.clear();
+
+            // Discard the invalid input
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+    }
+
+    // You now have a valid integer in myNumber
+    std::cout << "You entered: " << myNumber << std::endl;
+    std::cout << endl;
+    return myNumber;
+}
 
 /**
  * @brief Find the shortest paths from a start airport to an end airport in a graph.
@@ -33,57 +119,60 @@
  */
 template <class T>
 vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport, const T &endAirport) {
-    // Map to store distances from startAirport to each vertex
-    unordered_map<T, int> distance;
+    vector<vector<T>> allPaths;
+    vector<T> currentPath;
 
-    // Priority queue to store vertices and their distances
-    priority_queue<pair<int, T>, vector<pair<int, T>>, greater<pair<int, T>>> pq;
+    if(endAirport != startAirport) {
+        // Map to store distances from startAirport to each vertex
+        unordered_map<T, int> distance;
 
-    // Initialize distances
-    for (const auto &vertex : graph.getVertexSet()) {
-        if(!vertex->getAdj().empty()) {
-            if(vertex->getAdj()[0].getWeight() == "AIRPORT") {
-                distance[vertex->getInfo()] = INT_MAX;
-            }
-        }
-    }
+        // Priority queue to store vertices and their distances
+        priority_queue<pair<int, T>, vector<pair<int, T>>, greater<pair<int, T>>> pq;
 
-    // Set distance for the startAirport to 0
-    distance[startAirport] = 0;
-
-    // Insert startAirport into the priority queue
-    pq.push({0, startAirport});
-
-    // Dijkstra's algorithm
-    while (!pq.empty()) {
-        // Extract the vertex with the smallest distance
-        T currentAirport = pq.top().second;
-        pq.pop();
-
-        // Get neighboring vertices of the currentAirport
-        if(!graph.findVertex(currentAirport)->getAdj().empty()) {
-            auto neighbors = graph.findVertex(currentAirport)->getAdj();
-            if(neighbors[0].getWeight() == "AIRPORT") {
-                neighbors.erase(neighbors.begin());
-            }
-            // Update distances to neighboring vertices
-            for (const auto &edge : neighbors) {
-                T neighborAirport = edge.getDest()->getInfo();
-                int newDistance = distance[currentAirport] + 1; // Assuming equal weight for all edges
-
-                // If a shorter path is found, update the distance
-                if (newDistance < distance[neighborAirport] || distance[neighborAirport] == INT_MAX) {
-                    distance[neighborAirport] = newDistance;
-                    pq.push({newDistance, neighborAirport});
+        // Initialize distances
+        for (const auto &vertex : graph.getVertexSet()) {
+            if(!vertex->getAdj().empty()) {
+                if(vertex->getAdj()[0].getWeight() == "AIRPORT") {
+                    distance[vertex->getInfo()] = INT_MAX;
                 }
             }
         }
-    }
 
-    // Reconstruct all paths from endAirport to startAirport
-    vector<vector<T>> allPaths;
-    vector<T> currentPath;
-    backtrackPaths(graph,distance, endAirport, startAirport, currentPath, allPaths);
+        // Set distance for the startAirport to 0
+        distance[startAirport] = 0;
+
+        // Insert startAirport into the priority queue
+        pq.push({0, startAirport});
+
+        // Dijkstra's algorithm
+        while (!pq.empty()) {
+            // Extract the vertex with the smallest distance
+            T currentAirport = pq.top().second;
+            pq.pop();
+
+            // Get neighboring vertices of the currentAirport
+            if(!graph.findVertex(currentAirport)->getAdj().empty()) {
+                auto neighbors = graph.findVertex(currentAirport)->getAdj();
+                if(neighbors[0].getWeight() == "AIRPORT") {
+                    neighbors.erase(neighbors.begin());
+                }
+                // Update distances to neighboring vertices
+                for (const auto &edge : neighbors) {
+                    T neighborAirport = edge.getDest()->getInfo();
+                    int newDistance = distance[currentAirport] + 1; // Assuming equal weight for all edges
+
+                    // If a shorter path is found, update the distance
+                    if (newDistance < distance[neighborAirport] || distance[neighborAirport] == INT_MAX) {
+                        distance[neighborAirport] = newDistance;
+                        pq.push({newDistance, neighborAirport});
+                    }
+                }
+            }
+        }
+
+        // Reconstruct all paths from endAirport to startAirport
+        backtrackPaths(graph,distance, endAirport, startAirport, currentPath, allPaths);
+    }
 
     return allPaths;
 }
@@ -119,6 +208,7 @@ vector<vector<T>> findShortestPath(const Graph<T> &graph, const T &startAirport,
  */
 template <class T>
 void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance, const T &end, const T &current, vector<T> &currentPath, vector<vector<T>> &allPaths, size_t initialSize = 2) {
+    auto meu = distance.at(end);
     if(distance.at(end) != INT_MAX) {
         if (current == end) {
             currentPath.push_back(current);
@@ -136,17 +226,21 @@ void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance
         for (const auto &edge : neighbors) {
             currentPath.push_back(current);
             T neighborAirport = edge.getDest()->getInfo();
-            auto lessDifferentThatSource = distance.at(neighborAirport) + distance.at(current) < distance.at(end) && distance.at(neighborAirport) != 0;
-            auto sameAsEnd = neighborAirport == end;
-            auto higherOnlyIfEnd = (distance.at(neighborAirport) + distance.at(current) > distance.at(end) && neighborAirport == end);
+            if(find(currentPath.begin(), currentPath.end(), neighborAirport) == currentPath.end()) {
+                auto lessThanCurrent = (int) currentPath.size() / 2 + 1 < distance.at(end);
+                // auto lessDifferentThatSource = distance.at(neighborAirport) + distance.at(current) < distance.at(end) && distance.at(neighborAirport) != 0;
+                auto sameAsEnd = neighborAirport == end;
+                auto higherOnlyIfEnd = (distance.at(neighborAirport) + distance.at(current) > distance.at(end) && neighborAirport == end);
 
-            if (lessDifferentThatSource || sameAsEnd || higherOnlyIfEnd) {
-                // Add the airline information between consecutive airports in the path
-                currentPath.push_back(edge.getWeight());
-                backtrackPaths(graph, distance, end, neighborAirport, currentPath, allPaths, initialSize);
-            } else {
-                currentPath.resize(initialSize);
+                if (lessThanCurrent || sameAsEnd || higherOnlyIfEnd) {
+                    // Add the airline information between consecutive airports in the path
+                    currentPath.push_back(edge.getWeight());
+                    backtrackPaths(graph, distance, end, neighborAirport, currentPath, allPaths, initialSize);
+                } else {
+                    currentPath.resize(initialSize);
+                }
             }
+
         }
         if(initialSize >= 2) {
             currentPath.resize(initialSize-2);
@@ -176,6 +270,7 @@ void backtrackPaths(const Graph<T> &graph, const unordered_map<T, int> &distance
  */
 template <class T>
 string nameToCode(const Graph<T> &graph, string input) {
+    bool stop = false;
     vector<string> options;
     for(auto vertex: graph.getVertexSet()) {
         if(vertex->getAdj().empty()) {
@@ -185,17 +280,31 @@ string nameToCode(const Graph<T> &graph, string input) {
                 transform(airportName.begin(), airportName.end(), airportName.begin(), ::tolower);
                 transform(input.begin(), input.end(), input.begin(), ::tolower);
                 if(airportName.find(input) != string::npos) {
-                    options.push_back(vertex->getInfo().substr(2));
+                    options.push_back(vertex->getInfo());
                 }
             }
         }
     }
-    // it should display all the options in a menu so the user can select the option they want
-    for(int i = 0; i < options.size(); i++) {
-        cout << i + 1 << ". " << options[i] << endl;
+    if(options.empty()) {
+        stop = true;
+        cout << "There is no airport with this name. Try again." << endl;
+        while(stop) {
+            std::cout << "Please type the airport name: " << std::endl;
+            string source;
+            std::getline(std::cin, source);
+            return nameToCode(graph, source);
+        }
     }
-    int option;
-    cin >> option;
+    // it should display all the options in a menu so the user can select the option they want
+    int option = 1;
+    if(options.size() > 1) {
+        cout << "Choose the option you want: " << endl;
+        for(int i = 0; i < options.size(); i++) {
+            cout << i + 1 << ". " << options[i].substr(2) << endl;
+        }
+        option = validOptionInt(1, (int) options.size());
+    }
+
     return getAirportCode(options[option-1]);
 }
 
@@ -222,6 +331,7 @@ string nameToCode(const Graph<T> &graph, string input) {
  */
 template <class T>
 vector<string> cityToCode(const Graph<T> &graph, string input) {
+    bool stop = false;
     unordered_multimap<string, string> map;
     vector<string> options;
     for(auto vertex: graph.getVertexSet()) {
@@ -243,18 +353,32 @@ vector<string> cityToCode(const Graph<T> &graph, string input) {
             }
         }
     }
-    // it should display all the options in a menu so the user can select the option they want
-    for(int i = 0; i < options.size(); i++) {
-        cout << i + 1 << ". " << options[i] << endl;
+    if(options.empty()) {
+        stop = true;
+        cout << "There is no city with this name. Try again." << endl;
+        while(stop) {
+            std::cout << "Please type the city's name: " << std::endl;
+            string city;
+            std::getline(std::cin, city);
+            return cityToCode(graph, city);
+        }
     }
     int option = 1;
-    // cin >> option;
+    if(options.size() > 1) {
+        cout << "Choose the option you want: " << endl;
+        for(int i = 0; i < options.size(); i++) {
+            cout << i + 1 << ". " << options[i].substr(2) << endl;
+        }
+        option = validOptionInt(1, (int) options.size());
+    }
+
     vector<string> codes;
     for (auto & itr : map) {
         if(itr.first == options[option-1]) {
             codes.push_back(itr.second);
         }
     }
+
     return codes;
 }
 
@@ -417,5 +541,6 @@ Graph<T> filterGraph(const Graph<T> &originalGraph, const UserPreferences &userP
     }
     return filteredGraph;
 }
+
 
 #endif //PROJETO2AED_SEARCH_H
